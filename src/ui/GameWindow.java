@@ -6,6 +6,7 @@ import logic.Server;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * Created by freddeng on 2018-01-26.
@@ -71,7 +72,7 @@ public class GameWindow extends JFrame {
         return width;
     }
 
-    public int host () throws Exception {
+    public int host () {
         int portNumber = 0;
 
         while (true) {
@@ -101,8 +102,18 @@ public class GameWindow extends JFrame {
 
         }
 
+        try {
+            player = new Player("localhost", portNumber);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(shade, "A catastrophic network error had occured.\n" +
+                    "Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+            try {
+                Server.listener.close();
+            } catch (IOException f) {}
+            return Constants.ERROR;
+        }
+
         host.updatePort(portNumber);
-        player = new Player("localHost");
 
         return Constants.SUCCESS;
     }

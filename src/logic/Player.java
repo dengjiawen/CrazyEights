@@ -13,7 +13,6 @@ import java.net.Socket;
 
 public class Player {
 
-    private static int PORT = 9050;
     private Socket socket;
     private BufferedReader in;
     private PrintWriter out;
@@ -22,9 +21,9 @@ public class Player {
 
     public Hand hand;
 
-    public Player(String serverAddress) throws Exception {
+    public Player(String serverAddress, int port) throws Exception {
 
-        socket = new Socket(serverAddress, PORT);
+        socket = new Socket(serverAddress, port);
         in = new BufferedReader(new InputStreamReader(
                 socket.getInputStream()));
         out = new PrintWriter(socket.getOutputStream(), true);
