@@ -1,6 +1,7 @@
 package ui;
 
 import common.Constants;
+import logic.Player;
 import logic.Server;
 
 import javax.swing.*;
@@ -21,6 +22,8 @@ public class GameWindow extends JFrame {
     private static TitlePanel title;
     private static MainMenuPanel main_menu;
     private static HostPanel host;
+
+    Player player;
 
     public GameWindow () throws Exception {
 
@@ -68,7 +71,7 @@ public class GameWindow extends JFrame {
         return width;
     }
 
-    public int host () {
+    public int host () throws Exception {
         int portNumber = 0;
 
         while (true) {
@@ -95,7 +98,11 @@ public class GameWindow extends JFrame {
                             "Please try a different port.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
+
         }
+
+        host.updatePort(portNumber);
+        player = new Player("localHost");
 
         return Constants.SUCCESS;
     }

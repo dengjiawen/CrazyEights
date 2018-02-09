@@ -40,8 +40,11 @@ class MainMenuPanel extends JPanel {
 
         host.addActionListener(e -> {
             setVisible(false);
-            int portNumber = GameWindow.requestRef().host();
+            int statusCode = GameWindow.requestRef().host();
 
+            if (statusCode == Constants.ERROR) {
+                setVisible(true);
+            }
         });
 
         connect.addActionListener(e -> {
@@ -67,10 +70,6 @@ class MainMenuPanel extends JPanel {
         g2d.drawImage(Resources.host_button, 0, 0, buttonWidth, buttonHeight, null);
         g2d.drawImage(Resources.connect_button, 0, buttonHeight + buttonOffset, buttonWidth, buttonHeight, null);
         g2d.drawImage(Resources.cpu_button, 0, 2 * buttonHeight + 2 * buttonOffset, buttonWidth, buttonHeight, null);
-
-    }
-
-    public static void connect () {
 
     }
 

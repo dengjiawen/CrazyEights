@@ -18,10 +18,6 @@ class GamePanel extends JPanel {
     static int width = Constants.element("initWidth");
     static int height = Constants.element("initHeight");
 
-    Player player;
-
-    ExecutorService serverThread= Executors.newSingleThreadExecutor();
-
     protected GamePanel () throws Exception {
 
         super();

@@ -5,6 +5,8 @@ import common.Constants;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.Inet4Address;
+import java.net.InetAddress;
 
 /**
  * Created by freddeng on 2018-01-26.
@@ -23,14 +25,15 @@ class HostPanel extends JPanel {
     private final static int buttonX = (width - buttonWidth) / 2;
     private final static int buttonY = height - buttonHeight;
 
+    private static int portNumber = 0;
+
     TButton play;
 
     JLabel title;
     JLabel hint;
+    JLabel port;
 
-    JLabel ipAddress;
-
-    protected HostPanel () {
+    protected HostPanel () throws Exception {
 
         super();
 
@@ -41,20 +44,30 @@ class HostPanel extends JPanel {
 
         play = new TButton(buttonX, buttonY, buttonWidth, buttonHeight);
 
-        title = new JLabel("Enter Server Port");
-        title.setFont(new Font("Arial", Font.BOLD, 20));
-        title.setBounds(0, 0, 100, 50);
+        title = new JLabel("<html><div style='text-align: center;'>" +
+                "Your IP: " + Inet4Address.getLocalHost().getHostAddress() + "</div></html>");
+        title.setForeground(Color.white);
+        title.setFont(new Font("Arial", Font.BOLD, 25));
+        title.setBounds((width - 300)/2, 100, 300, 100);
 
-        hint = new JLabel("In the text field above, enter the port number that will be used.\n" +
-                "Other players will need this number to join your game.");
+        port = new JLabel("<html><div style='text-align: center;'>" +
+                "Port Number: " + portNumber + "</div></html>");
+        port.setForeground(Color.white);
+        port.setFont(new Font("Arial", Font.BOLD, 18));
+        port.setBounds((width - 300)/2, 125, 300, 100);
+
+        hint = new JLabel("<html><div style='text-align: center;'>" +
+                "Enter the above IP address and port number to join this game." + "</div></html>");
+        hint.setForeground(Color.white);
         hint.setFont(new Font("Arial", Font.PLAIN, 12));
-        hint.setBounds(500, 0, 100, 50);
+        hint.setBounds((width - 300)/2, 180, 500, 50);
 
         play.addActionListener(e -> {
             setVisible(false);
         });
 
         add (play);
+        add (port);
         add (title);
         add (hint);
 
@@ -67,6 +80,14 @@ class HostPanel extends JPanel {
 
         g2d.drawImage(Resources.host_button, buttonX, buttonY, buttonWidth, buttonHeight, null);
 
+    }
+
+    public void updatePort (int num) {
+        setVisible(true);
+        portNumber = num;
+        port.setText("<html><div style='text-align: center;'>" +
+                "Port Number: " + portNumber + "</div></html>");
+        repaint();
     }
 
 }
