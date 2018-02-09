@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Definitions>
+    <UIDefinitions>
+        <GameWindowParam>
+            <initWidth>1280</initWidth>
+            <initHeight>720</initHeight>
+            <initTitle>Crazy Eights!</initTitle>
+        </GameWindowParam>
+        <TitleWindowParam>
+            <titleWidth>1280</titleWidth>
+            <titleHeight>60</titleHeight>
+            <logoMarginW>20</logoMarginW>
+            <logoMarginH>10</logoMarginH>
+            <contMarginW>20</contMarginW>
+            <contMarginH>15</contMarginH>
+        </TitleWindowParam>
+        <GamePanelParam>
+            <HandPanelParam>
+                <CardWidth>80</CardWidth>
+                <HandPanelYOffset>30</HandPanelYOffset>
+                <HandPanelWidth>900</HandPanelWidth>
+                <HandPanelHeight>200</HandPanelHeight>
+                <IndividualSpace>15</IndividualSpace>
+            </HandPanelParam>
+        </GamePanelParam>
+        <MainMenuParam>
+            <ButtonW>248</ButtonW>
+            <ButtonH>65</ButtonH>
+            <ButtonOffset>35</ButtonOffset>
+        </MainMenuParam>
+        <HostMenuParam>
+            <HostPanelW>500</HostPanelW>
+            <HostPanelH>500</HostPanelH>
+            <initPort>9960</initPort>
+        </HostMenuParam>
+    </UIDefinitions>
+    <LogicDefinitions>
+        <MaxPlayer>6</MaxPlayer>
+    </LogicDefinitions>
+</Definitions>
