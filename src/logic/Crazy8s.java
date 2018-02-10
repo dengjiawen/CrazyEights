@@ -84,8 +84,6 @@ public class Crazy8s {
 
         public Client (Socket socket) {
 
-            Console.print("Player " + getNum() + " connected.");
-
             this.socket = socket;
 
             try {
@@ -99,6 +97,9 @@ public class Crazy8s {
         }
 
         public void run () {
+
+            Console.print("Player " + getNum() + " connected.");
+
             try {
 
                 if (getNum() == currentPlayer) {
@@ -109,6 +110,7 @@ public class Crazy8s {
 
                 while (true) {
                     String command = input.readLine();
+                    if (command == null) return;
                     if (command.startsWith("READY")) {
                         numReady ++;
                         if (numReady == Server.players.size() && Server.players.size() > 1) {
@@ -118,7 +120,7 @@ public class Crazy8s {
                     }
                     if (command.startsWith("NAME")) {
                         playerName = command.substring(4);
-                        Console.print("Name Registered");
+                        Console.print(playerName);
                         Server.game.updatePlayerList(this, true);
                     }
                     if (command.startsWith("MOVE")) {

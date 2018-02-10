@@ -107,6 +107,7 @@ public class GameWindow extends JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(shade, "A catastrophic network error had occured.\n" +
                     "Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
             try {
                 Server.listener.close();
             } catch (IOException f) {}
@@ -169,6 +170,7 @@ public class GameWindow extends JFrame {
         try {
             player = new Player(ip, port, name);
         } catch (Exception e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(shade, "A catastrophic network error had occured.\n" +
                     "Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
 

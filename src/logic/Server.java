@@ -49,6 +49,7 @@ public class Server {
                 } catch (IOException e) {}
 
                 players.add(game.new Client(playerSocket));
+                Console.print(players.get(0).toString());
                 players.get(0).start();
 
                 game.currentPlayer = 0;
