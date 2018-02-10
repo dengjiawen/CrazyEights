@@ -118,6 +118,66 @@ public class GameWindow extends JFrame {
         return Constants.SUCCESS;
     }
 
+    public int connect () {
+
+        int port = 0;
+
+        String name;
+        String ip = "";
+
+        while (true) {
+            String input = JOptionPane.showInputDialog("Enter game IP address:");
+            try {
+                if (input != null) {
+                    ip = input;
+                    break;
+                } else {
+                    return Constants.ERROR;
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(shade, "An invalid IP address was entered. Please try again.",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        while (true) {
+            String input = JOptionPane.showInputDialog("Enter game port:");
+            try {
+                if (input != null) {
+                    port = Integer.parseInt(input);
+                    break;
+                } else {
+                    return Constants.ERROR;
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(shade, "An invalid port was entered. Please try again.",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        while (true) {
+            String input = JOptionPane.showInputDialog("Enter a nickname: ");
+
+            if (input != null) {
+                name = input;
+                break;
+            } else {
+                return Constants.ERROR;
+            }
+        }
+
+        try {
+            player = new Player(ip, port, name);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(shade, "A catastrophic network error had occured.\n" +
+                    "Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+
+            return Constants.ERROR;
+        }
+
+        return Constants.SUCCESS;
+    }
+
     public void updateHand () {
         panel.hand.update();
     }

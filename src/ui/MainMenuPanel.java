@@ -42,13 +42,14 @@ class MainMenuPanel extends JPanel {
             setVisible(false);
             int statusCode = GameWindow.requestRef().host();
 
-            if (statusCode == Constants.ERROR) {
-                setVisible(true);
-            }
+            if (statusCode == Constants.ERROR) setVisible(true);
         });
 
         connect.addActionListener(e -> {
             setVisible(false);
+            int statusCode = GameWindow.requestRef().connect();
+
+            if (statusCode == Constants.ERROR) setVisible(true);
         });
 
         cpu.addActionListener(e -> {
