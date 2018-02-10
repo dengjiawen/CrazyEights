@@ -35,6 +35,9 @@ class GamePanel extends JPanel {
 
         buttons = new ButtonPanel();
 
+        hand = new HandPanel(GameWindow.requestRef().player.hand);
+        hand.setVisible(false);
+
         player = new ArrayList<>();
         player.add(null);
         player.add(null);

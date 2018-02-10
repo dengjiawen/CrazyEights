@@ -184,6 +184,10 @@ public class GameWindow extends JFrame {
         panel.startVotingSession();
     }
 
+    public void showHand () {
+        panel.hand.setVisible(true);
+    }
+
     public void updateHand () {
         panel.hand.update();
     }

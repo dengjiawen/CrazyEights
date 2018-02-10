@@ -36,6 +36,10 @@ public class Crazy8s {
 
     public void startGame () {
 
+        for (int i = 0; i < Server.players.size(); i ++) {
+            Server.players.get(i).notifyStartGame();
+        }
+
         playerCards = new Hand[Server.players.size()];
 
         for (int i = 0; i < playerCards.length; i += 9) {

@@ -96,6 +96,10 @@ public class Player {
                     }
                 }
 
+                if (response.startsWith("START_GAME")) {
+                    GameWindow.requestRef().showHand();
+                }
+
                 if (response.startsWith("CARD")) {
 
                     byte suit = Byte.parseByte(response.substring(4,5));
