@@ -42,14 +42,15 @@ public class Player {
         try {
             response = in.readLine();
             Console.print(response);
-            if (response.startsWith("WELCOME")) {
-                playerNum = Character.getNumericValue(response.charAt(8));
-                out.println("NAME" + name);
-            }
 
             while (true) {
                 response = in.readLine();
                 System.out.println(response);
+
+                if (response.startsWith("WELCOME")) {
+                    playerNum = Character.getNumericValue(response.charAt(8));
+                    out.println("NAME" + name);
+                }
 
                 if (response.startsWith("CONNECT")) {
                     int playerNum = Integer.parseInt(response.substring(7,8));
