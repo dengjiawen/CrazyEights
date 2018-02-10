@@ -39,7 +39,7 @@ class GamePanel extends JPanel {
         player.add(new PlayerPanel(name, playerNum, ++ curPlayerCount));
         Console.print("Break");
         add(player.get(curPlayerCount - 2));
-        repaint();
+        GameWindow.requestRef().repaint();
     }
 
     protected void paintComponent (Graphics g) {
