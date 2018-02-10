@@ -61,6 +61,12 @@ class Deck {
         cards.remove(card);
     }
 
+    void remove (int low, int high) {
+        for (int i = low; i <= high; i ++) {
+            remove(cards.get(i));
+        }
+    }
+
     public int size () {
         return cards.size();
     }

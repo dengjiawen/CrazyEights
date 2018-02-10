@@ -104,6 +104,7 @@ public class Player {
 
                     byte suit = Byte.parseByte(response.substring(4,5));
                     byte rank = Byte.parseByte(response.substring(5));
+                    Console.print("suit " + suit + " rank " + rank);
                     hand.add(new Card(suit, rank));
 
                 } else if (response.startsWith("VALID_MOVE")) {

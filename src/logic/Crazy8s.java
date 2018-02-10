@@ -42,12 +42,10 @@ public class Crazy8s {
 
         playerCards = new Hand[Server.players.size()];
 
-        for (int i = 0; i < playerCards.length; i += 9) {
-            Deck temp_subdeck = deck.subdeck(i, i + 8);
-            for (int j = 0; j < temp_subdeck.size(); j ++) {
-                playerCards[i].add(temp_subdeck.get(j));
-                deck.remove(playerCards[i].get(j));
-            }
+        for (int i = 0; i < playerCards.length; i ++) {
+            playerCards[i] = new Hand();
+            playerCards[i].addDeck(deck.subdeck(0, 7));
+            deck.remove(0, 7);
             Server.players.get(i).giveHand(playerCards[i]);
         }
         activeCard = deck.get(0);

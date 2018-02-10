@@ -1,5 +1,7 @@
 package logic;
 
+import ui.GameWindow;
+
 import java.util.ArrayList;
 
 /**
@@ -27,6 +29,13 @@ public class Hand extends Deck {
         update();
     }
 
+    public void add (Card card) {
+        super.add(card);
+        isSelected.add(false);
+        isPlayable.add(false);
+        GameWindow.requestRef().repaint();
+    }
+
     boolean isEmpty () {
         return size() == 0;
     }
@@ -43,6 +52,12 @@ public class Hand extends Deck {
             isSelected.set(index, true);
         } else {
             isSelected.set(index, false);
+        }
+    }
+
+    public void addDeck (Deck deck) {
+        for (int i = 0; i < deck.size(); i ++) {
+            add(deck.get(i));
         }
     }
 
