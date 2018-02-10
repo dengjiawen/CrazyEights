@@ -34,7 +34,6 @@ class GamePanel extends JPanel {
         setBounds(0, 0, width, height);
 
         buttons = new ButtonPanel();
-        buttons.setVisible(false);
 
         player = new ArrayList<>();
         player.add(null);
@@ -108,6 +107,7 @@ class GamePanel extends JPanel {
     }
 
     public void startVotingSession () {
+        buttons.setVisible(true);
         buttons.startVotingSession();
     }
 
