@@ -127,7 +127,6 @@ public class Crazy8s {
                     }
                     if (command.startsWith("NAME")) {
                         playerName = command.substring(4);
-                        Console.print(playerName);
                         Server.game.updatePlayerList(this, true);
                     }
                     if (command.startsWith("MOVE")) {
