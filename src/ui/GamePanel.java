@@ -18,6 +18,9 @@ class GamePanel extends JPanel {
     static int width = Constants.element("initWidth");
     static int height = Constants.element("initHeight");
 
+    PlayerPanel player;
+    HandPanel hand;
+
     protected GamePanel () throws Exception {
 
         super();
@@ -25,12 +28,8 @@ class GamePanel extends JPanel {
         setLayout(null);
         setBounds(0, 0, width, height);
 
-        Hand hand = new Hand();
+        player =  new PlayerPanel("John", 1);
 
-        HandPanel handPanel = new HandPanel(hand);
-        PlayerPanel player = new PlayerPanel("John", 1);
-
-        add(handPanel);
         add(player);
     }
 

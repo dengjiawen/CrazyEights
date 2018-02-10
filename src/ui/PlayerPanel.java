@@ -26,12 +26,18 @@ class PlayerPanel extends JPanel {
         super();
 
         setLayout(null);
-        //setOpaque(false);
-        setBounds(200, 800, 200, 75);
+        setBounds(200, 200, 300, 75);
+        setBackground(new Color(0,0,0, 150));
 
         this.playerNum = playerNum;
         this.playerName = playerName;
 
+        nameDisplay = new JLabel(playerName);
+        nameDisplay.setBounds(90, 0, 200 - 80, 80);
+        nameDisplay.setForeground(Color.white);
+        nameDisplay.setFont(new Font("Arial", Font.BOLD, 18));
+
+        add(nameDisplay);
 
     }
 

@@ -64,6 +64,7 @@ class HostPanel extends JPanel {
 
         play.addActionListener(e -> {
             setVisible(false);
+            GameWindow.requestRef().setShade(false);
         });
 
         add (play);
@@ -78,7 +79,7 @@ class HostPanel extends JPanel {
 
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.drawImage(Resources.host_button, buttonX, buttonY, buttonWidth, buttonHeight, null);
+        g2d.drawImage(Resources.cpu_secondary, buttonX, buttonY, buttonWidth, buttonHeight, null);
 
     }
 
@@ -87,7 +88,7 @@ class HostPanel extends JPanel {
         portNumber = num;
         port.setText("<html><div style='text-align: center;'>" +
                 "Port Number: " + portNumber + "</div></html>");
-        repaint();
+        play.grabFocus();
     }
 
 }

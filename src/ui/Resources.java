@@ -22,8 +22,8 @@ class Resources {
     static BufferedImage host_button;
     static BufferedImage cpu_button;
 
-    static BufferedImage connect_submit;
-    static BufferedImage cpu_submit;
+    static BufferedImage connect_secondary;
+    static BufferedImage cpu_secondary;
 
     static BufferedImage[][] cards;
 
@@ -42,6 +42,8 @@ class Resources {
         connect_button = loadImage("buttons/connect.png");
         host_button = loadImage("buttons/host.png");
         cpu_button = loadImage("buttons/cpu.png");
+
+        cpu_secondary = loadImage("buttons/cpu_secondary.png");
 
         cards = new BufferedImage[4][13];
         for (int i = 0; i < cards.length; i ++) {
