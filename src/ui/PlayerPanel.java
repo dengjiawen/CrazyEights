@@ -83,9 +83,11 @@ class PlayerPanel extends JPanel {
         if (ready) {
             this.vote.setForeground(Color.green);
             this.vote.setText("Voted to start");
+            repaint();
         } else {
             this.vote.setForeground(Color.red);
             this.vote.setText("Waiting for starting vote...");
+            repaint();
         }
     }
 

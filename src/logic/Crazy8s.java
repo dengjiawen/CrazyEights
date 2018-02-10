@@ -35,6 +35,7 @@ public class Crazy8s {
     }
 
     public void startGame () {
+
         playerCards = new Hand[Server.players.size()];
 
         for (int i = 0; i < playerCards.length; i += 9) {
@@ -185,7 +186,11 @@ public class Crazy8s {
 
         public void updateReadiness (Client player, boolean ready) {
             if (ready) output.println("READY" + player.getNum());
-            else output.print("UNREADY" + player.getNum());
+            else output.println("UNREADY" + player.getNum());
+        }
+
+        public void notifyStartGame () {
+            output.println("START_GAME");
         }
 
         public void giveHand (Hand hand) {
