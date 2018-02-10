@@ -110,7 +110,14 @@ public class Crazy8s {
 
                 while (true) {
                     String command = input.readLine();
-                    if (command == null) return;
+                    if (command == null) {
+                        command = "QUIT";
+                    }
+
+                    if (command.startsWith("REQ_LIST")) {
+                        giveList();
+                    }
+
                     if (command.startsWith("READY")) {
                         numReady ++;
                         if (numReady == Server.players.size() && Server.players.size() > 1) {
@@ -138,8 +145,8 @@ public class Crazy8s {
                         }
 
                     } else if (command.startsWith("QUIT")) {
-                        Server.players.remove(this);
                         Server.game.updatePlayerList(this, false);
+                        Server.players.remove(this);
                         return;
                     }
                 }
@@ -152,7 +159,10 @@ public class Crazy8s {
 
         public void updatePlayerList (Client player, int playerNum, boolean connected) {
             if (connected) output.println("CONNECT" + playerNum + player.playerName);
-            else output.println("DISCONNECT" + playerNum);
+            else {
+                output.println("DISCONNECT" + playerNum);
+                output.println("NUM_UPDATE" + getNum());
+            }
         }
 
         public void giveHand (Hand hand) {
@@ -167,6 +177,12 @@ public class Crazy8s {
 
         public int getNum () {
             return Server.players.indexOf(this);
+        }
+
+        public void giveList () {
+            for (int i = 0; i < Server.players.size(); i ++) {
+                Crazy8s.this.updatePlayerList(Server.players.get(i), true);
+            }
         }
 
     }

@@ -22,7 +22,7 @@ public class Player {
     private BufferedReader in;
     private PrintWriter out;
 
-    private int playerNum;
+    public int playerNum;
 
     public Hand hand;
     String name;
@@ -52,24 +52,34 @@ public class Player {
             while (true) {
                 try {
                     response = in.readLine();
-                    System.out.println(response);
                 } catch (IOException e) {};
 
-                System.out.println(response);
+                Console.print(response);
 
                 if (response.startsWith("WELCOME")) {
                     playerNum = Character.getNumericValue(response.charAt(7));
                     out.println("NAME" + name);
+                    out.println("REQ_LIST");
+                } else if (response.startsWith("ALIVE")) {
+
+                } else if (response.startsWith("NUM_UPDATE")) {
+                    playerNum = Character.getNumericValue(response.charAt(10));
                 }
 
                 if (response.startsWith("CONNECT")) {
                     int num = Integer.parseInt(response.substring(7,8));
                     String playerName = response.substring(8);
                     if (num != playerNum) {
-                        Console.print("Break");
                         SwingUtilities.invokeLater(() -> GameWindow.requestRef().addPlayer(playerName, num));
                     }
-                } else if (response.startsWith("CARD")) {
+                } else if (response.startsWith("DISCONNECT")) {
+                    int num = Integer.parseInt(response.substring(10,11));
+                    SwingUtilities.invokeLater(() -> GameWindow.requestRef().removePlayer(num));
+                    out.println("REQ_LIST");
+                }
+
+
+                else if (response.startsWith("CARD")) {
 
                     byte suit = Byte.parseByte(response.substring(4,5));
                     byte rank = Byte.parseByte(response.substring(5));

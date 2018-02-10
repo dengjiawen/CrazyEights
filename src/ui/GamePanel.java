@@ -36,9 +36,28 @@ class GamePanel extends JPanel {
     }
 
     public void addPlayer (String name, int playerNum) {
-        player.add(new PlayerPanel(name, playerNum, ++ curPlayerCount));
-        Console.print("Break");
+        int this_player_num = GameWindow.requestRef().player.playerNum;
+        int assigned_player_num = 0;
+
+        if (playerNum > this_player_num) {
+            assigned_player_num = playerNum - this_player_num + 1;
+        } else {
+            assigned_player_num = 6 - (this_player_num - playerNum) + 1;
+        }
+
+        curPlayerCount ++;
+
+        player.add(new PlayerPanel(name, playerNum, assigned_player_num));
         add(player.get(curPlayerCount - 2));
+        GameWindow.requestRef().repaint();
+    }
+
+    public void removePlayer (int playerNum) {
+        for (int i = 0; i < player.size(); i ++) {
+            remove(player.get(i));
+            player.remove(i);
+        }
+        curPlayerCount = 1;
         GameWindow.requestRef().repaint();
     }
 

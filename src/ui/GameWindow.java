@@ -188,6 +188,10 @@ public class GameWindow extends JFrame {
         panel.addPlayer(name, playerNum);
     }
 
+    public void removePlayer (int playerNum) {
+        panel.removePlayer(playerNum);
+    }
+
     public static void setRef (GameWindow ref) {
         frameRef = ref;
     }
