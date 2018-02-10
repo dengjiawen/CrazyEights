@@ -3,6 +3,7 @@ package logic;
 import common.Console;
 import ui.GameWindow;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -66,7 +67,7 @@ public class Player {
                     String playerName = response.substring(8);
                     if (num != playerNum) {
                         Console.print("Break");
-                        GameWindow.requestRef().addPlayer(playerName, playerNum);
+                        SwingUtilities.invokeLater(() -> GameWindow.requestRef().addPlayer(playerName, num));
                     }
                 } else if (response.startsWith("CARD")) {
 

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import common.Console;
 import common.Constants;
 import logic.Hand;
 import logic.Player;
@@ -30,11 +31,15 @@ class GamePanel extends JPanel {
 
         setLayout(null);
         setBounds(0, 0, width, height);
+
+        player = new ArrayList<>();
     }
 
     public void addPlayer (String name, int playerNum) {
         player.add(new PlayerPanel(name, playerNum, ++ curPlayerCount));
+        Console.print("Break");
         add(player.get(curPlayerCount - 2));
+        repaint();
     }
 
     protected void paintComponent (Graphics g) {
