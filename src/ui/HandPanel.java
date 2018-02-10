@@ -113,7 +113,7 @@ class HandPanel extends JPanel {
         }
     }
 
-    private void update () {
+    void update () {
 
         individualUsableSpace = Constants.element("IndividualSpace");
         usedSpace = cardWidth + individualUsableSpace * hand.size();
@@ -124,6 +124,7 @@ class HandPanel extends JPanel {
         y = GamePanel.height - height - Constants.element("HandPanelYOffset");
 
         setBounds(x, y, width, height);
+        repaint();
     }
 
 }

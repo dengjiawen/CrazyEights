@@ -33,6 +33,20 @@
             <HostPanelH>500</HostPanelH>
             <initPort>9960</initPort>
         </HostMenuParam>
+        <PlayerPanelParam>
+            <PlayerPanelW>300</PlayerPanelW>
+            <PlayerPanelH>75</PlayerPanelH>
+            <Player6X>200</Player6X>
+            <Player6Y>380</Player6Y>
+            <Player5X>180</Player5X>
+            <Player5Y>130</Player5Y>
+            <Player4X>525</Player4X>
+            <Player4Y>80</Player4Y>
+            <Player3X>880</Player3X>
+            <Player3Y>130</Player3Y>
+            <Player2X>900</Player2X>
+            <Player2Y>380</Player2Y>
+        </PlayerPanelParam>
     </UIDefinitions>
     <LogicDefinitions>
         <MaxPlayer>6</MaxPlayer>

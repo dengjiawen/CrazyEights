@@ -7,6 +7,7 @@ import logic.*;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,8 +20,10 @@ import java.util.concurrent.Future;
 public class Server {
 
     public static boolean allReady = false;
-    public static Crazy8s.Client[] players;
+    public static ArrayList<Crazy8s.Client> players;
     public static ServerSocket listener;
+
+    public static Crazy8s game;
 
     static ExecutorService serverThread = Executors.newSingleThreadExecutor();
 
@@ -36,17 +39,17 @@ public class Server {
 
         try {
             while (true) {
-                Crazy8s game = new Crazy8s();
+                game = new Crazy8s();
 
-                players = new Crazy8s.Client[maxPlayer];
+                players = new ArrayList<>();
 
                 Socket playerSocket = null;
                 try {
                     playerSocket = listener.accept();
                 } catch (IOException e) {}
 
-                players[1] = game.new Client(playerSocket, 0 + 1);
-                players[1].start();
+                players.add(game.new Client(playerSocket));
+                players.get(0).start();
 
                 game.currentPlayer = 0;
 
@@ -61,9 +64,10 @@ public class Server {
                         accepted = false;
                     }
 
-                    if (accepted) {
-                        players[game.numPlayer + 1] = game.new Client(playerSocket, 0 + 1);
-                        players[game.numPlayer + 1].start();
+                    if (accepted && players.size() < maxPlayer) {
+                        Crazy8s.Client newClient = game.new Client(playerSocket);
+                        players.add(newClient);
+                        newClient.start();
                     }
                 }
             }

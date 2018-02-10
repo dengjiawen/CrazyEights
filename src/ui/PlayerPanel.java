@@ -17,27 +17,48 @@ import logic.Sort;
  */
 class PlayerPanel extends JPanel {
 
+    private final static int width = Constants.element("PlayerPanelW");
+    private final static int height = Constants.element("PlayerPanelH");
+
     JLabel nameDisplay;
+    JLabel status;
+    JLabel vote;
+
     String playerName;
     int playerNum;
 
-    protected PlayerPanel (String playerName, int playerNum) {
+    protected PlayerPanel (String playerName, int sync_playerNum, int assigned_playerNum) {
 
         super();
 
-        setLayout(null);
-        setBounds(200, 200, 300, 75);
-        setBackground(new Color(0,0,0, 150));
-
-        this.playerNum = playerNum;
+        this.playerNum = assigned_playerNum;
         this.playerName = playerName;
 
+        int x = Constants.element("Player" + playerNum + "X");
+        int y = Constants.element("Player" + playerNum + "Y");
+
+        setLayout(null);
+        setBackground(new Color(0,0,0, 150));
+        setBounds(x, y, width, height);
+
         nameDisplay = new JLabel(playerName);
-        nameDisplay.setBounds(90, 0, 200 - 80, 80);
+        nameDisplay.setBounds(90, 10, 200, 20);
         nameDisplay.setForeground(Color.white);
         nameDisplay.setFont(new Font("Arial", Font.BOLD, 18));
 
+        status = new JLabel("Waiting for game to start...");
+        status.setBounds(90, 30, 200, 20);
+        status.setForeground(Color.white);
+        status.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        vote = new JLabel("Waiting for starting vote...");
+        vote.setBounds(90, 50, 200, 20);
+        vote.setForeground(Color.white);
+        vote.setFont(new Font("Arial", Font.PLAIN, 15));
+
         add(nameDisplay);
+        add(vote);
+        add(status);
 
     }
 
@@ -46,6 +67,12 @@ class PlayerPanel extends JPanel {
 
         Graphics2D g2d = (Graphics2D) g;
         g2d.drawImage(Resources.profile, 0, 0, 75, 75, null);
+    }
+
+    public void update () {
+        int x = Constants.element("Player" + playerNum + "X");
+        int y = Constants.element("Player" + playerNum + "Y");
+        setBounds(x, y, width, height);
     }
 
 }

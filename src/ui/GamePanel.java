@@ -2,6 +2,7 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -18,7 +19,9 @@ class GamePanel extends JPanel {
     static int width = Constants.element("initWidth");
     static int height = Constants.element("initHeight");
 
-    PlayerPanel player;
+    int curPlayerCount = 1;
+
+    ArrayList<PlayerPanel> player;
     HandPanel hand;
 
     protected GamePanel () throws Exception {
@@ -27,10 +30,11 @@ class GamePanel extends JPanel {
 
         setLayout(null);
         setBounds(0, 0, width, height);
+    }
 
-        player =  new PlayerPanel("John", 1);
-
-        add(player);
+    public void addPlayer (String name, int playerNum) {
+        player.add(new PlayerPanel(name, playerNum, ++ curPlayerCount));
+        add(player.get(curPlayerCount - 2));
     }
 
     protected void paintComponent (Graphics g) {
@@ -45,7 +49,6 @@ class GamePanel extends JPanel {
 
         g2d.drawImage(Resources.table, tableMarginW, tableMarginH,
                 Resources.table.getWidth(), Resources.table.getHeight(), null);
-
     }
 
 }

@@ -14,7 +14,6 @@ import java.net.Socket;
 
 public class Crazy8s {
 
-    public int numPlayer;
     public int currentPlayer;
 
     public Card activeCard;
@@ -36,15 +35,22 @@ public class Crazy8s {
     }
 
     public void startGame () {
-        playerCards = new Hand[numPlayer];
+        playerCards = new Hand[Server.players.size()];
 
         for (int i = 0; i < playerCards.length; i += 9) {
             playerCards[i] = (Hand) deck.subdeck(i, i + 8);
             for (int j = 0; j < playerCards[i].size(); j++) {
                 deck.remove(playerCards[i].get(j));
             }
+            Server.players.get(i).giveHand(playerCards[i]);
         }
         activeCard = deck.get(0);
+    }
+
+    public void updatePlayerList (Client client, boolean connected) {
+        for (int i = 0; i < Server.players.size(); i ++) {
+            Server.players.get(i).updatePlayerList(client, client.getNum(), connected);
+        }
     }
 
     public boolean hasWinner () {
@@ -70,19 +76,19 @@ public class Crazy8s {
 
     public class Client extends Thread {
 
-        int playerNum;
         String playerName;
 
         Socket socket;
         BufferedReader input;
         PrintWriter output;
 
-        public Client (Socket socket, int playerNum) {
+        public Client (Socket socket) {
+
+            int playerNum = Server.players.indexOf(this);
 
             Console.print("Player " + playerNum + " connected.");
 
             this.socket = socket;
-            this.playerNum = playerNum;
 
             try {
                 input = new BufferedReader(
@@ -99,8 +105,7 @@ public class Crazy8s {
         public void run () {
             try {
 
-                // Tell the first player that it is his/her turn.
-                if (playerNum == currentPlayer) {
+                if (getNum() == currentPlayer) {
                     output.println("YOUR_MOVE");
                 }
 
@@ -108,13 +113,14 @@ public class Crazy8s {
                     String command = input.readLine();
                     if (command.startsWith("READY")) {
                         numReady ++;
-                        if (numReady == playerNum) {
+                        if (numReady == Server.players.size() && Server.players.size() > 1) {
                             Server.listener.close();
                             startGame();
                         }
                     }
                     if (command.startsWith("NAME")) {
                         playerName = command.substring(4);
+                        Server.game.updatePlayerList(this, true);
                     }
                     if (command.startsWith("MOVE")) {
                         byte suit = (byte)Character.getNumericValue(command.charAt(4));
@@ -131,6 +137,8 @@ public class Crazy8s {
                         }
 
                     } else if (command.startsWith("QUIT")) {
+                        Server.players.remove(this);
+                        Server.game.updatePlayerList(this, false);
                         return;
                     }
                 }
@@ -141,13 +149,23 @@ public class Crazy8s {
             }
         }
 
-        public void updatePlayerList (Client player, boolean connected) {
-            if (connected) output.println("CONNECT" + player.playerNum + player.playerName);
-            else output.println("DISCONNECT" + player.playerNum);
+        public void updatePlayerList (Client player, int playerNum, boolean connected) {
+            if (connected) output.println("CONNECT" + playerNum + player.playerName);
+            else output.println("DISCONNECT" + playerNum);
         }
 
-        public void addCard () {
+        public void giveHand (Hand hand) {
+            for (int i = 0; i < hand.size(); i ++) {
+                output.println("CARD" + hand.get(i).getSuit() + hand.get(i).getRank());
+            }
+        }
 
+        public void giveCard (Card card) {
+            output.println("CARD" + card.getSuit() + card.getRank());
+        }
+
+        public int getNum () {
+            return Server.players.indexOf(this);
         }
 
     }

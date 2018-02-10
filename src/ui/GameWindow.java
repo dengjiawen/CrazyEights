@@ -103,7 +103,7 @@ public class GameWindow extends JFrame {
         }
 
         try {
-            player = new Player("localhost", portNumber);
+            player = new Player("localhost", portNumber, "John");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(shade, "A catastrophic network error had occured.\n" +
                     "Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -118,11 +118,19 @@ public class GameWindow extends JFrame {
         return Constants.SUCCESS;
     }
 
+    public void updateHand () {
+        panel.hand.update();
+    }
+
+    public void addPlayer (String name, int playerNum) {
+        panel.addPlayer(name, playerNum);
+    }
+
     public static void setRef (GameWindow ref) {
         frameRef = ref;
     }
 
-    static GameWindow requestRef () {
+    public static GameWindow requestRef () {
         return frameRef;
     }
 
