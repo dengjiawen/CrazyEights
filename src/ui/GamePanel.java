@@ -44,6 +44,8 @@ class GamePanel extends JPanel {
             player.get(i).setVisible(false);
             add(player.get(i));
         }
+
+        add (buttons);
     }
 
     public void addPlayer (String name, int playerNum) {
@@ -64,7 +66,7 @@ class GamePanel extends JPanel {
         int this_player_num = GameWindow.requestRef().player.playerNum;
         int assigned_player_num = 0;
 
-        if (playerNum > playerNum) {
+        if (playerNum > this_player_num) {
             assigned_player_num = playerNum - this_player_num + 1;
         } else {
             assigned_player_num = 6 - (this_player_num - playerNum) + 1;
