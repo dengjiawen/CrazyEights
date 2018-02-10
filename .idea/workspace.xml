@@ -10,113 +10,129 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f08b2ec-736c-4a30-95e3-4eb7fad181aa" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/CrazyEights_jar/CrazyEights.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/0/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/1/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/2/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards_candidate/3/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/fullRes/table_fullRes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/0/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/1/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/2/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/cards_candidate/3/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/fullRes/table_fullRes.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/Untitled-1.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/Untitled-1.psd" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/CrazyEights_jar/CrazyEights.jar" afterPath="$PROJECT_DIR$/out/artifacts/CrazyEights_jar/CrazyEights.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/cancel_vote.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/cancel_vote.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/connect.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/connect.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/connect_secondary.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/connect_secondary.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/cpu.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/cpu.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/cpu_secondary.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/cpu_secondary.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/ggnore.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/ggnore.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/host.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/host.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/play_card.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/play_card.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/skip_turn.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/skip_turn.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/vote_rematch.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/vote_rematch.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/vote_start.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/buttons/vote_start.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/1.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/10.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/11.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/12.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/13.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/2.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/3.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/4.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/5.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/6.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/7.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/8.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/9.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/0/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/1.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/10.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/11.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/12.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/13.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/2.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/3.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/4.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/5.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/6.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/7.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/8.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/9.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/1/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/1.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/10.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/11.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/12.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/13.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/2.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/3.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/4.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/5.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/6.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/7.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/8.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/9.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/highlight.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/highlight.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/playable.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/playable.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/background.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/background.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/logo.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/mini.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/mini.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/mini_dim.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/mini_dim.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/quit.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/quit.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/quit_dim.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/quit_dim.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/table.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/core/table.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/profile.jpg" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/profile.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/cancel_vote.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/cancel_vote.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/connect.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/connect.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/connect_secondary.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/connect_secondary.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/cpu.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/cpu.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/cpu_secondary.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/cpu_secondary.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/ggnore.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/ggnore.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/host.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/host.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/play_card.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/play_card.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/skip_turn.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/skip_turn.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/vote_rematch.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/vote_rematch.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/buttons/vote_start.png" afterPath="$PROJECT_DIR$/src/ui/resources/buttons/vote_start.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/1.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/10.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/11.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/12.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/13.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/2.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/3.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/4.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/5.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/6.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/7.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/8.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/0/9.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/0/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/1.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/10.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/11.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/12.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/13.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/2.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/3.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/4.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/5.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/6.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/7.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/8.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/1/9.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/1/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/1.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/10.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/11.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/12.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/13.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/2.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/3.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/4.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/5.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/6.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/7.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/8.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/9.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/highlight.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/highlight.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/playable.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/playable.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/core/background.png" afterPath="$PROJECT_DIR$/src/ui/resources/core/background.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/core/logo.png" afterPath="$PROJECT_DIR$/src/ui/resources/core/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/core/mini.png" afterPath="$PROJECT_DIR$/src/ui/resources/core/mini.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/core/mini_dim.png" afterPath="$PROJECT_DIR$/src/ui/resources/core/mini_dim.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/core/quit.png" afterPath="$PROJECT_DIR$/src/ui/resources/core/quit.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/core/quit_dim.png" afterPath="$PROJECT_DIR$/src/ui/resources/core/quit_dim.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/core/table.png" afterPath="$PROJECT_DIR$/src/ui/resources/core/table.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/profile.jpg" afterPath="$PROJECT_DIR$/src/ui/resources/profile.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -962,16 +978,15 @@
       <workItem from="1518221588440" duration="12298000" />
       <workItem from="1518275921131" duration="7883000" />
       <workItem from="1518298013448" duration="3223000" />
-      <workItem from="1518302268381" duration="181000" />
+      <workItem from="1518302268381" duration="745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70953000" />
+    <option name="totallyTimeSpent" value="71517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -982,7 +997,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.50277776" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32289156" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32289156" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
