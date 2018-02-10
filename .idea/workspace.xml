@@ -10,8 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f08b2ec-736c-4a30-95e3-4eb7fad181aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GameWindow.java" afterPath="$PROJECT_DIR$/src/ui/GameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/MainMenuPanel.java" afterPath="$PROJECT_DIR$/src/ui/MainMenuPanel.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/CrazyEights_jar/CrazyEights.jar" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +23,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainMenuPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainMenuPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/MainMenuPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
@@ -34,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="175" column="9" lean-forward="false" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
+            <state relative-caret-position="-288">
+              <caret line="137" column="107" lean-forward="false" selection-start-line="137" selection-start-column="53" selection-end-line="137" selection-end-column="107" />
               <folding>
                 <element signature="method#host#0;class#GameWindow#0" expanded="false" />
                 <element signature="e#5252#5253#0" expanded="true" />
@@ -738,12 +737,12 @@
       <workItem from="1518189900404" duration="382000" />
       <workItem from="1518202927729" duration="3907000" />
       <workItem from="1518211022274" duration="7313000" />
-      <workItem from="1518221588440" duration="4658000" />
+      <workItem from="1518221588440" duration="4814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52026000" />
+    <option name="totallyTimeSpent" value="52182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1115,23 +1114,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/GameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="175" column="9" lean-forward="false" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
-          <folding>
-            <element signature="method#host#0;class#GameWindow#0" expanded="false" />
-            <element signature="e#5252#5253#0" expanded="true" />
-            <element signature="e#5300#5301#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/MainMenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="51" column="64" lean-forward="true" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="137" column="107" lean-forward="false" selection-start-line="137" selection-start-column="53" selection-end-line="137" selection-end-column="107" />
+          <folding>
+            <element signature="method#host#0;class#GameWindow#0" expanded="false" />
+            <element signature="e#5252#5253#0" expanded="true" />
+            <element signature="e#5300#5301#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
