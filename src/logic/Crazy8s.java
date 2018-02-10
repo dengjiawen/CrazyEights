@@ -49,7 +49,7 @@ public class Crazy8s {
 
     public void updatePlayerList (Client client, boolean connected) {
         for (int i = 0; i < Server.players.size(); i ++) {
-            Server.players.get(i).updatePlayerList(client, client.getNum(), connected);
+            Server.players.get(i).updatePlayerList(client, connected);
         }
     }
 
@@ -156,10 +156,10 @@ public class Crazy8s {
             }
         }
 
-        public void updatePlayerList (Client player, int playerNum, boolean connected) {
-            if (connected) output.println("CONNECT" + playerNum + player.playerName);
+        public void updatePlayerList (Client player, boolean connected) {
+            if (connected) output.println("CONNECT" + player.getNum() + player.playerName);
             else {
-                output.println("DISCONNECT" + playerNum);
+                output.println("DISCONNECT" + player.getNum());
                 output.println("NUM_UPDATE" + getNum());
             }
         }
@@ -180,7 +180,7 @@ public class Crazy8s {
 
         public void giveList () {
             for (int i = 0; i < Server.players.size(); i ++) {
-                Crazy8s.this.updatePlayerList(Server.players.get(i), true);
+                updatePlayerList(Server.players.get(i), true);
             }
         }
 
