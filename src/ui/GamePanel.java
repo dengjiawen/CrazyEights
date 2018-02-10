@@ -35,9 +35,6 @@ class GamePanel extends JPanel {
 
         buttons = new ButtonPanel();
 
-        hand = new HandPanel(GameWindow.requestRef().player.hand);
-        hand.setVisible(false);
-
         player = new ArrayList<>();
         player.add(null);
         player.add(null);
@@ -62,6 +59,16 @@ class GamePanel extends JPanel {
 
         GameWindow.requestRef().repaint();
         GameWindow.requestRef().revalidate();
+    }
+
+    public void showHand () {
+        hand = new HandPanel(GameWindow.requestRef().player.hand);
+        hand.setVisible(true);
+
+        add(hand);
+
+        revalidate();
+        repaint();
     }
 
     public int getAssignedNum (int playerNum) {

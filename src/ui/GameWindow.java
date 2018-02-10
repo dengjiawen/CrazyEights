@@ -185,7 +185,7 @@ public class GameWindow extends JFrame {
     }
 
     public void showHand () {
-        panel.hand.setVisible(true);
+        panel.showHand();
     }
 
     public void updateHand () {
