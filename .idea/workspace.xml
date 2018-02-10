@@ -9,10 +9,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f08b2ec-736c-4a30-95e3-4eb7fad181aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GamePanel.java" afterPath="$PROJECT_DIR$/src/ui/GamePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GameWindow.java" afterPath="$PROJECT_DIR$/src/ui/GameWindow.java" />
-    </list>
+    <list default="true" id="7f08b2ec-736c-4a30-95e3-4eb7fad181aa" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -828,12 +825,12 @@
       <workItem from="1518211022274" duration="7313000" />
       <workItem from="1518221588440" duration="12298000" />
       <workItem from="1518275921131" duration="7883000" />
-      <workItem from="1518298013448" duration="886000" />
+      <workItem from="1518298013448" duration="1022000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68435000" />
+    <option name="totallyTimeSpent" value="68571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="668" y="0" width="772" height="900" extended-state="6" />
