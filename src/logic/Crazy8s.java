@@ -84,9 +84,7 @@ public class Crazy8s {
 
         public Client (Socket socket) {
 
-            int playerNum = Server.players.indexOf(this);
-
-            Console.print("Player " + playerNum + " connected.");
+            Console.print("Player " + getNum() + " connected.");
 
             this.socket = socket;
 
@@ -94,8 +92,6 @@ public class Crazy8s {
                 input = new BufferedReader(
                         new InputStreamReader(socket.getInputStream()));
                 output = new PrintWriter(socket.getOutputStream(), true);
-
-                output.println("WELCOME" + playerNum);
 
             } catch (IOException e) {
                 Console.print("Player died");
@@ -109,6 +105,8 @@ public class Crazy8s {
                     output.println("YOUR_MOVE");
                 }
 
+                output.println("WELCOME" + getNum());
+
                 while (true) {
                     String command = input.readLine();
                     if (command.startsWith("READY")) {
@@ -120,6 +118,7 @@ public class Crazy8s {
                     }
                     if (command.startsWith("NAME")) {
                         playerName = command.substring(4);
+                        Console.print("Name Registered");
                         Server.game.updatePlayerList(this, true);
                     }
                     if (command.startsWith("MOVE")) {
