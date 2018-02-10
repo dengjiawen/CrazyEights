@@ -53,7 +53,7 @@ class PlayerPanel extends JPanel {
 
         vote = new JLabel("Waiting for starting vote...");
         vote.setBounds(90, 50, 200, 20);
-        vote.setForeground(Color.white);
+        vote.setForeground(Color.red);
         vote.setFont(new Font("Arial", Font.PLAIN, 15));
 
         add(nameDisplay);
@@ -69,10 +69,24 @@ class PlayerPanel extends JPanel {
         g2d.drawImage(Resources.profile, 0, 0, 75, 75, null);
     }
 
-    public void update () {
-        int x = Constants.element("Player" + playerNum + "X");
-        int y = Constants.element("Player" + playerNum + "Y");
-        setBounds(x, y, width, height);
+    public void updateInfo (String name) {
+        this.playerName = name;
+        nameDisplay.setText(playerName);
+        repaint();
+    }
+
+    public void reset () {
+        voteReady(false);
+    }
+
+    public void voteReady (boolean ready) {
+        if (ready) {
+            this.vote.setForeground(Color.green);
+            this.vote.setText("Voted to start");
+        } else {
+            this.vote.setForeground(Color.red);
+            this.vote.setText("Waiting for starting vote...");
+        }
     }
 
 }

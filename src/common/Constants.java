@@ -23,6 +23,12 @@ public class Constants {
     public final static byte ERROR = -3;
     public final static byte SUCCESS = -5;
 
+    public final static byte VOTE_START = 0;
+    public final static byte CANCEL_VOTE_START = 1;
+    public final static byte PLAY_CARD_SKIP_TURN = 2;
+    public final static byte VOTE_REMATCH_GGNORE = 3;
+    public final static byte CANCEL_VOTE_REMATCH = 4;
+
     public final static String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
     public final static String[] ranks = {"null", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 

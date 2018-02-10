@@ -65,6 +65,7 @@ class HostPanel extends JPanel {
         play.addActionListener(e -> {
             setVisible(false);
             GameWindow.requestRef().setShade(false);
+            GameWindow.requestRef().startVotingSession();
         });
 
         add (play);

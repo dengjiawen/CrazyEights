@@ -180,6 +180,10 @@ public class GameWindow extends JFrame {
         return Constants.SUCCESS;
     }
 
+    public void startVotingSession () {
+        panel.startVotingSession();
+    }
+
     public void updateHand () {
         panel.hand.update();
     }
@@ -190,6 +194,10 @@ public class GameWindow extends JFrame {
 
     public void removePlayer () {
         panel.removePlayer();
+    }
+
+    public void updateReadyStatus (int playerNum, boolean ready) {
+        panel.updateReadyStatus (playerNum, ready);
     }
 
     public static void setRef (GameWindow ref) {

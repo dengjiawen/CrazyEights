@@ -47,6 +47,14 @@ public class Player {
         out.println("REQ_LIST");
     }
 
+    public void voteToStart () {
+        out.println("READY");
+    }
+
+    public void unvoteToStart () {
+        out.println("UNREADY");
+    }
+
     public void play() {
 
         String response = "";
@@ -64,13 +72,9 @@ public class Player {
                     playerNum = Character.getNumericValue(response.charAt(7));
                     out.println("NAME" + name);
                     out.println("REQ_LIST");
-                } else if (response.startsWith("ALIVE")) {
-
                 } else if (response.startsWith("NUM_UPDATE")) {
                     playerNum = Character.getNumericValue(response.charAt(10));
-                }
-
-                if (response.startsWith("CONNECT")) {
+                } else if (response.startsWith("CONNECT")) {
                     int num = Integer.parseInt(response.substring(7,8));
                     String playerName = response.substring(8);
                     if (num != playerNum) {
@@ -80,8 +84,19 @@ public class Player {
                     SwingUtilities.invokeLater(() -> GameWindow.requestRef().removePlayer());
                 }
 
+                if (response.startsWith("READY")) {
+                    int num = Integer.parseInt(response.substring(5));
+                    if (num != playerNum) {
+                        SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateReadyStatus(num, true));
+                    }
+                } else if (response.startsWith("UNREADY")) {
+                    int num = Integer.parseInt(response.substring(7));
+                    if (num != playerNum) {
+                        SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateReadyStatus(num, false));
+                    }
+                }
 
-                else if (response.startsWith("CARD")) {
+                if (response.startsWith("CARD")) {
 
                     byte suit = Byte.parseByte(response.substring(4,5));
                     byte rank = Byte.parseByte(response.substring(5));

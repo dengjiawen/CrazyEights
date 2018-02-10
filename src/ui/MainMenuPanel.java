@@ -50,6 +50,10 @@ class MainMenuPanel extends JPanel {
             int statusCode = GameWindow.requestRef().connect();
 
             if (statusCode == Constants.ERROR) setVisible(true);
+            else {
+                GameWindow.requestRef().setShade(false);
+                GameWindow.requestRef().startVotingSession();
+            }
         });
 
         cpu.addActionListener(e -> {

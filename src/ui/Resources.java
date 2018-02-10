@@ -22,6 +22,9 @@ class Resources {
     static BufferedImage host_button;
     static BufferedImage cpu_button;
 
+    static BufferedImage vote_start_button;
+    static BufferedImage cancel_vote_button;
+
     static BufferedImage connect_secondary;
     static BufferedImage cpu_secondary;
 
@@ -44,6 +47,9 @@ class Resources {
         cpu_button = loadImage("buttons/cpu.png");
 
         cpu_secondary = loadImage("buttons/cpu_secondary.png");
+
+        vote_start_button = loadImage("buttons/vote_start.png");
+        cancel_vote_button = loadImage("buttons/cancel_vote.png");
 
         cards = new BufferedImage[4][13];
         for (int i = 0; i < cards.length; i ++) {

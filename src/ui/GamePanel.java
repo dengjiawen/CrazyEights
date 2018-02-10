@@ -24,6 +24,7 @@ class GamePanel extends JPanel {
 
     ArrayList<PlayerPanel> player;
     HandPanel hand;
+    ButtonPanel buttons;
 
     protected GamePanel () throws Exception {
 
@@ -32,44 +33,62 @@ class GamePanel extends JPanel {
         setLayout(null);
         setBounds(0, 0, width, height);
 
+        buttons = new ButtonPanel();
+        buttons.setVisible(false);
+
         player = new ArrayList<>();
+        player.add(null);
+        player.add(null);
+        for (int i = 2; i <= Constants.element("MaxPlayer"); i ++) {
+            player.add(new PlayerPanel("PLACEHOLDER", 0, i));
+            player.get(i).setVisible(false);
+            add(player.get(i));
+        }
     }
 
     public void addPlayer (String name, int playerNum) {
-        int this_player_num = GameWindow.requestRef().player.playerNum;
-        int assigned_player_num = 0;
 
-        if (playerNum > this_player_num) {
-            assigned_player_num = playerNum - this_player_num + 1;
-        } else {
-            assigned_player_num = 6 - (this_player_num - playerNum) + 1;
-        }
+        int assigned_player_num = getAssignedNum(playerNum);
 
         curPlayerCount ++;
         Console.print(""+ assigned_player_num);
 
-        player.add(new PlayerPanel(name, playerNum, assigned_player_num));
-        add(player.get(curPlayerCount - 2));
+        player.get(assigned_player_num).updateInfo(name);
+        player.get(assigned_player_num).setVisible(true);
 
         GameWindow.requestRef().repaint();
         GameWindow.requestRef().revalidate();
     }
 
+    public int getAssignedNum (int playerNum) {
+        int this_player_num = GameWindow.requestRef().player.playerNum;
+        int assigned_player_num = 0;
+
+        if (playerNum > playerNum) {
+            assigned_player_num = playerNum - this_player_num + 1;
+        } else {
+            assigned_player_num = 6 - (this_player_num - playerNum) + 1;
+        }
+        return assigned_player_num;
+    }
+
     public void removePlayer () {
         for (int i = 0; i < player.size(); i ++) {
-            player.get(i).invalidate();
-            player.get(i).setVisible(false);
-            player.set(i, null);
-            player.remove(i);
+            if (player.get(i) != null) {
+                player.get(i).setVisible(false);
+                player.get(i).reset();
+            }
         }
-
-        removeAll();
 
         curPlayerCount = 1;
 
-        GameWindow.requestRef().repaint();
         GameWindow.requestRef().revalidate();
+        GameWindow.requestRef().repaint();
         GameWindow.requestRef().player.updateList();
+    }
+
+    public void updateReadyStatus (int playerNum, boolean ready) {
+        player.get(getAssignedNum(playerNum)).voteReady(ready);
     }
 
     protected void paintComponent (Graphics g) {
@@ -84,6 +103,10 @@ class GamePanel extends JPanel {
 
         g2d.drawImage(Resources.table, tableMarginW, tableMarginH,
                 Resources.table.getWidth(), Resources.table.getHeight(), null);
+    }
+
+    public void startVotingSession () {
+        buttons.startVotingSession();
     }
 
 }

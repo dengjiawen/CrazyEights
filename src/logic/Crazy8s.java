@@ -82,6 +82,8 @@ public class Crazy8s {
         BufferedReader input;
         PrintWriter output;
 
+        boolean ready;
+
         public Client (Socket socket) {
 
             this.socket = socket;
@@ -94,6 +96,8 @@ public class Crazy8s {
             } catch (IOException e) {
                 Console.print("Player died");
             }
+
+            ready = false;
         }
 
         public void run () {
@@ -120,10 +124,12 @@ public class Crazy8s {
 
                     if (command.startsWith("READY")) {
                         numReady ++;
+                        ready = true;
                         if (numReady == Server.players.size() && Server.players.size() > 1) {
                             Server.listener.close();
                             startGame();
                         }
+                        output.println("READY" + getNum());
                     }
                     if (command.startsWith("NAME")) {
                         playerName = command.substring(4);
@@ -181,6 +187,9 @@ public class Crazy8s {
         public void giveList () {
             for (int i = 0; i < Server.players.size(); i ++) {
                 updatePlayerList(Server.players.get(i), true);
+                if (Server.players.get(i).ready == true) {
+                    output.println("READY" + Server.players.get(i).getNum());
+                }
             }
         }
 
