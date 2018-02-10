@@ -46,6 +46,7 @@ class GamePanel extends JPanel {
         }
 
         curPlayerCount ++;
+        Console.print(""+curPlayerCount);
 
         player.add(new PlayerPanel(name, playerNum, assigned_player_num));
         add(player.get(curPlayerCount - 2));
@@ -54,11 +55,17 @@ class GamePanel extends JPanel {
 
     public void removePlayer (int playerNum) {
         for (int i = 0; i < player.size(); i ++) {
-            remove(player.get(i));
+            player.get(i).invalidate();
+            player.get(i).setVisible(false);
+            player.get(i).removeAll();
+            getRootPane().remove(player.get(i));
+            player.set(i, null);
             player.remove(i);
         }
         curPlayerCount = 1;
+        revalidate();
         GameWindow.requestRef().repaint();
+        GameWindow.requestRef().player.updateList();
     }
 
     protected void paintComponent (Graphics g) {

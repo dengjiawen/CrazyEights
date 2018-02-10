@@ -43,6 +43,10 @@ public class Player {
         playerThread.submit(() -> play());
     }
 
+    public void updateList () {
+        out.println("REQ_LIST");
+    }
+
     public void play() {
 
         String response = "";
@@ -75,7 +79,6 @@ public class Player {
                 } else if (response.startsWith("DISCONNECT")) {
                     int num = Integer.parseInt(response.substring(10,11));
                     SwingUtilities.invokeLater(() -> GameWindow.requestRef().removePlayer(num));
-                    out.println("REQ_LIST");
                 }
 
 
