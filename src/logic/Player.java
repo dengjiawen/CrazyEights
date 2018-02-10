@@ -77,8 +77,7 @@ public class Player {
                         SwingUtilities.invokeLater(() -> GameWindow.requestRef().addPlayer(playerName, num));
                     }
                 } else if (response.startsWith("DISCONNECT")) {
-                    int num = Integer.parseInt(response.substring(10,11));
-                    SwingUtilities.invokeLater(() -> GameWindow.requestRef().removePlayer(num));
+                    SwingUtilities.invokeLater(() -> GameWindow.requestRef().removePlayer());
                 }
 
 

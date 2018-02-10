@@ -144,8 +144,8 @@ public class Crazy8s {
                         }
 
                     } else if (command.startsWith("QUIT")) {
-                        Server.game.updatePlayerList(this, false);
                         Server.players.remove(this);
+                        Server.game.updatePlayerList(this, false);
                         return;
                     }
                 }
@@ -159,7 +159,7 @@ public class Crazy8s {
         public void updatePlayerList (Client player, boolean connected) {
             if (connected) output.println("CONNECT" + player.getNum() + player.playerName);
             else {
-                output.println("DISCONNECT" + player.getNum());
+                output.println("DISCONNECT");
                 output.println("NUM_UPDATE" + getNum());
             }
         }
