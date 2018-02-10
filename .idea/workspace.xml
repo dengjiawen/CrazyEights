@@ -9,9 +9,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f08b2ec-736c-4a30-95e3-4eb7fad181aa" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/CrazyEights_jar/CrazyEights.jar" afterPath="" />
-    </list>
+    <list default="true" id="7f08b2ec-736c-4a30-95e3-4eb7fad181aa" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -737,12 +735,12 @@
       <workItem from="1518189900404" duration="382000" />
       <workItem from="1518202927729" duration="3907000" />
       <workItem from="1518211022274" duration="7313000" />
-      <workItem from="1518221588440" duration="4814000" />
+      <workItem from="1518221588440" duration="4885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52182000" />
+    <option name="totallyTimeSpent" value="52253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
