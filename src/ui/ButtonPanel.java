@@ -18,7 +18,7 @@ class ButtonPanel extends JPanel {
     private static final int height = Constants.element("ButtonH");
 
     private static final int x = (Constants.element("initWidth") - width) / 2;
-    private static final int y = Constants.element("initHeight") - 500;
+    private static final int y = Constants.element("initHeight") - 200;
 
     private final static int buttonWidth = Constants.element("ButtonW");
     private final static int buttonHeight = Constants.element("ButtonH");
@@ -46,7 +46,7 @@ class ButtonPanel extends JPanel {
         voteStart = new TButton(centeredButtonX, 0, buttonWidth, buttonHeight);
         voteStart.setVisible(false);
         voteStart.addActionListener(e -> {
-            setVisible(false);
+            voteStart.setVisible(false);
             GameWindow.requestRef().player.voteToStart();
             currentStage = Constants.CANCEL_VOTE_START;
             unvoteStart.setVisible(true);
@@ -56,7 +56,7 @@ class ButtonPanel extends JPanel {
         unvoteStart = new TButton(centeredButtonX, 0, buttonWidth, buttonHeight);
         unvoteStart.setVisible(false);
         unvoteStart.addActionListener(e -> {
-            setVisible(false);
+            unvoteStart.setVisible(false);
             GameWindow.requestRef().player.unvoteToStart();
             currentStage = Constants.VOTE_START;
             voteStart.setVisible(true);
@@ -95,6 +95,7 @@ class ButtonPanel extends JPanel {
                 button1 = Resources.cancel_vote_button;
                 paint2 = false;
                 x1 = centeredButtonX;
+                break;
         }
 
         g2d.drawImage(button1, x1, 0, buttonWidth, buttonHeight, null);

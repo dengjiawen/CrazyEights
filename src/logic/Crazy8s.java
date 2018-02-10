@@ -38,8 +38,9 @@ public class Crazy8s {
         playerCards = new Hand[Server.players.size()];
 
         for (int i = 0; i < playerCards.length; i += 9) {
-            playerCards[i] = (Hand) deck.subdeck(i, i + 8);
-            for (int j = 0; j < playerCards[i].size(); j++) {
+            Deck temp_subdeck = deck.subdeck(i, i + 8);
+            for (int j = 0; j < temp_subdeck.size(); j ++) {
+                playerCards[i].add(temp_subdeck.get(j));
                 deck.remove(playerCards[i].get(j));
             }
             Server.players.get(i).giveHand(playerCards[i]);
@@ -50,6 +51,12 @@ public class Crazy8s {
     public void updatePlayerList (Client client, boolean connected) {
         for (int i = 0; i < Server.players.size(); i ++) {
             Server.players.get(i).updatePlayerList(client, connected);
+        }
+    }
+
+    public void updateReadiness (Client client, boolean ready) {
+        for (int i = 0; i < Server.players.size(); i ++) {
+            Server.players.get(i).updateReadiness(client, ready);
         }
     }
 
@@ -129,8 +136,14 @@ public class Crazy8s {
                             Server.listener.close();
                             startGame();
                         }
-                        output.println("READY" + getNum());
+                        Server.game.updateReadiness(this, true);
+                    } else if (command.startsWith("UNREADY")) {
+                        numReady --;
+                        ready = false;
+                        Server.game.updateReadiness(this, false);
                     }
+
+
                     if (command.startsWith("NAME")) {
                         playerName = command.substring(4);
                         Server.game.updatePlayerList(this, true);
@@ -168,6 +181,11 @@ public class Crazy8s {
                 output.println("DISCONNECT");
                 output.println("NUM_UPDATE" + getNum());
             }
+        }
+
+        public void updateReadiness (Client player, boolean ready) {
+            if (ready) output.println("READY" + player.getNum());
+            else output.print("UNREADY" + player.getNum());
         }
 
         public void giveHand (Hand hand) {
