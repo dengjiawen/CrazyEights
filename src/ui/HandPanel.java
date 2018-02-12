@@ -116,6 +116,8 @@ class HandPanel extends JPanel {
 
     void update () {
 
+        Sort.selectionSort(hand);
+
         individualUsableSpace = Constants.element("IndividualSpace");
         usedSpace = cardWidth + individualUsableSpace * hand.size();
 

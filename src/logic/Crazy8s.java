@@ -63,6 +63,12 @@ public class Crazy8s {
         }
     }
 
+    public void updatePlayerNumCard (Client player, int numCard) {
+        for (int i = 0; i < Server.players.size(); i ++) {
+            Server.players.get(i).updatePlayerNumCard(player, numCard);
+        }
+    }
+
     public boolean hasWinner () {
         for (int i = 0; i < playerCards.length; i++) {
             if (playerCards[i].size() == 0) {
@@ -184,6 +190,10 @@ public class Crazy8s {
                 output.println("DISCONNECT");
                 output.println("NUM_UPDATE" + getNum());
             }
+        }
+
+        public void updatePlayerNumCard (Client player, int numCard) {
+            output.println("NUM_CARD" + player.getNum() + numCard);
         }
 
         public void updateReadiness (Client player, boolean ready) {

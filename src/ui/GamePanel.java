@@ -71,6 +71,16 @@ class GamePanel extends JPanel {
         repaint();
     }
 
+    public void exitVoteStatus () {
+        for (int i = 0; i < player.size(); i ++) {
+            if (player.get(i) != null) player.get(i).exitVoteStatus();
+        }
+    }
+
+    public void updateNumCards (int playerNum, int numCards) {
+        player.get(getAssignedNum(playerNum)).updateNumCard(numCards);
+    }
+
     public int getAssignedNum (int playerNum) {
         int this_player_num = GameWindow.requestRef().player.playerNum;
         int assigned_player_num = 0;

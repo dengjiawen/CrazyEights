@@ -25,7 +25,9 @@ class PlayerPanel extends JPanel {
     JLabel vote;
 
     String playerName;
+
     int playerNum;
+    int numCards;
 
     protected PlayerPanel (String playerName, int sync_playerNum, int assigned_playerNum) {
 
@@ -33,6 +35,7 @@ class PlayerPanel extends JPanel {
 
         this.playerNum = assigned_playerNum;
         this.playerName = playerName;
+        this.numCards = 0;
 
         int x = Constants.element("Player" + playerNum + "X");
         int y = Constants.element("Player" + playerNum + "Y");
@@ -75,6 +78,13 @@ class PlayerPanel extends JPanel {
         repaint();
     }
 
+    public void exitVoteStatus () {
+        vote.setText("");
+        status.setText("Waiting for response from server...");
+        revalidate();
+        repaint();
+    }
+
     public void reset () {
         voteReady(false);
     }
@@ -99,6 +109,12 @@ class PlayerPanel extends JPanel {
             GameWindow.requestRef().revalidate();
             GameWindow.requestRef().repaint();
         }
+    }
+
+    public void updateNumCard (int numCards) {
+        status.setText("<html>Player has <b>" + numCards + "</b> cards left.</html>");
+        revalidate();
+        repaint();
     }
 
 }

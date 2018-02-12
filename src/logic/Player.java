@@ -97,17 +97,20 @@ public class Player {
                 }
 
                 if (response.startsWith("START_GAME")) {
-                    GameWindow.requestRef().showHand();
+                    GameWindow.requestRef().startGame();
                 }
 
                 if (response.startsWith("CARD")) {
-
                     byte suit = Byte.parseByte(response.substring(4,5));
                     byte rank = Byte.parseByte(response.substring(5));
                     Console.print("suit " + suit + " rank " + rank);
                     hand.add(new Card(suit, rank));
-
-                } else if (response.startsWith("VALID_MOVE")) {
+                } else if (response.startsWith("NUM_CARD")) {
+                    int playerNum = Character.valueOf(response.charAt(8));
+                    int numCard = Integer.parseInt(response.substring(9));
+                    GameWindow.requestRef().updateNumCards(playerNum, numCard);
+                }
+                else if (response.startsWith("VALID_MOVE")) {
                 } else if (response.startsWith("OPPONENT_MOVED")) {
                 } else if (response.startsWith("VICTORY")) {
                     break;
