@@ -106,8 +106,9 @@ public class Player {
                     Console.print("suit " + suit + " rank " + rank);
                     hand.add(new Card(suit, rank));
                 } else if (response.startsWith("NUM_CARD")) {
-                    int num = Character.valueOf(response.charAt(8));
+                    int num = Character.getNumericValue(response.charAt(8));
                     int numCard = Integer.parseInt(response.substring(9));
+                    Console.print("NUM = " + num + " NUMCARD = " + numCard);
                     if (num != playerNum) SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateNumCards(num, numCard));
                 }
                 else if (response.startsWith("VALID_MOVE")) {
