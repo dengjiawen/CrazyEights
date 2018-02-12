@@ -49,6 +49,10 @@ public class Crazy8s {
             Server.players.get(i).giveHand(playerCards[i]);
         }
         activeCard = deck.get(0);
+
+        for (int i = 0; i < Server.players.size(); i ++) {
+            updatePlayerNumCard(Server.players.get(i), playerCards[i].size());
+        }
     }
 
     public void updatePlayerList (Client client, boolean connected) {

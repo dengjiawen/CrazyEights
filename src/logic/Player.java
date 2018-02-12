@@ -106,9 +106,9 @@ public class Player {
                     Console.print("suit " + suit + " rank " + rank);
                     hand.add(new Card(suit, rank));
                 } else if (response.startsWith("NUM_CARD")) {
-                    int playerNum = Character.valueOf(response.charAt(8));
+                    int num = Character.valueOf(response.charAt(8));
                     int numCard = Integer.parseInt(response.substring(9));
-                    GameWindow.requestRef().updateNumCards(playerNum, numCard);
+                    if (num != playerNum) GameWindow.requestRef().updateNumCards(num, numCard);
                 }
                 else if (response.startsWith("VALID_MOVE")) {
                 } else if (response.startsWith("OPPONENT_MOVED")) {

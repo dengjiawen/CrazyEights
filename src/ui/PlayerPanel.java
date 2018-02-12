@@ -79,8 +79,8 @@ class PlayerPanel extends JPanel {
     }
 
     public void exitVoteStatus () {
-        vote.setText("");
-        status.setText("Waiting for response from server...");
+        vote.setVisible(false);
+        status.setText("Waiting for response...");
         revalidate();
         repaint();
     }
