@@ -28,6 +28,8 @@ public class Crazy8s {
     public Crazy8s () {
         deck = new Deck(true);
         deck.shuffle();
+        deck.shuffle();
+        deck.shuffle();
 
         discard = new Deck(false);
 
@@ -198,6 +200,7 @@ public class Crazy8s {
 
         public void updatePlayerNumCard (Client player, int numCard) {
             output.println("NUM_CARD" + player.getNum() + numCard);
+            Console.print(getNum() + "NUM_CARD" + player.getNum() + numCard);
         }
 
         public void updateReadiness (Client player, boolean ready) {

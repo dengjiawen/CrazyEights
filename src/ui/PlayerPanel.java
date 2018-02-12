@@ -80,6 +80,7 @@ class PlayerPanel extends JPanel {
 
     public void exitVoteStatus () {
         vote.setVisible(false);
+        vote.setForeground(Color.white);
         status.setText("Waiting for response...");
         revalidate();
         repaint();

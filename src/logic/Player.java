@@ -108,7 +108,7 @@ public class Player {
                 } else if (response.startsWith("NUM_CARD")) {
                     int num = Character.valueOf(response.charAt(8));
                     int numCard = Integer.parseInt(response.substring(9));
-                    if (num != playerNum) GameWindow.requestRef().updateNumCards(num, numCard);
+                    if (num != playerNum) SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateNumCards(num, numCard));
                 }
                 else if (response.startsWith("VALID_MOVE")) {
                 } else if (response.startsWith("OPPONENT_MOVED")) {
