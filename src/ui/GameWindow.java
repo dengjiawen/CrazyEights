@@ -187,6 +187,7 @@ public class GameWindow extends JFrame {
     public void startGame () {
         panel.showHand();
         panel.buttons.setVisible(false);
+        panel.exitVoteStatus();
 
     }
 
