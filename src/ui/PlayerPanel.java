@@ -118,4 +118,15 @@ class PlayerPanel extends JPanel {
         repaint();
     }
 
+    public void setCurrentPlayer (boolean isCurrentPlayer) {
+        if (isCurrentPlayer) {
+            vote.setVisible(true);
+            vote.setText("Playing...");
+            repaint();
+        } else {
+            vote.setVisible(false);
+            repaint();
+        }
+    }
+
 }

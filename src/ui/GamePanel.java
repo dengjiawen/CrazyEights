@@ -21,6 +21,7 @@ class GamePanel extends JPanel {
     static int height = Constants.element("initHeight");
 
     int curPlayerCount = 1;
+    int curPlayerNum = Constants.ERROR;
 
     ArrayList<PlayerPanel> player;
     HandPanel hand;
@@ -78,17 +79,20 @@ class GamePanel extends JPanel {
     }
 
     public void updateNumCards (int playerNum, int numCards) {
+        Console.print("DEBUG: " + getAssignedNum(playerNum));
         player.get(getAssignedNum(playerNum)).updateNumCard(numCards);
     }
 
     public int getAssignedNum (int playerNum) {
         int this_player_num = GameWindow.requestRef().player.playerNum;
+        Console.print("DEBUG TPN: " + this_player_num);
         int assigned_player_num = 0;
 
         if (playerNum > this_player_num) {
             assigned_player_num = playerNum - this_player_num + 1;
         } else {
             assigned_player_num = 6 - (this_player_num - playerNum) + 1;
+            Console.print("DEBUG APN: " + assigned_player_num);
         }
         return assigned_player_num;
     }
@@ -129,6 +133,12 @@ class GamePanel extends JPanel {
     public void startVotingSession () {
         buttons.setVisible(true);
         buttons.startVotingSession();
+    }
+
+    public void updateCurrentPlayer (int num) {
+        player.get(getAssignedNum(num)).setCurrentPlayer(true);
+        if (curPlayerNum != Constants.ERROR) player.get(getAssignedNum(curPlayerNum)).setCurrentPlayer(false);
+        curPlayerNum = num;
     }
 
 }

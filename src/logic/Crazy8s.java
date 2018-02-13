@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by freddeng on 2018-02-05.
@@ -27,8 +28,6 @@ public class Crazy8s {
 
     public Crazy8s () {
         deck = new Deck(true);
-        deck.shuffle();
-        deck.shuffle();
         deck.shuffle();
 
         discard = new Deck(false);
@@ -55,11 +54,20 @@ public class Crazy8s {
         for (int i = 0; i < Server.players.size(); i ++) {
             updatePlayerNumCard(Server.players.get(i), playerCards[i].size());
         }
+
+        currentPlayer = ThreadLocalRandom.current().nextInt(0, Server.players.size());
+        updateCurrentPlayer(currentPlayer);
     }
 
     public void updatePlayerList (Client client, boolean connected) {
         for (int i = 0; i < Server.players.size(); i ++) {
             Server.players.get(i).updatePlayerList(client, connected);
+        }
+    }
+
+    public void updateCurrentPlayer (int num) {
+        for (int i = 0; i < Server.players.size(); i ++) {
+            Server.players.get(i).updateCurrentPlayer(num);
         }
     }
 
@@ -136,8 +144,13 @@ public class Crazy8s {
 
                 while (true) {
                     String command = input.readLine();
+                    Console.print("CLIENT " + getNum() + " RESPONSE: " + command);
                     if (command == null) {
-                        command = "QUIT";
+                        try {output.print("ALIVE?"); return;}
+                        catch (Exception e) {
+                            command = "QUIT";
+                            e.printStackTrace();
+                        }
                     }
 
                     if (command.startsWith("REQ_LIST")) {
@@ -190,6 +203,10 @@ public class Crazy8s {
             }
         }
 
+        public void updateCurrentPlayer (int currentPlayer) {
+            output.println("CURR_PLAYER" + currentPlayer);
+        }
+
         public void updatePlayerList (Client player, boolean connected) {
             if (connected) output.println("CONNECT" + player.getNum() + player.playerName);
             else {
@@ -229,7 +246,7 @@ public class Crazy8s {
         public void giveList () {
             for (int i = 0; i < Server.players.size(); i ++) {
                 updatePlayerList(Server.players.get(i), true);
-                if (Server.players.get(i).ready == true) {
+                if (Server.players.get(i).ready) {
                     output.println("READY" + Server.players.get(i).getNum());
                 }
             }

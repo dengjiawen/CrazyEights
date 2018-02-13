@@ -64,7 +64,7 @@ public class Player {
             while (true) {
                 try {
                     response = in.readLine();
-                } catch (IOException e) {};
+                } catch (IOException e) {e.printStackTrace();};
 
                 Console.print(response);
 
@@ -111,6 +111,12 @@ public class Player {
                     Console.print("NUM = " + num + " NUMCARD = " + numCard);
                     if (num != playerNum) SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateNumCards(num, numCard));
                 }
+
+                if (response.startsWith("CURR_PLAYER")) {
+                    int num = Character.getNumericValue(response.charAt(11));
+                    GameWindow.requestRef().updateCurrentPlayer(num);
+                }
+
                 else if (response.startsWith("VALID_MOVE")) {
                 } else if (response.startsWith("OPPONENT_MOVED")) {
                 } else if (response.startsWith("VICTORY")) {
@@ -125,7 +131,7 @@ public class Player {
         finally {
             try {
                 socket.close();
-            } catch (IOException e) {}
+            } catch (IOException e) {e.printStackTrace();}
         }
     }
 

@@ -1,5 +1,6 @@
 package ui;
 
+import common.Console;
 import common.Constants;
 import logic.Player;
 import logic.Server;
@@ -192,11 +193,16 @@ public class GameWindow extends JFrame {
     }
 
     public void updateNumCards (int playerNum, int numCards) {
+        Console.print("DEBUG: " + playerNum + numCards);
         panel.updateNumCards(playerNum, numCards);
     }
 
     public void updateHand () {
         panel.hand.update();
+    }
+
+    public void updateCurrentPlayer (int num) {
+        panel.updateCurrentPlayer(num);
     }
 
     public void addPlayer (String name, int playerNum) {
