@@ -6,26 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="508ac29e-c7a4-4ba0-9610-4b4956f3b001" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/StackPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s$Client.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s$Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Player.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/GamePanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/GamePanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/GameWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources$1.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Definitions.plist" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Definitions.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Definitions.plist" afterPath="$PROJECT_DIR$/src/common/Definitions.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Crazy8s.java" afterPath="$PROJECT_DIR$/src/logic/Crazy8s.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Hand.java" afterPath="$PROJECT_DIR$/src/logic/Hand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Player.java" afterPath="$PROJECT_DIR$/src/logic/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GamePanel.java" afterPath="$PROJECT_DIR$/src/ui/GamePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GameWindow.java" afterPath="$PROJECT_DIR$/src/ui/GameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/HandPanel.java" afterPath="$PROJECT_DIR$/src/ui/HandPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/Resources.java" afterPath="$PROJECT_DIR$/src/ui/Resources.java" />
-    </list>
+    <list default="true" id="508ac29e-c7a4-4ba0-9610-4b4956f3b001" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -779,12 +760,12 @@
       <workItem from="1518629930006" duration="3761000" />
       <workItem from="1518635345433" duration="559000" />
       <workItem from="1518713758489" duration="1669000" />
-      <workItem from="1518721549590" duration="2789000" />
+      <workItem from="1518721549590" duration="2846000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16908000" />
+    <option name="totallyTimeSpent" value="16965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -800,7 +781,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32650602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32650602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
