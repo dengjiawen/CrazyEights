@@ -167,17 +167,17 @@ public class Crazy8s {
                     }
 
                     if (command.startsWith("READY")) {
+                        Server.game.updateReadiness(this, true);
                         numReady ++;
                         ready = true;
                         if (numReady == Server.players.size() && Server.players.size() > 1) {
                             //Server.listener.close();
                             startGame();
                         }
-                        Server.game.updateReadiness(this, true);
                     } else if (command.startsWith("UNREADY")) {
+                        Server.game.updateReadiness(this, false);
                         numReady --;
                         ready = false;
-                        Server.game.updateReadiness(this, false);
                     }
 
 

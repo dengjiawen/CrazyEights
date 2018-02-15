@@ -157,6 +157,7 @@ class GamePanel extends JPanel {
     public void allowToPlay () {
         GameWindow.requestRef().player.hand.findPlayable();
         hand.allowToPlay(true);
+
     }
 
 }
