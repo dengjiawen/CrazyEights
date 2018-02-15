@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import common.Console;
 import common.Constants;
 import common.Misc;
 import logic.Hand;
@@ -34,6 +35,11 @@ class HandPanel extends JPanel {
     MouseAdapter selectionAgent;
     ExecutorService clickHandler;
 
+    private float glowValue = 0f;
+    boolean glowIsIncreasing = false;
+
+    Timer glowTimer;
+
     protected HandPanel (Hand currentHand) {
 
         super();
@@ -45,6 +51,21 @@ class HandPanel extends JPanel {
         Sort.selectionSort(hand);
 
         clickHandler = Executors.newSingleThreadExecutor();
+
+        glowTimer = new Timer(1000/60, e -> {
+            if (glowIsIncreasing) glowValue += 0.1;
+            else glowValue -= 0.1;
+
+            if (glowValue > 1) {
+                glowValue = 1f;
+                glowIsIncreasing = false;
+            } else if (glowValue < 0) {
+                glowValue = 0f;
+                glowIsIncreasing = true;
+            }
+
+            repaint();
+        });
 
         selectionAgent = new MouseAdapter() {
             @Override
@@ -67,6 +88,8 @@ class HandPanel extends JPanel {
                     }
                 }
 
+                Console.print("" + selectedIndex);
+
                 hand.select(selectedIndex);
                 repaint();
 
@@ -84,8 +107,6 @@ class HandPanel extends JPanel {
                 setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
             }
         };
-
-        addMouseListener(selectionAgent);
 
         update();
 
@@ -111,6 +132,10 @@ class HandPanel extends JPanel {
                 g2d.drawImage(Resources.highlight, i * individualUsableSpace, 0,
                         cardWidth, cardHeight, null);
             }
+            if (hand.isPlayable(i) && !hand.isSelected(i)) {
+                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, glowValue));
+                g2d.drawImage(Resources.playable, i * individualUsableSpace, 0, cardWidth, cardHeight, null);
+            }
         }
     }
 
@@ -128,6 +153,14 @@ class HandPanel extends JPanel {
 
         setBounds(x, y, width, height);
         repaint();
+    }
+
+    public void allowToPlay (boolean isAllowed) {
+        if (!isAllowed) removeMouseListener(selectionAgent);
+        else {
+            addMouseListener(selectionAgent);
+            glowTimer.start();
+        }
     }
 
 }

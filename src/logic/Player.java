@@ -27,6 +27,8 @@ public class Player {
     public Hand hand;
     String name;
 
+    public Card activeCard;
+
     ExecutorService playerThread = Executors.newSingleThreadExecutor();
 
     public Player(String serverAddress, int port, String name) throws Exception {
@@ -37,6 +39,8 @@ public class Player {
         out = new PrintWriter(socket.getOutputStream(), true);
 
         hand = new Hand();
+
+        activeCard = null;
 
         this.name = name;
 
@@ -97,10 +101,15 @@ public class Player {
                 }
 
                 if (response.startsWith("START_GAME")) {
-                    GameWindow.requestRef().startGame();
+                    SwingUtilities.invokeLater(() -> GameWindow.requestRef().startGame());
                 }
 
-                if (response.startsWith("CARD")) {
+                if (response.startsWith("ACTIVE_CARD")) {
+                    byte suit = Byte.parseByte(response.substring(11,12));
+                    byte rank = Byte.parseByte(response.substring(12));
+                    Console.print("ACTIVE: suit " + suit + " rank " + rank);
+                    SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateActiveCard(new Card(suit, rank)));
+                } else if (response.startsWith("CARD")) {
                     byte suit = Byte.parseByte(response.substring(4,5));
                     byte rank = Byte.parseByte(response.substring(5));
                     Console.print("suit " + suit + " rank " + rank);
@@ -114,7 +123,8 @@ public class Player {
 
                 if (response.startsWith("CURR_PLAYER")) {
                     int num = Character.getNumericValue(response.charAt(11));
-                    GameWindow.requestRef().updateCurrentPlayer(num);
+                    if (num != playerNum) SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateCurrentPlayer(num));
+
                 }
 
                 else if (response.startsWith("VALID_MOVE")) {

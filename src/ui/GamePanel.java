@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 
 import common.Console;
 import common.Constants;
+import logic.Card;
 import logic.Hand;
 import logic.Player;
 import logic.Server;
@@ -26,6 +27,7 @@ class GamePanel extends JPanel {
     ArrayList<PlayerPanel> player;
     HandPanel hand;
     ButtonPanel buttons;
+    StackPanel stack;
 
     protected GamePanel () throws Exception {
 
@@ -35,6 +37,8 @@ class GamePanel extends JPanel {
         setBounds(0, 0, width, height);
 
         buttons = new ButtonPanel();
+
+        stack = new StackPanel();
 
         player = new ArrayList<>();
         player.add(null);
@@ -46,6 +50,8 @@ class GamePanel extends JPanel {
         }
 
         add (buttons);
+        add(stack);
+
     }
 
     public void addPlayer (String name, int playerNum) {
@@ -139,6 +145,18 @@ class GamePanel extends JPanel {
         player.get(getAssignedNum(num)).setCurrentPlayer(true);
         if (curPlayerNum != Constants.ERROR) player.get(getAssignedNum(curPlayerNum)).setCurrentPlayer(false);
         curPlayerNum = num;
+    }
+
+    public void updateActiveCard (Card card) {
+        stack.lastActiveCardRef = stack.activeCardRef;
+        stack.activeCardRef = Resources.cards[card.getSuit()][card.getRank()];
+        revalidate();
+        repaint();
+    }
+
+    public void allowToPlay () {
+        GameWindow.requestRef().player.hand.findPlayable();
+        hand.allowToPlay(true);
     }
 
 }

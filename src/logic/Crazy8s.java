@@ -50,6 +50,9 @@ public class Crazy8s {
             Server.players.get(i).giveHand(playerCards[i]);
         }
         activeCard = deck.get(0);
+        discard.add(activeCard);
+        deck.remove(activeCard);
+        updateActiveCard();
 
         for (int i = 0; i < Server.players.size(); i ++) {
             updatePlayerNumCard(Server.players.get(i), playerCards[i].size());
@@ -57,6 +60,12 @@ public class Crazy8s {
 
         currentPlayer = ThreadLocalRandom.current().nextInt(0, Server.players.size());
         updateCurrentPlayer(currentPlayer);
+    }
+
+    public void updateActiveCard () {
+        for (int i = 0; i < Server.players.size(); i ++) {
+            Server.players.get(i).updateActiveCard();
+        }
     }
 
     public void updatePlayerList (Client client, boolean connected) {
@@ -161,7 +170,7 @@ public class Crazy8s {
                         numReady ++;
                         ready = true;
                         if (numReady == Server.players.size() && Server.players.size() > 1) {
-                            Server.listener.close();
+                            //Server.listener.close();
                             startGame();
                         }
                         Server.game.updateReadiness(this, true);
@@ -199,7 +208,7 @@ public class Crazy8s {
             } catch (IOException e) {
                 System.out.println("Player died: " + e);
             } finally {
-                try {socket.close();} catch (IOException e) {}
+                try {socket.close();} catch (IOException e) {e.printStackTrace();}
             }
         }
 
@@ -250,6 +259,10 @@ public class Crazy8s {
                     output.println("READY" + Server.players.get(i).getNum());
                 }
             }
+        }
+
+        public void updateActiveCard () {
+            output.println("ACTIVE_CARD" + activeCard.getSuit() + activeCard.getRank());
         }
 
     }

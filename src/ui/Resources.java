@@ -16,16 +16,15 @@ class Resources {
     static BufferedImage playable;
     static BufferedImage profile;
 
-    static BufferedImage cardPattern;
-
     static BufferedImage connect_button;
     static BufferedImage host_button;
     static BufferedImage cpu_button;
 
+    static BufferedImage card_stack;
+
     static BufferedImage vote_start_button;
     static BufferedImage cancel_vote_button;
 
-    static BufferedImage connect_secondary;
     static BufferedImage cpu_secondary;
 
     static BufferedImage[][] cards;
@@ -51,10 +50,13 @@ class Resources {
         vote_start_button = loadImage("buttons/vote_start.png");
         cancel_vote_button = loadImage("buttons/cancel_vote.png");
 
-        cards = new BufferedImage[4][13];
+        card_stack = loadImage("cards/stack.png");
+
+        cards = new BufferedImage[4][13 + 1];
         for (int i = 0; i < cards.length; i ++) {
-            for (int j = 0; j < cards[i].length; j ++) {
-                cards[i][j] = loadImage("cards/" + i + "/" + (j + 1) + ".png");
+            cards[i][0] = null;
+            for (int j = 1; j < cards[i].length; j ++) {
+                cards[i][j] = loadImage("cards/" + i + "/" + j + ".png");
             }
         }
 

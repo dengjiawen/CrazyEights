@@ -4,7 +4,6 @@
         <GameWindowParam>
             <initWidth>1280</initWidth>
             <initHeight>720</initHeight>
-            <initTitle>Crazy Eights!</initTitle>
         </GameWindowParam>
         <TitleWindowParam>
             <titleWidth>1280</titleWidth>
@@ -47,6 +46,20 @@
             <Player2X>900</Player2X>
             <Player2Y>380</Player2Y>
         </PlayerPanelParam>
+        <StackPanelParam>
+            <stackPanelW>750</stackPanelW>
+            <stackPanelH>320</stackPanelH>
+            <stackPanelY>215</stackPanelY>
+            <stackX>250</stackX>
+            <stackY></stackY>
+            <stackW></stackW>
+            <stackH></stackH>
+            <activeX>400</activeX>
+            <activeY></activeY>
+            <inactiveX>400</inactiveX>
+            <inactiveY></inactiveY>
+            <rotationFactor>80</rotationFactor>
+        </StackPanelParam>
     </UIDefinitions>
     <LogicDefinitions>
         <MaxPlayer>6</MaxPlayer>

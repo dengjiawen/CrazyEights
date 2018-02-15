@@ -2,6 +2,7 @@ package ui;
 
 import common.Console;
 import common.Constants;
+import logic.Card;
 import logic.Player;
 import logic.Server;
 
@@ -25,7 +26,7 @@ public class GameWindow extends JFrame {
     private static MainMenuPanel main_menu;
     private static HostPanel host;
 
-    Player player;
+    public static Player player;
 
     public GameWindow () throws Exception {
 
@@ -190,6 +191,9 @@ public class GameWindow extends JFrame {
         panel.buttons.setVisible(false);
         panel.exitVoteStatus();
 
+        revalidate();
+        repaint();
+
     }
 
     public void updateNumCards (int playerNum, int numCards) {
@@ -213,8 +217,17 @@ public class GameWindow extends JFrame {
         panel.removePlayer();
     }
 
+    public void updateActiveCard (Card card) {
+        panel.updateActiveCard(card);
+        player.activeCard = card;
+    }
+
     public void updateReadyStatus (int playerNum, boolean ready) {
         panel.updateReadyStatus (playerNum, ready);
+    }
+
+    public void allowToPlay () {
+        panel.allowToPlay();
     }
 
     public static void setRef (GameWindow ref) {

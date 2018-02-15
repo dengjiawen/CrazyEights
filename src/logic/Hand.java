@@ -41,9 +41,16 @@ public class Hand extends Deck {
     }
 
     public void update () {
-        for (int i = 0; i < size(); i ++) {
+        for (int i = 0; i < size(); i++) {
             isSelected.add(new Boolean(false));
             isPlayable.add(new Boolean(false));
+        }
+    }
+
+    public void findPlayable () {
+        for (int i = 0; i < size(); i ++) {
+            Card eval_card = get(i);
+            if (isPlayable(eval_card)) isPlayable.set(i, true);
         }
     }
 
@@ -65,7 +72,22 @@ public class Hand extends Deck {
         return isSelected.get(index);
     }
 
-    public boolean isPlayable (int index) {return isPlayable.get(index);}
+    public boolean isPlayable (int index) {
+        return isPlayable.get(index);
+    }
+
+    public boolean isPlayable (Card card) {
+        Card activeCard = GameWindow.requestRef().player.activeCard;
+        if (card.getRank() == 8) {
+            return true;
+        } else if (card.getSuit() == activeCard.getSuit()) {
+            return true;
+        } else if (card.getRank() == activeCard.getRank()) {
+            return true;
+        }
+
+        return false;
+    }
 
 }
 
