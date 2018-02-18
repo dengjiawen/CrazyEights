@@ -121,7 +121,6 @@ class HandPanel extends JPanel {
         super.paintComponent(g);
 
         Graphics2D g2d = (Graphics2D) g;
-        update();
         drawCards(g2d);
     }
 
@@ -162,7 +161,10 @@ class HandPanel extends JPanel {
         repaint();
     }
 
+
+
     public void allowToPlay (boolean isAllowed) {
+        update();
         if (!isAllowed) {
             removeMouseListener(selectionAgent);
             glowTimer.stop();

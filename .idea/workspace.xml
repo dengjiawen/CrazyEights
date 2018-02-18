@@ -93,12 +93,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HandPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HandPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/HandPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="170" column="36" lean-forward="false" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
+            <state relative-caret-position="534">
+              <caret line="160" column="16" lean-forward="false" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="182" column="32" lean-forward="false" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
+              <folding>
+                <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
+                <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,7 +119,7 @@
       <file leaf-file-name="Hand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/logic/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="630">
               <caret line="60" column="37" lean-forward="false" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
               <folding>
                 <element signature="method#fill#0;class#Hand#0" expanded="false" />
@@ -119,10 +132,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Resources.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Resources.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/Resources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
+            <state relative-caret-position="173">
               <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
               <folding>
                 <element signature="method#loadMiscAssets#0;class#Resources#0" expanded="false" />
@@ -242,12 +255,12 @@
         <option value="$PROJECT_DIR$/src/logic/Sort.java" />
         <option value="$PROJECT_DIR$/src/logic/Deck.java" />
         <option value="$PROJECT_DIR$/src/logic/Crazy8s.java" />
-        <option value="$PROJECT_DIR$/src/ui/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/ui/LoadFrame.java" />
         <option value="$PROJECT_DIR$/src/ui/LoadPanel.java" />
         <option value="$PROJECT_DIR$/src/logic/Hand.java" />
-        <option value="$PROJECT_DIR$/src/ui/HandPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/Resources.java" />
+        <option value="$PROJECT_DIR$/src/ui/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/HandPanel.java" />
       </list>
     </option>
   </component>
@@ -927,18 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="154" column="45" lean-forward="false" selection-start-line="154" selection-start-column="45" selection-end-line="154" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
-            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -976,9 +977,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+          <folding>
+            <element signature="method#loadMiscAssets#0;class#Resources#0" expanded="false" />
+            <element signature="method#loadButtons#0;class#Resources#0" expanded="false" />
+            <element signature="method#loadCoreAssets#0;class#Resources#0" expanded="false" />
+            <element signature="method#dimImage#0;class#Resources#0" expanded="false" />
+            <element signature="method#loadImage#0;class#Resources#0" expanded="false" />
+            <element signature="method#convertToGrayScale#0;class#Resources#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/logic/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="630">
           <caret line="60" column="37" lean-forward="false" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
           <folding>
             <element signature="method#fill#0;class#Hand#0" expanded="false" />
@@ -990,26 +1006,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/HandPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="170" column="36" lean-forward="false" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="446">
+          <caret line="182" column="32" lean-forward="false" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
+          <folding>
+            <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
+            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Resources.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/HandPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
-          <folding>
-            <element signature="method#loadMiscAssets#0;class#Resources#0" expanded="false" />
-            <element signature="method#loadButtons#0;class#Resources#0" expanded="false" />
-            <element signature="method#loadCoreAssets#0;class#Resources#0" expanded="false" />
-            <element signature="method#dimImage#0;class#Resources#0" expanded="false" />
-            <element signature="method#loadImage#0;class#Resources#0" expanded="false" />
-            <element signature="method#convertToGrayScale#0;class#Resources#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="534">
+          <caret line="160" column="16" lean-forward="false" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
