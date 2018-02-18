@@ -46,9 +46,9 @@ public class Hand extends Deck {
 
     public void update () {
         for (int i = 0; i < size(); i++) {
-            if (isPlayable.get(i) != null) {
+            try {
                 isPlayable.set(i, false);
-            } else {
+            } catch (IndexOutOfBoundsException error) {
                 isPlayable.add(i, false);
             }
         }
