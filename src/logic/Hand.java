@@ -36,7 +36,7 @@ public class Hand extends Deck {
 
     public void add (Card card) {
         super.add(card);
-        isPlayable.add(false);
+        update();
         GameWindow.requestRef().repaint();
     }
 
@@ -46,7 +46,7 @@ public class Hand extends Deck {
 
     public void update () {
         for (int i = 0; i < size(); i++) {
-            isPlayable.add(new Boolean(false));
+            isPlayable.set(i, new Boolean(false));
         }
     }
 

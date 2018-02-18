@@ -208,7 +208,12 @@ public class Crazy8s {
                         ready = false;
                     }
 
-                    if (command.startsWith("MOVE")) {
+                    if (command.startsWith("MOVE8")) {
+                        byte original_suit = (byte)Character.getNumericValue(command.charAt(5));
+                        byte selected_suit = (byte)Character.getNumericValue(command.charAt(7));
+                        byte rank = (byte)Character.getNumericValue(command.charAt(6));
+                        playEight(new Card(original_suit, rank), selected_suit);
+                    } else if (command.startsWith("MOVE")) {
                         byte suit = (byte)Character.getNumericValue(command.charAt(4));
                         byte rank = Byte.parseByte(command.substring(5));
                         Card played = new Card(suit, rank);
@@ -269,9 +274,10 @@ public class Crazy8s {
         }
 
         public void playCard (Card card) {
+
             if (isLegalMove(card)) {
-                discard.add(active_card);
                 active_card = card;
+                discard.add(card);
 
                 notifyActiveCard();
 
@@ -288,6 +294,24 @@ public class Crazy8s {
             } else {
                 output.println("BAD_MOVE");
             }
+        }
+
+        public void playEight (Card card, byte suit) {
+            discard.add(card);
+            active_card = new Card (suit, card.getRank());
+
+            notifyActiveCard();
+
+            output.println("GOOD_MOVE");
+
+            for (int i = 0; i < hand.size(); i ++) {
+                if (hand.get(i).equals(card)) {
+                    hand.remove(i);
+                }
+            }
+
+            notifyNumCard(this);
+            nextPlayer();
         }
 
         public int getNum () {

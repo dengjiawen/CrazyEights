@@ -69,7 +69,15 @@ public class Player {
     }
 
     public void playCard (Card card) {
+        if (card.getRank() == 8) {
+            GameWindow.requestRef().setEightPanel(true);
+            return;
+        }
         out.println("MOVE" + card.getSuit() + card.getRank());
+    }
+
+    public void playEight (Card card, int suit) {
+        out.println("MOVE8" + card.getSuit() + card.getRank() + suit);
     }
 
     public void play() {

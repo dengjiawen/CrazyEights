@@ -25,6 +25,7 @@ public class GameWindow extends JFrame {
     private static TitlePanel title;
     private static MainMenuPanel main_menu;
     private static HostPanel host;
+    public static EightPanel eight;
 
     public static Player player;
 
@@ -43,10 +44,12 @@ public class GameWindow extends JFrame {
         shade = new ShadePanel();
         main_menu = new MainMenuPanel();
         host = new HostPanel();
+        eight = new EightPanel();
 
+        add(title);
         add(host);
         add(main_menu);
-        add(title);
+        add(eight);
         add(shade);
         add(panel);
 
@@ -238,6 +241,11 @@ public class GameWindow extends JFrame {
 
     public void nextPlayer () {
         panel.nextPlayer();
+    }
+
+    public void setEightPanel (boolean isVisible) {
+        eight.setVisible(isVisible);
+        setShade(isVisible);
     }
 
     public static void setRef (GameWindow ref) {

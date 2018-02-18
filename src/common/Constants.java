@@ -51,7 +51,7 @@ public class Constants {
         } catch (NullPointerException error) {
             integer_parameters.put(resource_name,
                     Parse.parseInt(definition_path, resource_name));
-            return integer_parameters.get(resource_name);
+            return getInt(resource_name);
         }
     }
 
