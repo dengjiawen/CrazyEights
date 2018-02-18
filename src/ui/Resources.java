@@ -38,6 +38,7 @@ public class Resources {
     static BufferedImage play_card_button_active;
     static BufferedImage play_card_button_inactive;
     static BufferedImage pickup_button;
+    static BufferedImage skipturn_button;
 
     static BufferedImage[][] cards;
 
@@ -62,6 +63,7 @@ public class Resources {
         play_card_button_active = loadImage("buttons/play_card.png", true);
         play_card_button_inactive = convertToGrayScale(play_card_button_active);
         pickup_button = loadImage("buttons/pickup.png", true);
+        skipturn_button = loadImage("buttons/skip_turn.png", true);
 
 
     }

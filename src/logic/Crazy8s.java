@@ -203,6 +203,10 @@ public class Crazy8s {
 
                         playCard(played);
 
+                    } else if (command.startsWith("PICKUP")) {
+                        pickUpCard();
+                    } else if (command.startsWith("SKIP")) {
+                        nextPlayer();
                     } else if (command.startsWith("QUIT")) {
                         clients.remove(this);
                         notifyList(this, false);
@@ -241,6 +245,13 @@ public class Crazy8s {
 
         public void giveCard (Card card) {
             output.println("CARD" + card.getSuit() + card.getRank());
+        }
+
+        public void pickUpCard () {
+            giveCard(deck.get(0));
+            hand.add(deck.get(0));
+            deck.remove(0);
+            notifyNumCard(this);
         }
 
         public void playCard (Card card) {

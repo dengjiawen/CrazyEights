@@ -70,14 +70,25 @@ class ButtonPanel extends JPanel {
 
         playCard = new TButton(0, 0, buttonWidth, buttonHeight);
         playCard.addActionListener(e -> {
-            Console.print("pressed");
             GameWindow.player.playCard(GameWindow.player.hand.get(
                     GameWindow.panel.hand.selected
             ));
         });
 
         pickUp = new TButton(buttonOffset + buttonWidth, 0, buttonWidth, buttonHeight);
+        pickUp.addActionListener(e -> {
+            GameWindow.player.requestPickup();
+            pickUp.setVisible(false);
+            skipTurn.setVisible(true);
+            currentStage = Constants.SKIP_TURN_ONLY;
+            repaint();
+        });
+
         skipTurn = new TButton(buttonOffset + buttonWidth, 0, buttonWidth, buttonHeight);
+        skipTurn.addActionListener(e -> {
+            GameWindow.player.skipTurn();
+            GameWindow.requestRef().nextPlayer();
+        });
 
         playCard.setVisible(false);
         pickUp.setVisible(false);
@@ -180,11 +191,11 @@ class ButtonPanel extends JPanel {
                 break;
             case Constants.PLAY_CARD_SKIP_TURN:
                 button1 = Resources.play_card_button_active;
-                button2 = Resources.pickup_button;
+                button2 = Resources.skipturn_button;
                 break;
             case Constants.SKIP_TURN_ONLY:
                 button1 = Resources.play_card_button_inactive;
-                button2 = Resources.pickup_button;
+                button2 = Resources.skipturn_button;
                 break;
             default :
                 button1 = null;

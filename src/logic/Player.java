@@ -60,6 +60,14 @@ public class Player {
         out.println("UNREADY");
     }
 
+    public void requestPickup () {
+        out.println("PICKUP");
+    }
+
+    public void skipTurn () {
+        out.println("SKIP");
+    }
+
     public void playCard (Card card) {
         out.println("MOVE" + card.getSuit() + card.getRank());
     }
@@ -119,6 +127,7 @@ public class Player {
                     byte rank = Byte.parseByte(response.substring(5));
                     Console.print("suit " + suit + " rank " + rank);
                     hand.add(new Card(suit, rank));
+                    SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateHand());
                 } else if (response.startsWith("NUM_CARD")) {
                     int num = Character.getNumericValue(response.charAt(8));
                     int numCard = Integer.parseInt(response.substring(9));

@@ -85,15 +85,17 @@ class GamePanel extends JPanel {
     }
 
     public int getAssignedNum (int playerNum) {
+        System.out.println(playerNum);
+
         int this_player_num = GameWindow.requestRef().player.playerNum;
-        Console.print("DEBUG TPN: " + this_player_num);
+        System.out.println("DEBUG TPN: " + this_player_num);
         int assigned_player_num = 0;
 
         if (playerNum > this_player_num) {
             assigned_player_num = playerNum - this_player_num + 1;
         } else {
             assigned_player_num = 6 - (this_player_num - playerNum) + 1;
-            Console.print("DEBUG APN: " + assigned_player_num);
+            System.out.println("DEBUG APN: " + assigned_player_num);
         }
         return assigned_player_num;
     }
@@ -149,11 +151,17 @@ class GamePanel extends JPanel {
 
     public void updateCurrentPlayer (int num) {
         player.get(getAssignedNum(num)).setCurrentPlayer(true);
+        System.out.println("CURR" + getAssignedNum(num));
         if (curPlayerNum != Constants.ERROR) player.get(getAssignedNum(curPlayerNum)).setCurrentPlayer(false);
+        System.out.println("CURR" + getAssignedNum(curPlayerNum));
         curPlayerNum = num;
 
         GameWindow.requestRef().revalidate();
         GameWindow.requestRef().repaint();
+    }
+
+    public void updateHand () {
+        hand.update();
     }
 
     public void updateActiveCard (Card card) {
@@ -167,6 +175,8 @@ class GamePanel extends JPanel {
         GameWindow.requestRef().player.hand.findPlayable();
         hand.allowToPlay(true);
         buttons.startPlayingSession();
+        player.get(getAssignedNum(curPlayerNum)).setCurrentPlayer(false);
+        curPlayerNum = Constants.ERROR;
     }
 
     public void stopPlay () {
@@ -179,6 +189,10 @@ class GamePanel extends JPanel {
 
     public void goodMove () {
         GameWindow.player.hand.remove(hand.selected);
+        nextPlayer();
+    }
+
+    public void nextPlayer () {
         buttons.stopPlayingSession();
         hand.allowToPlay(false);
         repaint();

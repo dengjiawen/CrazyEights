@@ -79,7 +79,7 @@ class PlayerPanel extends JPanel {
     }
 
     public void exitVoteStatus () {
-        vote.setVisible(false);
+        vote.setText("");
         vote.setForeground(Color.white);
         status.setText("Waiting for response...");
         revalidate();
@@ -121,12 +121,9 @@ class PlayerPanel extends JPanel {
 
     public void setCurrentPlayer (boolean isCurrentPlayer) {
         if (isCurrentPlayer) {
-            vote.setVisible(true);
             vote.setText("Playing...");
-            repaint();
         } else {
-            vote.setVisible(false);
-            repaint();
+            vote.setText(" ");
         }
     }
 

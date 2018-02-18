@@ -203,6 +203,7 @@ public class GameWindow extends JFrame {
     }
 
     public void updateHand () {
+        player.hand.findPlayable();
         panel.hand.update();
     }
 
@@ -233,6 +234,10 @@ public class GameWindow extends JFrame {
 
     public void goodMove () {
         panel.goodMove ();
+    }
+
+    public void nextPlayer () {
+        panel.nextPlayer();
     }
 
     public static void setRef (GameWindow ref) {
