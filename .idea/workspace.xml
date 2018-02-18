@@ -135,7 +135,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/logic/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -191,15 +191,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hand.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Hand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/logic/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
+            <state relative-caret-position="425">
+              <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
               <folding>
                 <element signature="method#fill#0;class#Hand#0" expanded="false" />
-                <element signature="e#1352#1353#0" expanded="true" />
-                <element signature="e#1396#1397#0" expanded="true" />
+                <element signature="e#1465#1466#0" expanded="true" />
+                <element signature="e#1509#1510#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -237,8 +237,8 @@
       <find>p</find>
       <find>play</find>
       <find>playCar</find>
-      <find>playCard</find>
       <find>resetPl</find>
+      <find>playCard</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -277,12 +277,12 @@
         <option value="$PROJECT_DIR$/src/ui/ButtonPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/HandPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/GamePanel.java" />
-        <option value="$PROJECT_DIR$/src/logic/Hand.java" />
         <option value="$PROJECT_DIR$/src/common/Constants.java" />
         <option value="$PROJECT_DIR$/src/logic/Crazy8s.java" />
         <option value="$PROJECT_DIR$/src/logic/Player.java" />
         <option value="$PROJECT_DIR$/src/ui/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/ui/EightPanel.java" />
+        <option value="$PROJECT_DIR$/src/logic/Hand.java" />
       </list>
     </option>
   </component>
@@ -894,18 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/logic/Hand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
-          <folding>
-            <element signature="method#fill#0;class#Hand#0" expanded="false" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1396#1397#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
@@ -1005,6 +993,18 @@
           <folding>
             <element signature="e#1723#1724#0" expanded="true" />
             <element signature="e#1800#1801#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logic/Hand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <element signature="method#fill#0;class#Hand#0" expanded="false" />
+            <element signature="e#1465#1466#0" expanded="true" />
+            <element signature="e#1509#1510#0" expanded="true" />
           </folding>
         </state>
       </provider>

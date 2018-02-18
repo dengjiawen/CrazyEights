@@ -46,7 +46,11 @@ public class Hand extends Deck {
 
     public void update () {
         for (int i = 0; i < size(); i++) {
-            isPlayable.set(i, new Boolean(false));
+            if (isPlayable.get(i) != null) {
+                isPlayable.set(i, false);
+            } else {
+                isPlayable.add(i, false);
+            }
         }
     }
 
