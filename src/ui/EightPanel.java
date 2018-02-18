@@ -39,6 +39,7 @@ class EightPanel extends JPanel {
                 informRank(suit);
                 GameWindow.requestRef().setEightPanel(false);
             });
+            add(suit_selections[i]);
         }
 
     }
@@ -46,10 +47,16 @@ class EightPanel extends JPanel {
     protected void paintComponent (Graphics g) {
         super.paintComponent(g);
 
-        for (int i = 0; i < suit_selections.length; i ++) {
+        for (int i = 0; i < suit_selections.length; i++) {
             g.drawImage(Resources.cards[i][8], i * card_width + i * card_offset, 0, card_width, card_height, null);
         }
 
+    }
+
+    public void setVisible (boolean isVisible) {
+        super.setVisible(isVisible);
+
+        if (isVisible) grabFocus();
     }
 
 

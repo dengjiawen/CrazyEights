@@ -206,7 +206,7 @@ public class GameWindow extends JFrame {
     }
 
     public void updateHand () {
-        player.hand.findPlayable();
+        if (GameWindow.requestRef().player.activeCard != null) player.hand.findPlayable();
         panel.hand.update();
     }
 
