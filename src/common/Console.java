@@ -6,7 +6,12 @@
  *
  * This document may not be reproduced or transmitted in any form,
  * in whole or in part, without the express written permission of
- * Jiawen Deng.
+ * Jiawen Deng. (I-LU-V-EH)
+ *
+ * Roses are red,
+ * Violets are blue.
+ * Unexpected '{'
+ * On line 32.
  *
  *-----------------------------------------------------------------------------
  * Console.java
@@ -24,7 +29,7 @@ import java.util.Date;
 
 public class Console {
 
-    //Constant boolean that toggles debug messages on/off.
+    //Constant boolean that toggles messages on/off.
     private static final boolean show_debug_messages = true;
     private static final boolean show_general_messages = true;
 

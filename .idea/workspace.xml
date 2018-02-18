@@ -89,11 +89,40 @@
             <state relative-caret-position="945">
               <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
               <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1339#1340#0" expanded="false" />
+                <element signature="e#1380#1381#0" expanded="false" />
+                <element signature="e#1548#1549#0" expanded="false" />
+                <element signature="e#1577#1578#0" expanded="false" />
+                <element signature="e#1607#1608#0" expanded="false" />
+                <element signature="e#1635#1636#0" expanded="false" />
                 <element signature="method#host#0;class#GameWindow#0" expanded="false" />
                 <element signature="method#connect#0;class#GameWindow#0" expanded="false" />
+                <element signature="e#5286#5287#0" expanded="false" />
+                <element signature="e#5328#5329#0" expanded="false" />
                 <element signature="method#startGame#0;class#GameWindow#0" expanded="false" />
+                <element signature="e#5568#5569#0" expanded="false" />
+                <element signature="e#5620#5621#0" expanded="false" />
                 <element signature="method#updateNumCards#0;class#GameWindow#0" expanded="false" />
+                <element signature="e#6006#6007#0" expanded="false" />
+                <element signature="e#6052#6053#0" expanded="false" />
+                <element signature="e#6110#6111#0" expanded="false" />
+                <element signature="e#6158#6159#0" expanded="false" />
+                <element signature="e#6193#6194#0" expanded="false" />
+                <element signature="e#6229#6230#0" expanded="false" />
                 <element signature="method#updateActiveCard#0;class#GameWindow#0" expanded="false" />
+                <element signature="e#6423#6424#0" expanded="false" />
+                <element signature="e#6481#6482#0" expanded="false" />
+                <element signature="e#6537#6538#0" expanded="false" />
+                <element signature="e#6586#6587#0" expanded="false" />
+                <element signature="e#6617#6618#0" expanded="false" />
+                <element signature="e#6650#6651#0" expanded="false" />
+                <element signature="e#6683#6684#0" expanded="false" />
+                <element signature="e#6717#6718#0" expanded="false" />
+                <element signature="e#6892#6893#0" expanded="false" />
+                <element signature="e#6922#6923#0" expanded="false" />
+                <element signature="e#6968#6969#0" expanded="false" />
+                <element signature="e#6999#7000#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -102,7 +131,7 @@
       <file leaf-file-name="EightPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
+            <state relative-caret-position="85">
               <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -137,9 +166,10 @@
       <file leaf-file-name="Console.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/common/Console.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+            <state relative-caret-position="379">
+              <caret line="42" column="66" lean-forward="false" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="method#getDate#0;class#Console#0" expanded="false" />
               </folding>
             </state>
@@ -152,8 +182,17 @@
             <state relative-caret-position="1710">
               <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
               <folding>
-                <element signature="e#1723#1724#0" expanded="true" />
-                <element signature="e#1800#1801#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1119#1120#0" expanded="false" />
+                <element signature="e#1158#1159#0" expanded="false" />
+                <element signature="e#1192#1193#0" expanded="false" />
+                <element signature="e#1228#1229#0" expanded="false" />
+                <element signature="e#1264#1265#0" expanded="false" />
+                <element signature="e#1302#1303#0" expanded="false" />
+                <element signature="e#1338#1339#0" expanded="false" />
+                <element signature="e#1375#1376#0" expanded="false" />
+                <element signature="e#1406#1407#0" expanded="false" />
+                <element signature="e#1441#1442#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -164,7 +203,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,7 +225,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="780">
               <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -195,8 +238,15 @@
             <state relative-caret-position="2145">
               <caret line="175" column="25" lean-forward="false" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
                 <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+                <element signature="e#4641#4642#0" expanded="false" />
+                <element signature="e#4670#4671#0" expanded="false" />
+                <element signature="e#5254#5255#0" expanded="false" />
+                <element signature="e#5293#5294#0" expanded="false" />
+                <element signature="e#5352#5353#0" expanded="false" />
+                <element signature="e#5406#5407#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -208,9 +258,14 @@
             <state relative-caret-position="825">
               <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#420#421#0" expanded="false" />
+                <element signature="e#449#450#0" expanded="false" />
                 <element signature="method#fill#0;class#Hand#0" expanded="false" />
-                <element signature="e#1473#1474#0" expanded="true" />
-                <element signature="e#1517#1518#0" expanded="true" />
+                <element signature="e#677#678#0" expanded="false" />
+                <element signature="e#711#712#0" expanded="false" />
+                <element signature="e#1878#1879#0" expanded="false" />
+                <element signature="e#1922#1923#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -635,8 +690,15 @@
         <state relative-caret-position="615">
           <caret line="136" column="27" lean-forward="false" selection-start-line="136" selection-start-column="27" selection-end-line="136" selection-end-column="27" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#4641#4642#0" expanded="false" />
+            <element signature="e#4670#4671#0" expanded="false" />
+            <element signature="e#5254#5255#0" expanded="false" />
+            <element signature="e#5293#5294#0" expanded="false" />
+            <element signature="e#5352#5353#0" expanded="false" />
+            <element signature="e#5406#5407#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -695,8 +757,15 @@
         <state relative-caret-position="615">
           <caret line="136" column="27" lean-forward="false" selection-start-line="136" selection-start-column="27" selection-end-line="136" selection-end-column="27" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#4641#4642#0" expanded="false" />
+            <element signature="e#4670#4671#0" expanded="false" />
+            <element signature="e#5254#5255#0" expanded="false" />
+            <element signature="e#5293#5294#0" expanded="false" />
+            <element signature="e#5352#5353#0" expanded="false" />
+            <element signature="e#5406#5407#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -869,7 +938,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -878,8 +949,15 @@
         <state relative-caret-position="2145">
           <caret line="175" column="25" lean-forward="false" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#4641#4642#0" expanded="false" />
+            <element signature="e#4670#4671#0" expanded="false" />
+            <element signature="e#5254#5255#0" expanded="false" />
+            <element signature="e#5293#5294#0" expanded="false" />
+            <element signature="e#5352#5353#0" expanded="false" />
+            <element signature="e#5406#5407#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,7 +966,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -905,9 +985,14 @@
         <state relative-caret-position="825">
           <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#420#421#0" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
             <element signature="method#fill#0;class#Hand#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
+            <element signature="e#677#678#0" expanded="false" />
+            <element signature="e#711#712#0" expanded="false" />
+            <element signature="e#1878#1879#0" expanded="false" />
+            <element signature="e#1922#1923#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,11 +1002,40 @@
         <state relative-caret-position="945">
           <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1339#1340#0" expanded="false" />
+            <element signature="e#1380#1381#0" expanded="false" />
+            <element signature="e#1548#1549#0" expanded="false" />
+            <element signature="e#1577#1578#0" expanded="false" />
+            <element signature="e#1607#1608#0" expanded="false" />
+            <element signature="e#1635#1636#0" expanded="false" />
             <element signature="method#host#0;class#GameWindow#0" expanded="false" />
             <element signature="method#connect#0;class#GameWindow#0" expanded="false" />
+            <element signature="e#5286#5287#0" expanded="false" />
+            <element signature="e#5328#5329#0" expanded="false" />
             <element signature="method#startGame#0;class#GameWindow#0" expanded="false" />
+            <element signature="e#5568#5569#0" expanded="false" />
+            <element signature="e#5620#5621#0" expanded="false" />
             <element signature="method#updateNumCards#0;class#GameWindow#0" expanded="false" />
+            <element signature="e#6006#6007#0" expanded="false" />
+            <element signature="e#6052#6053#0" expanded="false" />
+            <element signature="e#6110#6111#0" expanded="false" />
+            <element signature="e#6158#6159#0" expanded="false" />
+            <element signature="e#6193#6194#0" expanded="false" />
+            <element signature="e#6229#6230#0" expanded="false" />
             <element signature="method#updateActiveCard#0;class#GameWindow#0" expanded="false" />
+            <element signature="e#6423#6424#0" expanded="false" />
+            <element signature="e#6481#6482#0" expanded="false" />
+            <element signature="e#6537#6538#0" expanded="false" />
+            <element signature="e#6586#6587#0" expanded="false" />
+            <element signature="e#6617#6618#0" expanded="false" />
+            <element signature="e#6650#6651#0" expanded="false" />
+            <element signature="e#6683#6684#0" expanded="false" />
+            <element signature="e#6717#6718#0" expanded="false" />
+            <element signature="e#6892#6893#0" expanded="false" />
+            <element signature="e#6922#6923#0" expanded="false" />
+            <element signature="e#6968#6969#0" expanded="false" />
+            <element signature="e#6999#7000#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -931,18 +1045,17 @@
         <state relative-caret-position="1710">
           <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding>
-            <element signature="e#1723#1724#0" expanded="true" />
-            <element signature="e#1800#1801#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1119#1120#0" expanded="false" />
+            <element signature="e#1158#1159#0" expanded="false" />
+            <element signature="e#1192#1193#0" expanded="false" />
+            <element signature="e#1228#1229#0" expanded="false" />
+            <element signature="e#1264#1265#0" expanded="false" />
+            <element signature="e#1302#1303#0" expanded="false" />
+            <element signature="e#1338#1339#0" expanded="false" />
+            <element signature="e#1375#1376#0" expanded="false" />
+            <element signature="e#1406#1407#0" expanded="false" />
+            <element signature="e#1441#1442#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -968,11 +1081,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/Console.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+        <state relative-caret-position="379">
+          <caret line="42" column="66" lean-forward="false" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="method#getDate#0;class#Console#0" expanded="false" />
           </folding>
         </state>
