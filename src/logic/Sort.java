@@ -60,12 +60,33 @@ public class Sort {
 
     }
 
+    public static void selectionSort (Deck deck) {
+
+        for (int j = 0; j < deck.size(); j ++) {
+            deck.swap(findSmallestCardIndex(deck, j), j);
+        }
+
+    }
+
     public static int findSmallestCardIndex (Hand hand, int startIndex) {
 
         int smallestIndex = startIndex;
 
         for (int i = startIndex; i < hand.size(); i ++) {
             if (hand.get(i).compare(hand.get(smallestIndex)) == Constants.CARD_IS_SMALLER) {
+                smallestIndex = i;
+            }
+        }
+
+        return smallestIndex;
+    }
+
+    public static int findSmallestCardIndex (Deck deck, int startIndex) {
+
+        int smallestIndex = startIndex;
+
+        for (int i = startIndex; i < deck.size(); i ++) {
+            if (deck.get(i).compare(deck.get(smallestIndex)) == Constants.CARD_IS_SMALLER) {
                 smallestIndex = i;
             }
         }

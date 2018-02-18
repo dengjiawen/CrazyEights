@@ -1,46 +1,80 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ *
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ *
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ *
+ *-----------------------------------------------------------------------------
+ * Parse.java
+ *-----------------------------------------------------------------------------
+ * This is a specialized java class designed to parse content from
+ * property list files (.plist files) in XML format.
+ *-----------------------------------------------------------------------------
+ */
+
 package common;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+import java.io.IOException;
 
-import java.awt.*;
-
-/**
- * Created by freddeng on 2017-10-06.
- */
 public class Parse {
 
-    public static String parseString (String pListName, String resourceName) {
+    //Constant String used for console output.
+    private static final String class_name = "common.Parse";
 
+    /**
+     * Parse strings from XML entries.
+     * @param plist_name     name of the plist file
+     * @param resource_name  name of the requested resource
+     * @return  parsed content (string)
+     */
+    public static String parseString (String plist_name, String resource_name) {
+
+        //Parse XML tree structure, transverse to find requested resource, parse and return
         try {
-
-            DocumentBuilderFactory XMLParser = DocumentBuilderFactory.newInstance();
-            DocumentBuilder XMLBuilder = XMLParser.newDocumentBuilder();
-            Document XMLTree = XMLBuilder.parse(Parse.class.getResourceAsStream(pListName));
-
+            Document XMLTree = DocumentBuilderFactory.newInstance().
+                    newDocumentBuilder().parse(Parse.class.getResourceAsStream(plist_name));
             XMLTree.getDocumentElement().normalize();
 
-            return XMLTree.getElementsByTagName(resourceName).item(0).getTextContent();
+            Console.printGeneralMessage("Found resource [" + resource_name + "] in plist [" + plist_name +"]", class_name);
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            return XMLTree.getElementsByTagName(resource_name).item(0).getTextContent();
+        } catch (SAXException error) {
+            Console.printErrorMessage("[SAXException]" + error.getMessage(), class_name);
+        } catch (IOException error) {
+            Console.printErrorMessage("[IOException]" + error.getMessage(), class_name);
+        } catch (ParserConfigurationException error) {
+            Console.printErrorMessage("[ParserConfigurationException]" + error.getMessage(), class_name);
         }
 
-        return "0";
+        Console.printErrorMessage("Resource " + resource_name + " is not found in plist " + plist_name, class_name);
+
+        //If file is not found, return null.
+        return null;
 
     }
 
-    public static int parseInt (String pListName, String resourceName) {
-        return Integer.parseInt(parseString(pListName, resourceName));
+    /**
+     * Parse integer from XML entries, using parseString
+     * as a helper method.
+     * @param plist_name     name of the plist file
+     * @param resource_name  name of the requested resource
+     * @return  parsed content (integer)
+     * @throws NullPointerException   may throw exception if helper method returns null
+     */
+    public static int parseInt (String plist_name, String resource_name) throws NullPointerException {
+        return Integer.parseInt(parseString(plist_name, resource_name));
     }
 
-    public static boolean parseBool (String pListName, String resourceName) {
-        return parseInt (pListName, resourceName) == 1;
-    }
-
-    public static Color parseColor (String pListName, String resourceName) {
-        return Color.decode("#" + parseString(pListName, resourceName));
+    public static float parseFloat (String plist_name, String resource_name) throws NullPointerException {
+        return Float.parseFloat(parseString(plist_name, resource_name));
     }
 
 }

@@ -19,17 +19,24 @@ import java.util.concurrent.Future;
 
 public class Server {
 
-    public static boolean allReady = false;
-    public static ArrayList<Crazy8s.Client> players;
-    public static ServerSocket listener;
+    private static boolean all_ready = false;
+    private static ServerSocket listener;
 
-    public static Crazy8s game;
+    private static Crazy8s game;
 
-    static ExecutorService serverThread = Executors.newSingleThreadExecutor();
+    private static ExecutorService serverThread = Executors.newSingleThreadExecutor();
 
     public static void init (int portNumber) throws Exception {
         listener = new ServerSocket(portNumber);
         serverThread.submit(() -> initConnection(portNumber));
+    }
+
+    public static void stopListening () {
+        try {
+            listener.close();
+        } catch (IOException error) {
+            // tell someone that cares
+        }
     }
 
     public static void initConnection (int portNumber) {
@@ -41,20 +48,17 @@ public class Server {
             while (true) {
                 game = new Crazy8s();
 
-                players = new ArrayList<>();
-
                 Socket playerSocket = null;
                 try {
                     playerSocket = listener.accept();
-                } catch (IOException e) {}
+                } catch (IOException e) {
 
-                players.add(game.new Client(playerSocket));
-                Console.print(players.get(0).toString());
-                players.get(0).start();
+                }
 
-                game.currentPlayer = 0;
+                game.clients.add(game.new Client(playerSocket));
+                game.clients.get(0).start();
 
-                while (!allReady) {
+                while (!all_ready) {
                     boolean accepted = false;
                     playerSocket = null;
 
@@ -65,9 +69,9 @@ public class Server {
                         accepted = false;
                     }
 
-                    if (accepted && players.size() < maxPlayer) {
+                    if (accepted && game.clients.size() < maxPlayer) {
                         Crazy8s.Client newClient = game.new Client(playerSocket);
-                        players.add(newClient);
+                        game.clients.add(newClient);
                         newClient.start();
                     }
                 }

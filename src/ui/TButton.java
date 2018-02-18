@@ -36,13 +36,13 @@ class TButton extends JButton {
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
-                setCursor(new Cursor(Cursor.HAND_CURSOR));
+                getRootPane().setCursor(new Cursor(Cursor.HAND_CURSOR));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
-                setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                getRootPane().setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
             }
         });
     }

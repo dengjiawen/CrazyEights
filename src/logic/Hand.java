@@ -1,5 +1,6 @@
 package logic;
 
+import common.Console;
 import ui.GameWindow;
 
 import java.util.ArrayList;
@@ -10,19 +11,21 @@ import java.util.ArrayList;
 
 public class Hand extends Deck {
 
-    ArrayList<Boolean> isSelected;
+    public int selectedIndex;
     ArrayList<Boolean> isPlayable;
 
     public Hand () {
         super(false);
 
-        isSelected = new ArrayList<>();
+        selectedIndex = -1;
         isPlayable = new ArrayList<>();
     }
 
     void play (Card card) {
         remove (card);
     }
+
+
 
     public void fill () {
         super.fill();
@@ -31,7 +34,6 @@ public class Hand extends Deck {
 
     public void add (Card card) {
         super.add(card);
-        isSelected.add(false);
         isPlayable.add(false);
         GameWindow.requestRef().repaint();
     }
@@ -42,7 +44,6 @@ public class Hand extends Deck {
 
     public void update () {
         for (int i = 0; i < size(); i++) {
-            isSelected.add(new Boolean(false));
             isPlayable.add(new Boolean(false));
         }
     }
@@ -55,21 +56,8 @@ public class Hand extends Deck {
     }
 
     public void select (int index) {
-        if (!isSelected.get(index)) {
-            isSelected.set(index, true);
-        } else {
-            isSelected.set(index, false);
-        }
-    }
-
-    public void addDeck (Deck deck) {
-        for (int i = 0; i < deck.size(); i ++) {
-            add(deck.get(i));
-        }
-    }
-
-    public boolean isSelected (int index) {
-        return isSelected.get(index);
+        if (selectedIndex == index) selectedIndex = -1;
+        else selectedIndex = index;
     }
 
     public boolean isPlayable (int index) {
@@ -77,6 +65,9 @@ public class Hand extends Deck {
     }
 
     public boolean isPlayable (Card card) {
+
+        Console.print(this.toString());
+
         Card activeCard = GameWindow.requestRef().player.activeCard;
         if (card.getRank() == 8) {
             return true;
@@ -87,6 +78,16 @@ public class Hand extends Deck {
         }
 
         return false;
+    }
+
+    public static Hand valueOf (Deck deck) {
+        Hand temp_deck = new Hand();
+
+        for (int i = 0; i < deck.size(); i ++) {
+            temp_deck.add(deck.get(i));
+        }
+
+        return temp_deck;
     }
 
 }

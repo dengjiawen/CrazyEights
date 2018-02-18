@@ -2,6 +2,7 @@ package ui;
 
 import common.Console;
 import common.Constants;
+import logic.Server;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +19,7 @@ class ButtonPanel extends JPanel {
     private static final int height = Constants.element("ButtonH");
 
     private static final int x = (Constants.element("initWidth") - width) / 2;
-    private static final int y = Constants.element("initHeight") - 200;
+    private static final int y = Constants.element("initHeight") - 250;
 
     private final static int buttonWidth = Constants.element("ButtonW");
     private final static int buttonHeight = Constants.element("ButtonH");
@@ -30,6 +31,10 @@ class ButtonPanel extends JPanel {
 
     TButton voteStart;
     TButton unvoteStart;
+
+    TButton playCard;
+    TButton pickUp;
+    TButton skipTurn;
 
     protected ButtonPanel () {
 
@@ -63,13 +68,86 @@ class ButtonPanel extends JPanel {
             repaint();
         });
 
+        playCard = new TButton(0, 0, buttonWidth, buttonHeight);
+        playCard.addActionListener(e -> {
+            Console.print("pressed");
+            GameWindow.player.playCard(GameWindow.player.hand.get(
+                    GameWindow.panel.hand.selected
+            ));
+        });
+
+        pickUp = new TButton(buttonOffset + buttonWidth, 0, buttonWidth, buttonHeight);
+        skipTurn = new TButton(buttonOffset + buttonWidth, 0, buttonWidth, buttonHeight);
+
+        playCard.setVisible(false);
+        pickUp.setVisible(false);
+        skipTurn.setVisible(false);
+
         add (voteStart);
         add (unvoteStart);
+
+        add (playCard);
+        add (pickUp);
+        add (skipTurn);
 
     }
 
     void startVotingSession () {
         voteStart.setVisible(true);
+    }
+
+    void exitVotingSession () {
+        voteStart.setVisible(false);
+        unvoteStart.setVisible(false);
+
+        currentStage = Constants.DEFAULT;
+
+        GameWindow.requestRef().repaint();
+    }
+
+    void startPlayingSession () {
+        pickUp.setVisible(true);
+        currentStage = Constants.PICKUP_ONLY;
+
+        GameWindow.requestRef().repaint();
+    }
+
+    void stopPlayingSession () {
+        playCard.setVisible(false);
+        pickUp.setVisible(false);
+        skipTurn.setVisible(false);
+
+        currentStage = Constants.DEFAULT;
+
+        GameWindow.requestRef().repaint();
+    }
+
+    void activatePlayButton (boolean doActivate) {
+        if (doActivate) {
+            if (currentStage == Constants.PICKUP_ONLY) {
+                currentStage = Constants.PLAY_CARD_PICKUP;
+                playCard.setVisible(true);
+                grabFocus();
+                GameWindow.requestRef().repaint();
+            } else if (currentStage == Constants.SKIP_TURN_ONLY) {
+                currentStage = Constants.PLAY_CARD_SKIP_TURN;
+                playCard.setVisible(true);
+                grabFocus();
+                revalidate();
+                repaint();
+                GameWindow.requestRef().repaint();
+            }
+        } else {
+            if (currentStage == Constants.PLAY_CARD_PICKUP) {
+                currentStage = Constants.PICKUP_ONLY;
+                playCard.setVisible(false);
+                GameWindow.requestRef().repaint();
+            } else if (currentStage == Constants.PLAY_CARD_SKIP_TURN) {
+                currentStage = Constants.SKIP_TURN_ONLY;
+                playCard.setVisible(false);
+                GameWindow.requestRef().repaint();
+            }
+        }
     }
 
     protected void paintComponent (Graphics g) {
@@ -81,26 +159,43 @@ class ButtonPanel extends JPanel {
         BufferedImage button2 = null;
 
         int x1 = 0;
-        int x2 = 0;
-
-        boolean paint2 = true;
+        int x2 = buttonWidth + buttonOffset;
 
         switch (currentStage) {
             case Constants.VOTE_START:
                 button1 = Resources.vote_start_button;
-                paint2 = false;
                 x1 = centeredButtonX;
                 break;
             case Constants.CANCEL_VOTE_START:
                 button1 = Resources.cancel_vote_button;
-                paint2 = false;
                 x1 = centeredButtonX;
                 break;
+            case Constants.PICKUP_ONLY:
+                button1 = Resources.play_card_button_inactive;
+                button2 = Resources.pickup_button;
+                break;
+            case Constants.PLAY_CARD_PICKUP:
+                button1 = Resources.play_card_button_active;
+                button2 = Resources.pickup_button;
+                break;
+            case Constants.PLAY_CARD_SKIP_TURN:
+                button1 = Resources.play_card_button_active;
+                button2 = Resources.pickup_button;
+                break;
+            case Constants.SKIP_TURN_ONLY:
+                button1 = Resources.play_card_button_inactive;
+                button2 = Resources.pickup_button;
+                break;
+            default :
+                button1 = null;
+                button2 = null;
         }
 
-        g2d.drawImage(button1, x1, 0, buttonWidth, buttonHeight, null);
-        if (paint2) g2d.drawImage(button2, x2, 0, buttonWidth, buttonHeight, null);
+        if (button1 != null) g2d.drawImage(button1, x1, 0, buttonWidth, buttonHeight, null);
+        if (button2 != null) g2d.drawImage(button2, x2, 0, buttonWidth, buttonHeight, null);
 
     }
+
+
 
 }

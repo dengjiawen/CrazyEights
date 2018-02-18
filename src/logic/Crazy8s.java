@@ -1,12 +1,14 @@
 package logic;
 
 import common.Console;
+import common.Misc;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -15,86 +17,85 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Crazy8s {
 
-    public int currentPlayer;
+    private int current_player;
+    private int pickup_num;
 
-    public Card activeCard;
+    private Card active_card;
 
-    Hand[] playerCards;
+    private Deck deck;
+    private Deck discard;
 
-    Deck deck;
-    Deck discard;
-
-    int numReady;
+    public ArrayList<Client> clients;
 
     public Crazy8s () {
+
+        discard = new Deck(false);
         deck = new Deck(true);
         deck.shuffle();
 
-        discard = new Deck(false);
+        clients = new ArrayList<Client>();
 
-        numReady = 0;
+        pickup_num = 1;
+
     }
 
     public void startGame () {
 
-        for (int i = 0; i < Server.players.size(); i ++) {
-            Server.players.get(i).notifyStartGame();
+        massBroadcast("START_GAME");
+
+        for (int i = 0; i < clients.size(); i++) {
+
+            Deck subdeck = deck.subdeck(0, 7);
+            subdeck.print();
+
+            clients.get(i).giveHand(
+                    Hand.valueOf(subdeck));
+            notifyNumCard(clients.get(i));
         }
 
-        playerCards = new Hand[Server.players.size()];
+        active_card = deck.get(0);
+        discard.add(active_card);
+        deck.remove(active_card);
+        notifyActiveCard();
 
-        for (int i = 0; i < playerCards.length; i ++) {
-            playerCards[i] = new Hand();
-            playerCards[i].addDeck(deck.subdeck(0, 7));
-            deck.remove(0, 7);
-            Server.players.get(i).giveHand(playerCards[i]);
-        }
-        activeCard = deck.get(0);
-        discard.add(activeCard);
-        deck.remove(activeCard);
-        updateActiveCard();
+        current_player = ThreadLocalRandom.current().nextInt(0, clients.size());
+        notifyCurPlayer();
 
-        for (int i = 0; i < Server.players.size(); i ++) {
-            updatePlayerNumCard(Server.players.get(i), playerCards[i].size());
-        }
-
-        currentPlayer = ThreadLocalRandom.current().nextInt(0, Server.players.size());
-        updateCurrentPlayer(currentPlayer);
     }
 
-    public void updateActiveCard () {
-        for (int i = 0; i < Server.players.size(); i ++) {
-            Server.players.get(i).updateActiveCard();
+    public void massBroadcast (String message) {
+        for (int i = 0; i < clients.size(); i ++) {
+            clients.get(i).broadcast(message);
         }
     }
 
-    public void updatePlayerList (Client client, boolean connected) {
-        for (int i = 0; i < Server.players.size(); i ++) {
-            Server.players.get(i).updatePlayerList(client, connected);
+    public void notifyActiveCard () {
+        massBroadcast("ACTIVE_CARD" + active_card.getSuit() + active_card.getRank());
+    }
+
+    public void notifyList (Client client, boolean connected) {
+        for (int i = 0; i < clients.size(); i ++) {
+            clients.get(i).updatePlayerList(client, connected);
         }
     }
 
-    public void updateCurrentPlayer (int num) {
-        for (int i = 0; i < Server.players.size(); i ++) {
-            Server.players.get(i).updateCurrentPlayer(num);
+    public void notifyCurPlayer () {
+        massBroadcast("CURR_PLAYER" + current_player);
+    }
+
+    public void notifyReadiness (Client client, boolean ready) {
+        for (int i = 0; i < clients.size(); i ++) {
+            clients.get(i).updateReadiness(client, ready);
         }
     }
 
-    public void updateReadiness (Client client, boolean ready) {
-        for (int i = 0; i < Server.players.size(); i ++) {
-            Server.players.get(i).updateReadiness(client, ready);
-        }
-    }
-
-    public void updatePlayerNumCard (Client player, int numCard) {
-        for (int i = 0; i < Server.players.size(); i ++) {
-            Server.players.get(i).updatePlayerNumCard(player, numCard);
-        }
+    public void notifyNumCard (Client player) {
+        massBroadcast("NUM_CARD" + player.getNum() + player.hand.size());
     }
 
     public boolean hasWinner () {
-        for (int i = 0; i < playerCards.length; i++) {
-            if (playerCards[i].size() == 0) {
+        for (int i = 0; i < clients.size(); i++) {
+            if (clients.get(i).hand.size() == 0) {
                 return true;
             }
         }
@@ -104,24 +105,41 @@ public class Crazy8s {
     public boolean isLegalMove (Card card) {
         if (card.getRank() == 8) {
             return true;
-        } else if (card.getSuit() == activeCard.getSuit()) {
+        } else if (card.getSuit() == active_card.getSuit()) {
             return true;
-        } else if (card.getRank() == activeCard.getRank()) {
+        } else if (card.getRank() == active_card.getRank()) {
             return true;
         }
 
         return false;
     }
 
+    public boolean isAllReady () {
+        for (int i = 0; i < clients.size(); i ++) {
+            if (!clients.get(i).ready) return false;
+        }
+        return true;
+    }
+
+    public void nextPlayer () {
+        current_player += 1;
+
+        if (current_player == clients.size()) {
+            current_player = 0;
+        }
+
+        notifyCurPlayer();
+    }
+
     public class Client extends Thread {
 
-        String playerName;
+        private Hand hand;
+        private Socket socket;
+        private BufferedReader input;
+        private PrintWriter output;
+        private String name;
 
-        Socket socket;
-        BufferedReader input;
-        PrintWriter output;
-
-        boolean ready;
+        private boolean ready;
 
         public Client (Socket socket) {
 
@@ -133,7 +151,7 @@ public class Crazy8s {
                 output = new PrintWriter(socket.getOutputStream(), true);
 
             } catch (IOException e) {
-                Console.print("Player died");
+                Console.printErrorMessage("Player died", this.getClass().getName());
             }
 
             ready = false;
@@ -141,68 +159,53 @@ public class Crazy8s {
 
         public void run () {
 
-            Console.print("Player " + getNum() + " connected.");
+            Console.printGeneralMessage("Player " + getNum() + " connected.",
+                    this.getClass().getName());
 
             try {
-
-                if (getNum() == currentPlayer) {
-                    output.println("YOUR_MOVE");
-                }
 
                 output.println("WELCOME" + getNum());
 
                 while (true) {
+
                     String command = input.readLine();
-                    Console.print("CLIENT " + getNum() + " RESPONSE: " + command);
+                    Console.printGeneralMessage("CLIENT " + getNum() + " RESPONSE: " + command,
+                            this.getClass().getName());
+
                     if (command == null) {
-                        try {output.print("ALIVE?"); return;}
-                        catch (Exception e) {
-                            command = "QUIT";
-                            e.printStackTrace();
-                        }
+                        command = "QUIT";
                     }
 
                     if (command.startsWith("REQ_LIST")) {
                         giveList();
+                    } else if (command.startsWith("NAME")) {
+                        name = command.substring(4);
+                        notifyList(this, true);
                     }
 
                     if (command.startsWith("READY")) {
-                        Server.game.updateReadiness(this, true);
-                        numReady ++;
+                        notifyReadiness(this, true);
+
                         ready = true;
-                        if (numReady == Server.players.size() && Server.players.size() > 1) {
-                            //Server.listener.close();
+                        if (isAllReady() && clients.size() > 1) {
+                            Server.stopListening();
                             startGame();
                         }
                     } else if (command.startsWith("UNREADY")) {
-                        Server.game.updateReadiness(this, false);
-                        numReady --;
+                        notifyReadiness(this, false);
                         ready = false;
                     }
 
-
-                    if (command.startsWith("NAME")) {
-                        playerName = command.substring(4);
-                        Server.game.updatePlayerList(this, true);
-                    }
                     if (command.startsWith("MOVE")) {
                         byte suit = (byte)Character.getNumericValue(command.charAt(4));
                         byte rank = Byte.parseByte(command.substring(5));
                         Card played = new Card(suit, rank);
 
-                        if (isLegalMove(played)) {
-                            discard.add(activeCard);
-                            activeCard = played;
-                            currentPlayer += 1;
-                            output.println("GOOD_MOVE");
-                        } else {
-                            output.println("BAD_MOVE");
-                        }
+                        playCard(played);
 
                     } else if (command.startsWith("QUIT")) {
-                        Server.players.remove(this);
-                        Server.game.updatePlayerList(this, false);
-                        return;
+                        clients.remove(this);
+                        notifyList(this, false);
                     }
                 }
             } catch (IOException e) {
@@ -212,21 +215,16 @@ public class Crazy8s {
             }
         }
 
-        public void updateCurrentPlayer (int currentPlayer) {
-            output.println("CURR_PLAYER" + currentPlayer);
+        public void broadcast (String message) {
+            output.println(message);
         }
 
         public void updatePlayerList (Client player, boolean connected) {
-            if (connected) output.println("CONNECT" + player.getNum() + player.playerName);
+            if (connected) output.println("CONNECT" + player.getNum() + player.name);
             else {
                 output.println("DISCONNECT");
                 output.println("NUM_UPDATE" + getNum());
             }
-        }
-
-        public void updatePlayerNumCard (Client player, int numCard) {
-            output.println("NUM_CARD" + player.getNum() + numCard);
-            Console.print(getNum() + "NUM_CARD" + player.getNum() + numCard);
         }
 
         public void updateReadiness (Client player, boolean ready) {
@@ -234,13 +232,10 @@ public class Crazy8s {
             else output.println("UNREADY" + player.getNum());
         }
 
-        public void notifyStartGame () {
-            output.println("START_GAME");
-        }
-
         public void giveHand (Hand hand) {
+            this.hand = hand;
             for (int i = 0; i < hand.size(); i ++) {
-                output.println("CARD" + hand.get(i).getSuit() + hand.get(i).getRank());
+                giveCard(hand.get(i));
             }
         }
 
@@ -248,21 +243,39 @@ public class Crazy8s {
             output.println("CARD" + card.getSuit() + card.getRank());
         }
 
-        public int getNum () {
-            return Server.players.indexOf(this);
-        }
+        public void playCard (Card card) {
+            if (isLegalMove(card)) {
+                discard.add(active_card);
+                active_card = card;
 
-        public void giveList () {
-            for (int i = 0; i < Server.players.size(); i ++) {
-                updatePlayerList(Server.players.get(i), true);
-                if (Server.players.get(i).ready) {
-                    output.println("READY" + Server.players.get(i).getNum());
+                notifyActiveCard();
+
+                output.println("GOOD_MOVE");
+
+                for (int i = 0; i < hand.size(); i ++) {
+                    if (hand.get(i).equals(card)) {
+                        hand.remove(i);
+                    }
                 }
+
+                notifyNumCard(this);
+                nextPlayer();
+            } else {
+                output.println("BAD_MOVE");
             }
         }
 
-        public void updateActiveCard () {
-            output.println("ACTIVE_CARD" + activeCard.getSuit() + activeCard.getRank());
+        public int getNum () {
+            return clients.indexOf(this);
+        }
+
+        public void giveList () {
+            for (int i = 0; i < clients.size(); i ++) {
+                updatePlayerList(clients.get(i), true);
+                if (clients.get(i).ready) {
+                    output.println("READY" + clients.get(i).getNum());
+                }
+            }
         }
 
     }

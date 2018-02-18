@@ -1,6 +1,7 @@
 package logic;
 
 import common.Console;
+import common.Misc;
 import ui.GameWindow;
 
 import javax.swing.*;
@@ -59,6 +60,10 @@ public class Player {
         out.println("UNREADY");
     }
 
+    public void playCard (Card card) {
+        out.println("MOVE" + card.getSuit() + card.getRank());
+    }
+
     public void play() {
 
         String response = "";
@@ -70,7 +75,7 @@ public class Player {
                     response = in.readLine();
                 } catch (IOException e) {e.printStackTrace();};
 
-                Console.print(response);
+                Console.printGeneralMessage(response, this.getClass().getName());
 
                 if (response.startsWith("WELCOME")) {
                     playerNum = Character.getNumericValue(response.charAt(7));
@@ -127,13 +132,11 @@ public class Player {
                     else SwingUtilities.invokeLater(() -> GameWindow.requestRef().allowToPlay());
                 }
 
-                else if (response.startsWith("VALID_MOVE")) {
-                } else if (response.startsWith("OPPONENT_MOVED")) {
-                } else if (response.startsWith("VICTORY")) {
+                if (response.startsWith("GOOD_MOVE")) {
+                    Misc.deepRemove(hand, activeCard);
+                    GameWindow.requestRef().goodMove();
+                } else if (response.startsWith("PLACEHOLDER")) {
                     break;
-                } else if (response.startsWith("DEFEAT")) {
-                    break;
-                } else if (response.startsWith("MESSAGE")) {
                 }
             }
             out.println("QUIT");

@@ -1,12 +1,20 @@
 package ui;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
+import java.io.IOException;
 import java.util.HashMap;
 
+import common.Console;
 import common.Constants;
 
-class Resources {
+public class Resources {
+
+    private static final String class_name = "ui.Resources";
 
     static BufferedImage logo;
     static BufferedImage background;
@@ -27,41 +35,44 @@ class Resources {
 
     static BufferedImage cpu_secondary;
 
+    static BufferedImage play_card_button_active;
+    static BufferedImage play_card_button_inactive;
+    static BufferedImage pickup_button;
+
     static BufferedImage[][] cards;
 
     static HashMap<String, BufferedImage> dimmable_Assets;
 
-    static void loadImageAssets () {
-        logo = loadImage("core/logo.png");
-        background = loadImage("core/background.png");
-        table = loadImage("core/table.png");
+    public static void loadMiscAssets () {
 
-        highlight = loadImage("cards/highlight.png");
-        playable = loadImage("cards/playable.png");
+        profile = loadImage("profile.jpg", true);
+        card_stack = loadImage("cards/stack.png", true);
+    }
 
-        profile = loadImage("profile.jpg");
+    public static void loadButtons () {
+        connect_button = loadImage("buttons/connect.png", true);
+        host_button = loadImage("buttons/host.png", true);
+        cpu_button = loadImage("buttons/cpu.png", true);
 
-        connect_button = loadImage("buttons/connect.png");
-        host_button = loadImage("buttons/host.png");
-        cpu_button = loadImage("buttons/cpu.png");
+        cpu_secondary = loadImage("buttons/cpu_secondary.png", true);
 
-        cpu_secondary = loadImage("buttons/cpu_secondary.png");
+        vote_start_button = loadImage("buttons/vote_start.png", true);
+        cancel_vote_button = loadImage("buttons/cancel_vote.png", true);
 
-        vote_start_button = loadImage("buttons/vote_start.png");
-        cancel_vote_button = loadImage("buttons/cancel_vote.png");
+        play_card_button_active = loadImage("buttons/play_card.png", true);
+        play_card_button_inactive = convertToGrayScale(play_card_button_active);
+        pickup_button = loadImage("buttons/pickup.png", true);
 
-        card_stack = loadImage("cards/stack.png");
 
-        cards = new BufferedImage[4][13 + 1];
-        for (int i = 0; i < cards.length; i ++) {
-            cards[i][0] = null;
-            for (int j = 1; j < cards[i].length; j ++) {
-                cards[i][j] = loadImage("cards/" + i + "/" + j + ".png");
-            }
-        }
+    }
 
-        BufferedImage quit = loadImage("core/quit.png");
-        BufferedImage mini = loadImage("core/mini.png");
+    public static void loadCoreAssets () {
+        logo = loadImage("core/logo.png", true);
+        background = loadImage("core/background.png", true);
+        table = loadImage("core/table.png", true);
+
+        BufferedImage quit = loadImage("core/quit.png", true);
+        BufferedImage mini = loadImage("core/mini.png", true);
 
         dimmable_Assets = new HashMap<String, BufferedImage>() {
             {
@@ -71,7 +82,20 @@ class Resources {
         };
     }
 
-    static void dimImage (String assetName, boolean doDim) {
+    public static void loadCards () {
+        cards = new BufferedImage[4][13 + 1];
+        for (int i = 0; i < cards.length; i ++) {
+            cards[i][0] = null;
+            for (int j = 1; j < cards[i].length; j ++) {
+                cards[i][j] = loadImage("cards/" + i + "/" + j + ".png", true);
+            }
+        }
+
+        highlight = loadImage("cards/highlight.png", true);
+        playable = loadImage("cards/playable.png", true);
+    }
+
+    public static void dimImage (String assetName, boolean doDim) {
 
         BufferedImage tempRef = dimmable_Assets.get(assetName);
 
@@ -79,16 +103,32 @@ class Resources {
         else dimmable_Assets.put(assetName, loadImage("core/" + assetName + ".png"));
     }
 
-    static BufferedImage loadImage (String res_path) {
+    private static BufferedImage loadImage (String res_path, boolean doBroadcast) {
+        if (doBroadcast) SwingUtilities.invokeLater(() -> LoadFrame.requestLoadPanelReference().updateLoadedAsset(res_path));
+        return loadImage(res_path);
+    }
+
+    private static BufferedImage loadImage (String res_path) {
 
         try {
+            Console.printGeneralMessage("Found resource [" + res_path + "]", class_name);
             return ImageIO.read(Resources.class.getResource(Constants.UIRes_path + res_path));
-        } catch (java.io.IOException e) {
-            e.printStackTrace();
+        } catch (IOException error) {
+            Console.printErrorMessage("[IOException]" + error.getMessage(), class_name);
         }
 
         return null;
 
+    }
+
+    private static BufferedImage convertToGrayScale(BufferedImage image) {
+        BufferedImage result = new BufferedImage(
+                image.getWidth(),
+                image.getHeight(),
+                BufferedImage.TYPE_INT_ARGB);
+        ColorConvertOp op = new ColorConvertOp(ColorSpace.getInstance(ColorSpace.CS_GRAY), null);
+        op.filter(image, result);
+        return result;
     }
 
 }

@@ -88,6 +88,7 @@ class PlayerPanel extends JPanel {
 
     public void reset () {
         voteReady(false);
+        setVisible(false);
     }
 
     public void voteReady (boolean ready) {

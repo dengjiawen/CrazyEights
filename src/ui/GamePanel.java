@@ -3,15 +3,10 @@ package ui;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import common.Console;
 import common.Constants;
 import logic.Card;
-import logic.Hand;
-import logic.Player;
-import logic.Server;
 
 /**
  * Created by freddeng on 2018-01-26.
@@ -106,10 +101,20 @@ class GamePanel extends JPanel {
     public void removePlayer () {
         for (int i = 0; i < player.size(); i ++) {
             if (player.get(i) != null) {
-                player.get(i).setVisible(false);
-                player.get(i).reset();
+                this.remove(player.get(i));
             }
         }
+
+        player = new ArrayList<>();
+        player.add(null);
+        player.add(null);
+        for (int i = 2; i <= Constants.element("MaxPlayer"); i ++) {
+            player.add(new PlayerPanel("PLACEHOLDER", 0, i));
+            player.get(i).setVisible(false);
+            add(player.get(i));
+        }
+
+        System.gc();
 
         curPlayerCount = 1;
 
@@ -120,6 +125,7 @@ class GamePanel extends JPanel {
 
     public void updateReadyStatus (int playerNum, boolean ready) {
         player.get(getAssignedNum(playerNum)).voteReady(ready);
+        GameWindow.requestRef().repaint();
     }
 
     protected void paintComponent (Graphics g) {
@@ -145,19 +151,37 @@ class GamePanel extends JPanel {
         player.get(getAssignedNum(num)).setCurrentPlayer(true);
         if (curPlayerNum != Constants.ERROR) player.get(getAssignedNum(curPlayerNum)).setCurrentPlayer(false);
         curPlayerNum = num;
+
+        GameWindow.requestRef().revalidate();
+        GameWindow.requestRef().repaint();
     }
 
     public void updateActiveCard (Card card) {
         stack.lastActiveCardRef = stack.activeCardRef;
         stack.activeCardRef = Resources.cards[card.getSuit()][card.getRank()];
-        revalidate();
-        repaint();
+
+        GameWindow.requestRef().repaint();
     }
 
     public void allowToPlay () {
         GameWindow.requestRef().player.hand.findPlayable();
         hand.allowToPlay(true);
+        buttons.startPlayingSession();
+    }
 
+    public void stopPlay () {
+        hand.allowToPlay(false);
+    }
+
+    public void activatePlayButton (boolean doActivate) {
+        buttons.activatePlayButton(doActivate);
+    }
+
+    public void goodMove () {
+        GameWindow.player.hand.remove(hand.selected);
+        buttons.stopPlayingSession();
+        hand.allowToPlay(false);
+        repaint();
     }
 
 }

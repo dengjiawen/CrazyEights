@@ -40,6 +40,8 @@ class HandPanel extends JPanel {
 
     Timer glowTimer;
 
+    int selected = -1;
+
     protected HandPanel (Hand currentHand) {
 
         super();
@@ -52,8 +54,8 @@ class HandPanel extends JPanel {
 
         clickHandler = Executors.newSingleThreadExecutor();
 
-        glowTimer = new Timer(1000/60, e -> {
-            if (glowIsIncreasing) glowValue += 0.1;
+        glowTimer = new Timer(1000/15, e -> {
+            if (glowIsIncreasing) glowValue += 0.05;
             else glowValue -= 0.1;
 
             if (glowValue > 1) {
@@ -64,17 +66,12 @@ class HandPanel extends JPanel {
                 glowIsIncreasing = true;
             }
 
-            repaint();
+            GameWindow.requestRef().repaint();
         });
 
         selectionAgent = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-
-                if (!hasFocus()) {
-                    return;
-                }
 
                 int x = e.getX();
                 int selectedIndex = 0;
@@ -88,9 +85,17 @@ class HandPanel extends JPanel {
                     }
                 }
 
-                Console.print("" + selectedIndex);
+                Console.printErrorMessage("" + selectedIndex, this.getClass().getName());
 
                 hand.select(selectedIndex);
+                if (hand.selectedIndex == -1) {
+                    GameWindow.requestRef().activatePlayButton(false);
+                } else {
+                    GameWindow.requestRef().activatePlayButton(true);
+                }
+
+                selected = selectedIndex;
+
                 repaint();
 
             }
@@ -98,13 +103,13 @@ class HandPanel extends JPanel {
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
-                setCursor(new Cursor(Cursor.HAND_CURSOR));
+                getRootPane().setCursor(new Cursor(Cursor.HAND_CURSOR));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
-                setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                getRootPane().setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
             }
         };
 
@@ -125,18 +130,20 @@ class HandPanel extends JPanel {
         for (int i = 0; i < hand.size(); i ++) {
             int suit = hand.get(i).getSuit();
             int rank = hand.get(i).getRank();
-            g2d.drawImage(Resources.cards[suit][rank - 1], i * individualUsableSpace, 0,
+            g2d.drawImage(Resources.cards[suit][rank], i * individualUsableSpace, 0,
                     cardWidth, cardHeight, null);
 
-            if (hand.isSelected(i)) {
+            if (i == hand.selectedIndex) {
                 g2d.drawImage(Resources.highlight, i * individualUsableSpace, 0,
                         cardWidth, cardHeight, null);
             }
-            if (hand.isPlayable(i) && !hand.isSelected(i)) {
+            if (hand.isPlayable(i) && i != hand.selectedIndex) {
                 g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, glowValue));
                 g2d.drawImage(Resources.playable, i * individualUsableSpace, 0, cardWidth, cardHeight, null);
+                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1));
             }
         }
+
     }
 
     void update () {
@@ -156,9 +163,16 @@ class HandPanel extends JPanel {
     }
 
     public void allowToPlay (boolean isAllowed) {
-        if (!isAllowed) removeMouseListener(selectionAgent);
+        if (!isAllowed) {
+            removeMouseListener(selectionAgent);
+            glowTimer.stop();
+            glowValue = 0f;
+            hand.selectedIndex = -1;
+            repaint();
+        }
         else {
             addMouseListener(selectionAgent);
+            grabFocus();
             glowTimer.start();
         }
     }

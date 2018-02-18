@@ -21,7 +21,7 @@ public class GameWindow extends JFrame {
 
     private static GameWindow frameRef;
     private static ShadePanel shade;
-    private static GamePanel panel;
+    public static GamePanel panel;
     private static TitlePanel title;
     private static MainMenuPanel main_menu;
     private static HostPanel host;
@@ -37,8 +37,6 @@ public class GameWindow extends JFrame {
         setUndecorated(true);
         setResizable(false);
         setLocationRelativeTo(null);
-
-        Resources.loadImageAssets();
 
         panel = new GamePanel();
         title = new TitlePanel();
@@ -78,7 +76,7 @@ public class GameWindow extends JFrame {
         int portNumber = 0;
 
         while (true) {
-            String input = JOptionPane.showInputDialog(Constants.titleFont + "Enter a Port Number\n" +
+            String input = JOptionPane.showInputDialog(shade,Constants.titleFont + "Enter a Port Number\n" +
                     Constants.bodyFont + "In the text field above, enter the port number that will be used.\n" +
                     Constants.bodyFont + "Other players will need this number to join your game.", "Enter Port Number");
             try {
@@ -110,9 +108,9 @@ public class GameWindow extends JFrame {
             JOptionPane.showMessageDialog(shade, "A catastrophic network error had occured.\n" +
                     "Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
-            try {
-                Server.listener.close();
-            } catch (IOException f) {}
+
+            Server.stopListening();
+
             return Constants.ERROR;
         }
 
@@ -188,12 +186,15 @@ public class GameWindow extends JFrame {
 
     public void startGame () {
         panel.showHand();
-        panel.buttons.setVisible(false);
+        panel.buttons.exitVotingSession();
         panel.exitVoteStatus();
 
         revalidate();
         repaint();
+    }
 
+    public void activatePlayButton (boolean doActivate) {
+        panel.activatePlayButton(doActivate);
     }
 
     public void updateNumCards (int playerNum, int numCards) {
@@ -228,6 +229,10 @@ public class GameWindow extends JFrame {
 
     public void allowToPlay () {
         panel.allowToPlay();
+    }
+
+    public void goodMove () {
+        panel.goodMove ();
     }
 
     public static void setRef (GameWindow ref) {

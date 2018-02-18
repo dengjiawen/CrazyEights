@@ -1,8 +1,6 @@
 package ui;
 
 import common.Constants;
-import logic.GameDirector;
-import logic.Server;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,7 +56,6 @@ class MainMenuPanel extends JPanel {
 
         cpu.addActionListener(e -> {
             setVisible(false);
-            GameDirector.cpu();
         });
 
         add (host);
