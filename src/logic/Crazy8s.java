@@ -25,6 +25,8 @@ public class Crazy8s {
     private Deck deck;
     private Deck discard;
 
+    private boolean active_skipped;
+
     public ArrayList<Client> clients;
 
     public Crazy8s () {
@@ -36,6 +38,7 @@ public class Crazy8s {
         clients = new ArrayList<Client>();
 
         pickup_num = 1;
+        active_skipped = false;
 
     }
 
@@ -80,7 +83,7 @@ public class Crazy8s {
     }
 
     public void notifyCurPlayer () {
-        massBroadcast("CURR_PLAYER" + current_player);
+        massBroadcast("CURR_PLAYER" + current_player + (active_skipped ? 1 : 0));
     }
 
     public void notifyReadiness (Client client, boolean ready) {
@@ -103,11 +106,20 @@ public class Crazy8s {
     }
 
     public boolean isLegalMove (Card card) {
+
         if (card.getRank() == 8) {
+            active_skipped = false;
             return true;
         } else if (card.getSuit() == active_card.getSuit()) {
+            active_skipped = false;
             return true;
         } else if (card.getRank() == active_card.getRank()) {
+            active_skipped = false;
+            return true;
+        }
+
+        if (active_skipped) {
+            active_skipped = false;
             return true;
         }
 
@@ -206,7 +218,9 @@ public class Crazy8s {
                     } else if (command.startsWith("PICKUP")) {
                         pickUpCard();
                     } else if (command.startsWith("SKIP")) {
+                        active_skipped = true;
                         nextPlayer();
+
                     } else if (command.startsWith("QUIT")) {
                         clients.remove(this);
                         notifyList(this, false);

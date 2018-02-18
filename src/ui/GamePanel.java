@@ -171,8 +171,8 @@ class GamePanel extends JPanel {
         GameWindow.requestRef().repaint();
     }
 
-    public void allowToPlay () {
-        GameWindow.requestRef().player.hand.findPlayable();
+    public void allowToPlay (boolean active_skipped) {
+        GameWindow.requestRef().player.hand.findPlayable(active_skipped);
         hand.allowToPlay(true);
         buttons.startPlayingSession();
         player.get(getAssignedNum(curPlayerNum)).setCurrentPlayer(false);
@@ -189,6 +189,7 @@ class GamePanel extends JPanel {
 
     public void goodMove () {
         GameWindow.player.hand.remove(hand.selected);
+        GameWindow.player.hand.resetPlayability();
         nextPlayer();
     }
 

@@ -228,8 +228,8 @@ public class GameWindow extends JFrame {
         panel.updateReadyStatus (playerNum, ready);
     }
 
-    public void allowToPlay () {
-        panel.allowToPlay();
+    public void allowToPlay (boolean active_skipped) {
+        panel.allowToPlay(active_skipped);
     }
 
     public void goodMove () {

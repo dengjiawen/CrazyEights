@@ -138,7 +138,11 @@ public class Player {
                 if (response.startsWith("CURR_PLAYER")) {
                     int num = Character.getNumericValue(response.charAt(11));
                     if (num != playerNum) SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateCurrentPlayer(num));
-                    else SwingUtilities.invokeLater(() -> GameWindow.requestRef().allowToPlay());
+                    else {
+                        boolean active_skipped = (Character.getNumericValue(
+                                response.charAt(12)) == 1) ? true : false;
+                        SwingUtilities.invokeLater(() -> GameWindow.requestRef().allowToPlay(active_skipped));
+                    }
                 }
 
                 if (response.startsWith("GOOD_MOVE")) {

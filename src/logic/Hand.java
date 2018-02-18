@@ -12,6 +12,8 @@ import java.util.ArrayList;
 public class Hand extends Deck {
 
     public int selectedIndex;
+    boolean active_skipped = false;
+
     ArrayList<Boolean> isPlayable;
 
     public Hand () {
@@ -48,18 +50,30 @@ public class Hand extends Deck {
         }
     }
 
-    public void findPlayable () {
-        for (int i = 0; i < size(); i ++) {
-            Card eval_card = get(i);
-            if (isPlayable(eval_card)) isPlayable.set(i, true);
-            System.out.println(eval_card + " " + isPlayable.get(i));
+    public void findPlayable (boolean active_skipped) {
+
+        if (active_skipped) {
+            for (int i = 0; i < size(); i ++) {
+                isPlayable.set(i, true);
+            }
+        } else {
+            for (int i = 0; i < size(); i++) {
+                Card eval_card = get(i);
+                if (isPlayable(eval_card)) isPlayable.set(i, true);
+                System.out.println(eval_card + " " + isPlayable.get(i));
+            }
         }
+    }
+
+    public void findPlayable () {
+        findPlayable(active_skipped);
     }
 
     public void resetPlayability () {
         for (int i = 0; i < isPlayable.size(); i ++) {
             isPlayable.set(i, false);
         }
+        active_skipped = false;
     }
 
     public void select (int index) {
