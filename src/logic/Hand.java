@@ -52,6 +52,13 @@ public class Hand extends Deck {
         for (int i = 0; i < size(); i ++) {
             Card eval_card = get(i);
             if (isPlayable(eval_card)) isPlayable.set(i, true);
+            System.out.println(eval_card + " " + isPlayable.get(i));
+        }
+    }
+
+    public void resetPlayability () {
+        for (int i = 0; i < isPlayable.size(); i ++) {
+            isPlayable.set(i, false);
         }
     }
 

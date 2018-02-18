@@ -168,6 +168,7 @@ class HandPanel extends JPanel {
             glowTimer.stop();
             glowValue = 0f;
             hand.selectedIndex = -1;
+            hand.resetPlayability();
             repaint();
         }
         else {
