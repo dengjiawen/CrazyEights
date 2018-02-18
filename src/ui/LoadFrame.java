@@ -12,9 +12,6 @@ import ui.Resources;
  */
 public class LoadFrame extends JFrame {
 
-    //Constant String used for console output.
-    private static final String class_name = "load.LoadFrame";
-
     private static final int width = 400;
     private static final int height = 110;
 

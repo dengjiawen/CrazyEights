@@ -23,9 +23,9 @@ public class LoadPanel extends JPanel {
     private static final int HEIGHT = 110;
 
     private static final Image load_animation = new ImageIcon(
-            Resources.class.getResource(Constants.UIRes_path + "animation/load.gif")).getImage();
+            LoadPanel.class.getResource(Constants.UIRes_path + "animation/load.gif")).getImage();
     private static final Image logo = new ImageIcon(
-            Resources.class.getResource(Constants.UIRes_path + "/core/logo.png")).getImage();
+            LoadPanel.class.getResource(Constants.UIRes_path + "core/logo.png")).getImage();
 
     private static final int LOGO_WIDTH = 200;
     private static final int LOGO_HEIGHT = (int)(logo.getHeight(null) * LOGO_WIDTH / logo.getWidth(null));
