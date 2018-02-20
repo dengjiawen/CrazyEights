@@ -148,6 +148,10 @@ public class Player {
                         SwingUtilities.invokeLater(() -> GameWindow.requestRef().goodMove());
                         SwingUtilities.invokeLater(() -> GameWindow.requestRef().forceSkipped());
                     }
+                } else if (response.startsWith("WINNER")) {
+                    int num = Character.getNumericValue(response.charAt(6));
+                    if (num == playerNum) SwingUtilities.invokeLater(() -> GameWindow.requestRef().youWon());
+                    else SwingUtilities.invokeLater(() -> GameWindow.requestRef().otherWon(GameWindow.requestRef().getName(num)));
                 }
 
                 if (response.startsWith("CURR_PLAYER")) {

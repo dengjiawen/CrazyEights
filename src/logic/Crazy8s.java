@@ -100,6 +100,7 @@ public class Crazy8s {
     public boolean hasWinner () {
         for (int i = 0; i < clients.size(); i++) {
             if (clients.get(i).hand.size() == 0) {
+                massBroadcast("WINNER" + clients.get(i).getNum());
                 return true;
             }
         }
@@ -220,12 +221,14 @@ public class Crazy8s {
                         byte selected_suit = (byte)Character.getNumericValue(command.charAt(7));
                         byte rank = (byte)Character.getNumericValue(command.charAt(6));
                         playEight(new Card(original_suit, rank), selected_suit);
+
                     } else if (command.startsWith("MOVE")) {
                         byte suit = (byte)Character.getNumericValue(command.charAt(4));
                         byte rank = Byte.parseByte(command.substring(5));
                         Card played = new Card(suit, rank);
 
                         playCard(played);
+
 
                     } else if (command.startsWith("PICKUP")) {
                         pickUpCard();
@@ -336,6 +339,8 @@ public class Crazy8s {
                     nextPlayer(true);
                 }
 
+                hasWinner();
+
             } else {
                 output.println("BAD_MOVE");
             }
@@ -357,6 +362,8 @@ public class Crazy8s {
 
             notifyNumCard(this);
             nextPlayer(false);
+
+            hasWinner();
         }
 
         public int getNum () {

@@ -26,6 +26,7 @@ public class GameWindow extends JFrame {
     private static MainMenuPanel main_menu;
     private static HostPanel host;
     public static EightPanel eight;
+    private static WinnerPanel winner;
 
     public static Player player;
 
@@ -45,9 +46,11 @@ public class GameWindow extends JFrame {
         main_menu = new MainMenuPanel();
         host = new HostPanel();
         eight = new EightPanel();
+        winner = new WinnerPanel();
 
         add(title);
         add(host);
+        add(winner);
         add(main_menu);
         add(eight);
         add(shade);
@@ -196,6 +199,20 @@ public class GameWindow extends JFrame {
         repaint();
     }
 
+    public void youWon () {
+        winner.youWon();
+        setShade(true);
+        revalidate();
+        repaint();
+    }
+
+    public void otherWon (String name) {
+        winner.otherWon(name);
+        setShade(true);
+        revalidate();
+        repaint();
+    }
+
     public void activatePlayButton (boolean doActivate) {
         panel.activatePlayButton(doActivate);
     }
@@ -241,6 +258,10 @@ public class GameWindow extends JFrame {
 
     public void nextPlayer () {
         panel.nextPlayer();
+    }
+
+    public String getName (int num) {
+        return panel.player.get(panel.getAssignedNum(num)).playerName;
     }
 
     public void setEightPanel (boolean isVisible) {
