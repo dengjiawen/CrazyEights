@@ -93,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-757">
-              <caret line="68" column="35" lean-forward="false" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+            <state relative-caret-position="153">
+              <caret line="258" column="57" lean-forward="false" selection-start-line="258" selection-start-column="57" selection-end-line="258" selection-end-column="57" />
               <folding>
                 <element signature="method#host#0;class#GameWindow#0" expanded="false" />
                 <element signature="method#connect#0;class#GameWindow#0" expanded="false" />
@@ -105,12 +105,10 @@
                 <element signature="method#updateActiveCard#0;class#GameWindow#0" expanded="false" />
                 <element signature="e#6982#6983#0" expanded="true" />
                 <element signature="e#7015#7016#0" expanded="true" />
-                <element signature="e#7048#7049#0" expanded="true" />
-                <element signature="e#7082#7083#0" expanded="true" />
-                <element signature="e#7121#7122#0" expanded="true" />
-                <element signature="e#7198#7199#0" expanded="true" />
-                <element signature="e#7358#7359#0" expanded="true" />
-                <element signature="e#7392#7393#0" expanded="true" />
+                <element signature="e#7149#7150#0" expanded="true" />
+                <element signature="e#7226#7227#0" expanded="true" />
+                <element signature="e#7386#7387#0" expanded="true" />
+                <element signature="e#7420#7421#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,7 +117,7 @@
       <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="1337">
               <caret line="199" column="29" lean-forward="false" selection-start-line="199" selection-start-column="29" selection-end-line="199" selection-end-column="29" />
               <folding>
                 <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
@@ -128,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EightPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EightPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+            <state relative-caret-position="291">
+              <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -292,8 +290,8 @@
         <option value="$PROJECT_DIR$/src/logic/Crazy8s.java" />
         <option value="$PROJECT_DIR$/src/logic/Player.java" />
         <option value="$PROJECT_DIR$/src/ui/WinnerPanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/ui/EightPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/GameWindow.java" />
       </list>
     </option>
   </component>
@@ -962,30 +960,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/GameWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-757">
-          <caret line="68" column="35" lean-forward="false" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+        <state relative-caret-position="291">
+          <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="41" />
           <folding>
-            <element signature="method#host#0;class#GameWindow#0" expanded="false" />
-            <element signature="method#connect#0;class#GameWindow#0" expanded="false" />
-            <element signature="method#updateNumCards#0;class#GameWindow#0" expanded="false" />
-            <element signature="method#updateActiveCard#0;class#GameWindow#0" expanded="false" />
-            <element signature="e#6982#6983#0" expanded="true" />
-            <element signature="e#7015#7016#0" expanded="true" />
-            <element signature="e#7048#7049#0" expanded="true" />
-            <element signature="e#7082#7083#0" expanded="true" />
-            <element signature="e#7121#7122#0" expanded="true" />
-            <element signature="e#7198#7199#0" expanded="true" />
-            <element signature="e#7358#7359#0" expanded="true" />
-            <element signature="e#7392#7393#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="1337">
           <caret line="199" column="29" lean-forward="false" selection-start-line="199" selection-start-column="29" selection-end-line="199" selection-end-column="29" />
           <folding>
             <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
@@ -993,12 +980,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+        <state relative-caret-position="153">
+          <caret line="258" column="57" lean-forward="false" selection-start-line="258" selection-start-column="57" selection-end-line="258" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#host#0;class#GameWindow#0" expanded="false" />
+            <element signature="method#connect#0;class#GameWindow#0" expanded="false" />
+            <element signature="method#updateNumCards#0;class#GameWindow#0" expanded="false" />
+            <element signature="method#updateActiveCard#0;class#GameWindow#0" expanded="false" />
+            <element signature="e#6982#6983#0" expanded="true" />
+            <element signature="e#7015#7016#0" expanded="true" />
+            <element signature="e#7149#7150#0" expanded="true" />
+            <element signature="e#7226#7227#0" expanded="true" />
+            <element signature="e#7386#7387#0" expanded="true" />
+            <element signature="e#7420#7421#0" expanded="true" />
           </folding>
         </state>
       </provider>

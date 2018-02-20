@@ -256,7 +256,7 @@ public class GameWindow extends JFrame {
         panel.goodMove ();
     }
 
-    public void nextPlayer () {
+    public void nextPlayer () throws NullPointerException {
         panel.nextPlayer();
     }
 
