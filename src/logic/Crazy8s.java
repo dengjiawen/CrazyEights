@@ -1,6 +1,7 @@
 package logic;
 
 import common.Console;
+import common.Constants;
 import common.Misc;
 
 import java.io.BufferedReader;
@@ -133,7 +134,13 @@ public class Crazy8s {
         return true;
     }
 
-    public void nextPlayer () {
+    public void nextPlayer (boolean forceSkipped) {
+
+        if (forceSkipped) {
+            massBroadcast("FORCE_SKIP" + current_player);
+            return;
+        }
+
         current_player += 1;
 
         if (current_player == clients.size()) {
@@ -223,8 +230,8 @@ public class Crazy8s {
                     } else if (command.startsWith("PICKUP")) {
                         pickUpCard();
                     } else if (command.startsWith("SKIP")) {
-                        active_skipped = true;
-                        nextPlayer();
+                        //active_skipped = true;
+                        nextPlayer(false);
 
                     } else if (command.startsWith("QUIT")) {
                         clients.remove(this);
@@ -267,15 +274,48 @@ public class Crazy8s {
         }
 
         public void pickUpCard () {
-            giveCard(deck.get(0));
-            hand.add(deck.get(0));
-            deck.remove(0);
-            notifyNumCard(this);
+
+            if (deck.size() < pickup_num) {
+                for (int i = 0; i < discard.size(); i ++) {
+                    deck.add(discard.get(i));
+                }
+                for (int i = 0; i < discard.size(); i ++) {
+                    discard.remove(i);
+                }
+            }
+
+            deck.shuffle();
+
+            for (int i = 0; i < pickup_num; i ++) {
+                giveCard(deck.get(0));
+                hand.add(deck.get(0));
+                deck.remove(0);
+                notifyNumCard(this);
+            }
+
+            pickup_num = 1;
+        }
+
+        public void checkSpecialConditions (Card card) {
+
+            if (card.getRank() == 2) {
+                if (pickup_num == 1) pickup_num = 2;
+                else pickup_num += 2;
+            } else if (card.getSuit() == Constants.SPADES && card.getRank() == Constants.QUEEN) {
+                if (pickup_num == 1) pickup_num = 5;
+                else pickup_num += 5;
+            } else {
+                pickup_num = 1;
+            }
+
         }
 
         public void playCard (Card card) {
 
             if (isLegalMove(card)) {
+
+                checkSpecialConditions(card);
+
                 active_card = card;
                 discard.add(card);
 
@@ -290,7 +330,12 @@ public class Crazy8s {
                 }
 
                 notifyNumCard(this);
-                nextPlayer();
+                nextPlayer(false);
+
+                if (card.getRank() == Constants.JACK) {
+                    nextPlayer(true);
+                }
+
             } else {
                 output.println("BAD_MOVE");
             }
@@ -311,7 +356,7 @@ public class Crazy8s {
             }
 
             notifyNumCard(this);
-            nextPlayer();
+            nextPlayer(false);
         }
 
         public int getNum () {

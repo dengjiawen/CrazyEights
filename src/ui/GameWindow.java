@@ -248,6 +248,10 @@ public class GameWindow extends JFrame {
         setShade(isVisible);
     }
 
+    public void forceSkipped () {
+        panel.nextPlayer();
+    }
+
     public static void setRef (GameWindow ref) {
         frameRef = ref;
     }

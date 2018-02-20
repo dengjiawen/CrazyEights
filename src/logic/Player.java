@@ -141,6 +141,13 @@ public class Player {
                     int numCard = Integer.parseInt(response.substring(9));
                     Console.print("NUM = " + num + " NUMCARD = " + numCard);
                     if (num != playerNum) SwingUtilities.invokeLater(() -> GameWindow.requestRef().updateNumCards(num, numCard));
+                } else if (response.startsWith("FORCE_SKIP")) {
+                    int num = Character.getNumericValue(response.charAt(10));
+                    if (num == playerNum) {
+                        skipTurn();
+                        SwingUtilities.invokeLater(() -> GameWindow.requestRef().goodMove());
+                        SwingUtilities.invokeLater(() -> GameWindow.requestRef().forceSkipped());
+                    }
                 }
 
                 if (response.startsWith("CURR_PLAYER")) {
@@ -155,7 +162,7 @@ public class Player {
 
                 if (response.startsWith("GOOD_MOVE")) {
                     Misc.deepRemove(hand, activeCard);
-                    GameWindow.requestRef().goodMove();
+                    SwingUtilities.invokeLater(() -> GameWindow.requestRef().goodMove());
                 } else if (response.startsWith("PLACEHOLDER")) {
                     break;
                 }

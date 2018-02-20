@@ -60,6 +60,11 @@
             <inactiveY></inactiveY>
             <rotationFactor>80</rotationFactor>
         </StackPanelParam>
+        <HintPanelParam>
+            <hintW>250</hintW>
+            <hintH>25</hintH>
+            <hintYOffset>185</hintYOffset>
+        </HintPanelParam>
     </UIDefinitions>
     <LogicDefinitions>
         <MaxPlayer>6</MaxPlayer>

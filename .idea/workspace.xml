@@ -7,70 +7,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="508ac29e-c7a4-4ba0-9610-4b4956f3b001" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/logic/GameDirector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/PlayPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/GameDirector.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/PlayPanel.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/HandPanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/HandPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Sort.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Sort.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/HandPanel$1.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/HandPanel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Console.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Console.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/PlayerPanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/PlayerPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/HandPanel.java" afterPath="$PROJECT_DIR$/src/ui/HandPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Constants.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Deck.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Deck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/Resources.java" afterPath="$PROJECT_DIR$/src/ui/Resources.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Crazy8s.java" afterPath="$PROJECT_DIR$/src/logic/Crazy8s.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/3.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Deck.java" afterPath="$PROJECT_DIR$/src/logic/Deck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/PlayerPanel.java" afterPath="$PROJECT_DIR$/src/ui/PlayerPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/GameWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources$1.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/7.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/5.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/4.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Launcher.java" afterPath="$PROJECT_DIR$/src/Launcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GameWindow.java" afterPath="$PROJECT_DIR$/src/ui/GameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Parse.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Parse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/TButton$1.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/TButton$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s$Client.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s$Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/MainMenuPanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/MainMenuPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/10.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/ButtonPanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/ButtonPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Misc.java" afterPath="$PROJECT_DIR$/src/common/Misc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/11.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/11.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Hand.java" afterPath="$PROJECT_DIR$/src/logic/Hand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Hand.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Hand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/6.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Parse.java" afterPath="$PROJECT_DIR$/src/common/Parse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Misc.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Misc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Server.java" afterPath="$PROJECT_DIR$/src/logic/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/2.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/9.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/9.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/logic/GameDirector.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/GameDirector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/PlayPanel.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/7.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/4.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Player.java" afterPath="$PROJECT_DIR$/src/logic/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/8.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/1.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Console.java" afterPath="$PROJECT_DIR$/src/common/Console.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Card.java" afterPath="$PROJECT_DIR$/src/logic/Card.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/TButton.java" afterPath="$PROJECT_DIR$/src/ui/TButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Player.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/ButtonPanel.java" afterPath="$PROJECT_DIR$/src/ui/ButtonPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/GamePanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/GamePanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/Launcher.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/Launcher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/MainMenuPanel.java" afterPath="$PROJECT_DIR$/src/ui/MainMenuPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Hand.java" afterPath="$PROJECT_DIR$/src/logic/Hand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/TButton.java" afterPath="$PROJECT_DIR$/src/ui/TButton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/3.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Parse.java" afterPath="$PROJECT_DIR$/src/common/Parse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/PlayerPanel.java" afterPath="$PROJECT_DIR$/src/ui/PlayerPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/6.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s$Client.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s$Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Card.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Card.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/10.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/4.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Console.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Console.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/5.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Player.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources$1.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/Resources$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/1.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Misc.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Misc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/11.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/HandPanel$1.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/HandPanel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Parse.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Parse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Server.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Server.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/2.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/GameWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GameWindow.java" afterPath="$PROJECT_DIR$/src/ui/GameWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Deck.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Deck.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/common/Constants.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/common/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/4.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/13.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Misc.java" afterPath="$PROJECT_DIR$/src/common/Misc.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/9.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/GamePanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/GamePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Server.java" afterPath="$PROJECT_DIR$/src/logic/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/8.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/ButtonPanel.java" afterPath="$PROJECT_DIR$/src/ui/ButtonPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Constants.java" afterPath="$PROJECT_DIR$/src/common/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Player.java" afterPath="$PROJECT_DIR$/src/logic/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/HandPanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/HandPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/HandPanel.java" afterPath="$PROJECT_DIR$/src/ui/HandPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/ButtonPanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/ButtonPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/7.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/6.png" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/resources/cards/3/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Sort.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Sort.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/PlayerPanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/PlayerPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Hand.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Hand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Crazy8s.java" afterPath="$PROJECT_DIR$/src/logic/Crazy8s.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Console.java" afterPath="$PROJECT_DIR$/src/common/Console.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GamePanel.java" afterPath="$PROJECT_DIR$/src/ui/GamePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/TButton$1.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/TButton$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Card.java" afterPath="$PROJECT_DIR$/src/logic/Card.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Launcher.java" afterPath="$PROJECT_DIR$/src/Launcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/ui/MainMenuPanel.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/ui/MainMenuPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Sort.java" afterPath="$PROJECT_DIR$/src/logic/Sort.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/12.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/6.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Crazy8s.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/MainMenuPanel.java" afterPath="$PROJECT_DIR$/src/ui/MainMenuPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/GamePanel.java" afterPath="$PROJECT_DIR$/src/ui/GamePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/resources/cards/3/13.png" afterPath="$PROJECT_DIR$/src/ui/resources/cards/3/13.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Constants.java" afterPath="$PROJECT_DIR$/src/common/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Server.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Server.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyEights/logic/Card.class" afterPath="$PROJECT_DIR$/out/production/CrazyEights/logic/Card.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/Resources.java" afterPath="$PROJECT_DIR$/src/ui/Resources.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logic/Deck.java" afterPath="$PROJECT_DIR$/src/logic/Deck.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,8 +86,8 @@
       <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+            <state relative-caret-position="1620">
+              <caret line="251" column="27" lean-forward="false" selection-start-line="251" selection-start-column="27" selection-end-line="251" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="false" />
                 <element signature="e#1339#1340#0" expanded="false" />
@@ -100,7 +100,6 @@
                 <element signature="method#connect#0;class#GameWindow#0" expanded="false" />
                 <element signature="e#5286#5287#0" expanded="false" />
                 <element signature="e#5328#5329#0" expanded="false" />
-                <element signature="method#startGame#0;class#GameWindow#0" expanded="false" />
                 <element signature="e#5568#5569#0" expanded="false" />
                 <element signature="e#5620#5621#0" expanded="false" />
                 <element signature="method#updateNumCards#0;class#GameWindow#0" expanded="false" />
@@ -119,10 +118,31 @@
                 <element signature="e#6650#6651#0" expanded="false" />
                 <element signature="e#6683#6684#0" expanded="false" />
                 <element signature="e#6717#6718#0" expanded="false" />
-                <element signature="e#6892#6893#0" expanded="false" />
-                <element signature="e#6922#6923#0" expanded="false" />
-                <element signature="e#6968#6969#0" expanded="false" />
-                <element signature="e#6999#7000#0" expanded="false" />
+                <element signature="e#6877#6878#0" expanded="false" />
+                <element signature="e#6911#6912#0" expanded="false" />
+                <element signature="e#6961#6962#0" expanded="false" />
+                <element signature="e#6991#6992#0" expanded="false" />
+                <element signature="e#7037#7038#0" expanded="false" />
+                <element signature="e#7068#7069#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+                <element signature="e#4890#4891#0" expanded="false" />
+                <element signature="e#4919#4920#0" expanded="false" />
+                <element signature="e#5503#5504#0" expanded="false" />
+                <element signature="e#5542#5543#0" expanded="false" />
+                <element signature="e#5601#5602#0" expanded="false" />
+                <element signature="e#5655#5656#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -131,20 +151,32 @@
       <file leaf-file-name="EightPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+            <state relative-caret-position="210">
+              <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ButtonPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/ButtonPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="54" column="42" lean-forward="false" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#3194#3195#0" expanded="false" />
+                <element signature="e#3236#3237#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Crazy8s.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Crazy8s.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/logic/Crazy8s.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="345">
+              <caret line="286" column="27" lean-forward="false" selection-start-line="286" selection-start-column="27" selection-end-line="286" selection-end-column="27" />
               <folding>
                 <element signature="method#massBroadcast#0;class#Crazy8s#0" expanded="false" />
                 <element signature="method#notifyList#0;class#Crazy8s#0" expanded="false" />
@@ -152,47 +184,55 @@
                 <element signature="method#hasWinner#0;class#Crazy8s#0" expanded="false" />
                 <element signature="method#isLegalMove#0;class#Crazy8s#0" expanded="false" />
                 <element signature="method#isAllReady#0;class#Crazy8s#0" expanded="false" />
-                <element signature="method#nextPlayer#0;class#Crazy8s#0" expanded="false" />
                 <element signature="method#updatePlayerList#0;class#Client#0;class#Crazy8s#0" expanded="false" />
                 <element signature="method#updateReadiness#0;class#Client#0;class#Crazy8s#0" expanded="false" />
                 <element signature="method#giveHand#0;class#Client#0;class#Crazy8s#0" expanded="false" />
-                <element signature="method#pickUpCard#0;class#Client#0;class#Crazy8s#0" expanded="false" />
                 <element signature="method#giveList#0;class#Client#0;class#Crazy8s#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Console.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/common/Console.java">
+      <file leaf-file-name="HintPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/HintPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="42" column="66" lean-forward="false" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
+            <state relative-caret-position="1005">
+              <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="method#getDate#0;class#Console#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1439#1440#0" expanded="false" />
+                <element signature="e#1492#1493#0" expanded="false" />
+                <element signature="e#2891#2892#0" expanded="false" />
+                <element signature="e#2985#2986#0" expanded="false" />
+                <element signature="e#3012#3013#0" expanded="false" />
+                <element signature="e#3085#3086#0" expanded="false" />
+                <element signature="e#3251#3252#0" expanded="false" />
+                <element signature="e#3339#3340#0" expanded="false" />
+                <element signature="e#3586#3587#0" expanded="false" />
+                <element signature="e#3646#3647#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/logic/Player.java">
+      <file leaf-file-name="Definitions.plist" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/Definitions.plist">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+            <state relative-caret-position="945">
+              <caret line="63" column="22" lean-forward="false" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Console.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/Console.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="42" column="66" lean-forward="false" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1119#1120#0" expanded="false" />
-                <element signature="e#1158#1159#0" expanded="false" />
-                <element signature="e#1192#1193#0" expanded="false" />
-                <element signature="e#1228#1229#0" expanded="false" />
-                <element signature="e#1264#1265#0" expanded="false" />
-                <element signature="e#1302#1303#0" expanded="false" />
-                <element signature="e#1338#1339#0" expanded="false" />
-                <element signature="e#1375#1376#0" expanded="false" />
-                <element signature="e#1406#1407#0" expanded="false" />
-                <element signature="e#1441#1442#0" expanded="false" />
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="method#getDate#0;class#Console#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -210,63 +250,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Definitions.plist" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/Definitions.plist">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/logic/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="25" />
+            <state relative-caret-position="1875">
+              <caret line="148" column="95" lean-forward="false" selection-start-line="148" selection-start-column="95" selection-end-line="148" selection-end-column="95" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2145">
-              <caret line="175" column="25" lean-forward="false" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
-                <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
-                <element signature="e#4641#4642#0" expanded="false" />
-                <element signature="e#4670#4671#0" expanded="false" />
-                <element signature="e#5254#5255#0" expanded="false" />
-                <element signature="e#5293#5294#0" expanded="false" />
-                <element signature="e#5352#5353#0" expanded="false" />
-                <element signature="e#5406#5407#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/logic/Hand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#420#421#0" expanded="false" />
-                <element signature="e#449#450#0" expanded="false" />
-                <element signature="method#fill#0;class#Hand#0" expanded="false" />
-                <element signature="e#677#678#0" expanded="false" />
-                <element signature="e#711#712#0" expanded="false" />
-                <element signature="e#1878#1879#0" expanded="false" />
-                <element signature="e#1922#1923#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -275,13 +264,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>QUIT</find>
-      <find>START_GAME</find>
-      <find>card</find>
-      <find>CURR</find>
-      <find>selectionAgent</find>
-      <find>Card</find>
-      <find>button</find>
       <find>Activat</find>
       <find>activatePla</find>
       <find>updateCurrentPlayer</find>
@@ -305,6 +287,13 @@
       <find>resetPla</find>
       <find>resetPl</find>
       <find>playCard</find>
+      <find>startGame</find>
+      <find>start</find>
+      <find>forceS</find>
+      <find>Constants.SPADES</find>
+      <find>skipTurn();</find>
+      <find>Constants.JACK</find>
+      <find>skip</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -326,7 +315,6 @@
         <option value="$PROJECT_DIR$/src/ui/load/LoadFrame.java" />
         <option value="$PROJECT_DIR$/src/ui/ResourceLoader.java" />
         <option value="$PROJECT_DIR$/src/common/Parse.java" />
-        <option value="$PROJECT_DIR$/src/common/Definitions.plist" />
         <option value="$PROJECT_DIR$/src/Launcher.java" />
         <option value="$PROJECT_DIR$/src/logic/Card.java" />
         <option value="$PROJECT_DIR$/src/common/Sort.java" />
@@ -341,14 +329,16 @@
         <option value="$PROJECT_DIR$/src/ui/Resources.java" />
         <option value="$PROJECT_DIR$/src/ui/ButtonPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/HandPanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/common/Constants.java" />
-        <option value="$PROJECT_DIR$/src/logic/Crazy8s.java" />
-        <option value="$PROJECT_DIR$/src/logic/Player.java" />
         <option value="$PROJECT_DIR$/src/logic/Hand.java" />
-        <option value="$PROJECT_DIR$/src/ui/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/ui/EightPanel.java" />
         <option value="$PROJECT_DIR$/src/common/Console.java" />
+        <option value="$PROJECT_DIR$/src/common/Definitions.plist" />
+        <option value="$PROJECT_DIR$/src/ui/HintPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/GameWindow.java" />
+        <option value="$PROJECT_DIR$/src/logic/Player.java" />
+        <option value="$PROJECT_DIR$/src/logic/Crazy8s.java" />
       </list>
     </option>
   </component>
@@ -377,6 +367,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -459,9 +452,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -611,7 +601,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2966878" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2060241" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -628,14 +618,14 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28433734" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
@@ -657,13 +647,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/HandPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
@@ -691,14 +674,13 @@
           <caret line="136" column="27" lean-forward="false" selection-start-line="136" selection-start-column="27" selection-end-line="136" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
-            <element signature="e#4641#4642#0" expanded="false" />
-            <element signature="e#4670#4671#0" expanded="false" />
-            <element signature="e#5254#5255#0" expanded="false" />
-            <element signature="e#5293#5294#0" expanded="false" />
-            <element signature="e#5352#5353#0" expanded="false" />
-            <element signature="e#5406#5407#0" expanded="false" />
+            <element signature="e#4890#4891#0" expanded="false" />
+            <element signature="e#4919#4920#0" expanded="false" />
+            <element signature="e#5503#5504#0" expanded="false" />
+            <element signature="e#5542#5543#0" expanded="false" />
+            <element signature="e#5601#5602#0" expanded="false" />
+            <element signature="e#5655#5656#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -758,14 +740,13 @@
           <caret line="136" column="27" lean-forward="false" selection-start-line="136" selection-start-column="27" selection-end-line="136" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
-            <element signature="e#4641#4642#0" expanded="false" />
-            <element signature="e#4670#4671#0" expanded="false" />
-            <element signature="e#5254#5255#0" expanded="false" />
-            <element signature="e#5293#5294#0" expanded="false" />
-            <element signature="e#5352#5353#0" expanded="false" />
-            <element signature="e#5406#5407#0" expanded="false" />
+            <element signature="e#4890#4891#0" expanded="false" />
+            <element signature="e#4919#4920#0" expanded="false" />
+            <element signature="e#5503#5504#0" expanded="false" />
+            <element signature="e#5542#5543#0" expanded="false" />
+            <element signature="e#5601#5602#0" expanded="false" />
+            <element signature="e#5655#5656#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -899,13 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/PlayerPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="126" column="9" lean-forward="false" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/HandPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -927,10 +901,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/ButtonPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-722">
-          <caret line="81" column="35" lean-forward="true" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
+        <state relative-caret-position="780">
+          <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logic/Hand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/PlayerPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -944,63 +933,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/common/Console.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="175" column="25" lean-forward="false" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
+        <state relative-caret-position="285">
+          <caret line="42" column="66" lean-forward="false" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#addPlayer#0;class#GamePanel#0" expanded="false" />
-            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
-            <element signature="e#4641#4642#0" expanded="false" />
-            <element signature="e#4670#4671#0" expanded="false" />
-            <element signature="e#5254#5255#0" expanded="false" />
-            <element signature="e#5293#5294#0" expanded="false" />
-            <element signature="e#5352#5353#0" expanded="false" />
-            <element signature="e#5406#5407#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#getDate#0;class#Console#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/Definitions.plist">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="25" />
+        <state relative-caret-position="945">
+          <caret line="63" column="22" lean-forward="false" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/logic/Hand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#420#421#0" expanded="false" />
-            <element signature="e#449#450#0" expanded="false" />
-            <element signature="method#fill#0;class#Hand#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#711#712#0" expanded="false" />
-            <element signature="e#1878#1879#0" expanded="false" />
-            <element signature="e#1922#1923#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        <state relative-caret-position="1620">
+          <caret line="251" column="27" lean-forward="false" selection-start-line="251" selection-start-column="27" selection-end-line="251" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="false" />
             <element signature="e#1339#1340#0" expanded="false" />
@@ -1013,7 +968,6 @@
             <element signature="method#connect#0;class#GameWindow#0" expanded="false" />
             <element signature="e#5286#5287#0" expanded="false" />
             <element signature="e#5328#5329#0" expanded="false" />
-            <element signature="method#startGame#0;class#GameWindow#0" expanded="false" />
             <element signature="e#5568#5569#0" expanded="false" />
             <element signature="e#5620#5621#0" expanded="false" />
             <element signature="method#updateNumCards#0;class#GameWindow#0" expanded="false" />
@@ -1032,38 +986,85 @@
             <element signature="e#6650#6651#0" expanded="false" />
             <element signature="e#6683#6684#0" expanded="false" />
             <element signature="e#6717#6718#0" expanded="false" />
-            <element signature="e#6892#6893#0" expanded="false" />
-            <element signature="e#6922#6923#0" expanded="false" />
-            <element signature="e#6968#6969#0" expanded="false" />
-            <element signature="e#6999#7000#0" expanded="false" />
+            <element signature="e#6877#6878#0" expanded="false" />
+            <element signature="e#6911#6912#0" expanded="false" />
+            <element signature="e#6961#6962#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="false" />
+            <element signature="e#7037#7038#0" expanded="false" />
+            <element signature="e#7068#7069#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/ButtonPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="54" column="42" lean-forward="false" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3194#3195#0" expanded="false" />
+            <element signature="e#3236#3237#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#paintComponent#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#4890#4891#0" expanded="false" />
+            <element signature="e#4919#4920#0" expanded="false" />
+            <element signature="e#5503#5504#0" expanded="false" />
+            <element signature="e#5542#5543#0" expanded="false" />
+            <element signature="e#5601#5602#0" expanded="false" />
+            <element signature="e#5655#5656#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/HintPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1439#1440#0" expanded="false" />
+            <element signature="e#1492#1493#0" expanded="false" />
+            <element signature="e#2891#2892#0" expanded="false" />
+            <element signature="e#2985#2986#0" expanded="false" />
+            <element signature="e#3012#3013#0" expanded="false" />
+            <element signature="e#3085#3086#0" expanded="false" />
+            <element signature="e#3251#3252#0" expanded="false" />
+            <element signature="e#3339#3340#0" expanded="false" />
+            <element signature="e#3586#3587#0" expanded="false" />
+            <element signature="e#3646#3647#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/logic/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1119#1120#0" expanded="false" />
-            <element signature="e#1158#1159#0" expanded="false" />
-            <element signature="e#1192#1193#0" expanded="false" />
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1264#1265#0" expanded="false" />
-            <element signature="e#1302#1303#0" expanded="false" />
-            <element signature="e#1338#1339#0" expanded="false" />
-            <element signature="e#1375#1376#0" expanded="false" />
-            <element signature="e#1406#1407#0" expanded="false" />
-            <element signature="e#1441#1442#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="1875">
+          <caret line="148" column="95" lean-forward="false" selection-start-line="148" selection-start-column="95" selection-end-line="148" selection-end-column="95" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/logic/Crazy8s.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="345">
+          <caret line="286" column="27" lean-forward="false" selection-start-line="286" selection-start-column="27" selection-end-line="286" selection-end-column="27" />
           <folding>
             <element signature="method#massBroadcast#0;class#Crazy8s#0" expanded="false" />
             <element signature="method#notifyList#0;class#Crazy8s#0" expanded="false" />
@@ -1071,33 +1072,10 @@
             <element signature="method#hasWinner#0;class#Crazy8s#0" expanded="false" />
             <element signature="method#isLegalMove#0;class#Crazy8s#0" expanded="false" />
             <element signature="method#isAllReady#0;class#Crazy8s#0" expanded="false" />
-            <element signature="method#nextPlayer#0;class#Crazy8s#0" expanded="false" />
             <element signature="method#updatePlayerList#0;class#Client#0;class#Crazy8s#0" expanded="false" />
             <element signature="method#updateReadiness#0;class#Client#0;class#Crazy8s#0" expanded="false" />
             <element signature="method#giveHand#0;class#Client#0;class#Crazy8s#0" expanded="false" />
-            <element signature="method#pickUpCard#0;class#Client#0;class#Crazy8s#0" expanded="false" />
             <element signature="method#giveList#0;class#Client#0;class#Crazy8s#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/EightPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/Console.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="42" column="66" lean-forward="false" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#getDate#0;class#Console#0" expanded="false" />
           </folding>
         </state>
       </provider>

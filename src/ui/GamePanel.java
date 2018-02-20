@@ -23,8 +23,9 @@ class GamePanel extends JPanel {
     HandPanel hand;
     ButtonPanel buttons;
     StackPanel stack;
+    HintPanel hint;
 
-    protected GamePanel () throws Exception {
+    public GamePanel () throws Exception {
 
         super();
 
@@ -32,8 +33,8 @@ class GamePanel extends JPanel {
         setBounds(0, 0, width, height);
 
         buttons = new ButtonPanel();
-
         stack = new StackPanel();
+        hint = new HintPanel();
 
         player = new ArrayList<>();
         player.add(null);
@@ -44,8 +45,9 @@ class GamePanel extends JPanel {
             add(player.get(i));
         }
 
-        add (buttons);
+        add(buttons);
         add(stack);
+        add(hint);
 
     }
 
@@ -58,6 +60,8 @@ class GamePanel extends JPanel {
 
         player.get(assigned_player_num).updateInfo(name);
         player.get(assigned_player_num).setVisible(true);
+
+        hint.updatePlayerJoin(name);
 
         GameWindow.requestRef().repaint();
         GameWindow.requestRef().revalidate();
@@ -77,6 +81,8 @@ class GamePanel extends JPanel {
         for (int i = 0; i < player.size(); i ++) {
             if (player.get(i) != null) player.get(i).exitVoteStatus();
         }
+
+        hint.startGame();
     }
 
     public void updateNumCards (int playerNum, int numCards) {
@@ -127,6 +133,7 @@ class GamePanel extends JPanel {
 
     public void updateReadyStatus (int playerNum, boolean ready) {
         player.get(getAssignedNum(playerNum)).voteReady(ready);
+        hint.updateVoteStart(player.get(getAssignedNum(playerNum)).playerName, ready);
         GameWindow.requestRef().repaint();
     }
 
@@ -145,6 +152,7 @@ class GamePanel extends JPanel {
     }
 
     public void startVotingSession () {
+        hint.setVisible(true);
         buttons.setVisible(true);
         buttons.startVotingSession();
     }
