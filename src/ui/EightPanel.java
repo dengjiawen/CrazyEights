@@ -58,10 +58,12 @@ class EightPanel extends JPanel {
 
         if (isVisible) grabFocus();
 
-        try {
-            GameWindow.requestRef().nextPlayer();
-        } catch (NullPointerException error) {
-            System.out.println("FUCK YOU");
+        if (isVisible) {
+            try {
+                GameWindow.requestRef().nextPlayer();
+            } catch (NullPointerException error) {
+                System.out.println("FUCK YOU");
+            }
         }
     }
 
