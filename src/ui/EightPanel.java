@@ -57,6 +57,7 @@ class EightPanel extends JPanel {
         super.setVisible(isVisible);
 
         if (isVisible) grabFocus();
+        GameWindow.requestRef().nextPlayer();
     }
 
 
