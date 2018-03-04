@@ -30,8 +30,8 @@ import java.util.Date;
 public class Console {
 
     //Constant boolean that toggles messages on/off.
-    private static final boolean show_debug_messages = false;
-    private static final boolean show_general_messages = false;
+    private static final boolean show_debug_messages = true;
+    private static final boolean show_general_messages = true;
 
     /**
      * Prints a generic message to console, including time and the
