@@ -1,21 +1,31 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ *
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ *
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ *
+ *-----------------------------------------------------------------------------
+ * LoadFrame.java
+ *-----------------------------------------------------------------------------
+ * This class hosts the LoadPanel when loading.
+ *-----------------------------------------------------------------------------
+ */
+
 package ui;
 
-import com.sun.awt.AWTUtilities;
 import javax.swing.*;
 import java.awt.*;
 
-import common.Constants;
-import ui.Resources;
-
-/**
- * Created by freddeng on 2018-02-07.
- */
 public class LoadFrame extends JFrame {
 
-    private static final int width = 400;
+    private static final int width = 400;   // hard coded size
     private static final int height = 110;
 
-    private static LoadPanel load_panel;
+    private static LoadPanel load_panel;    // the loading panel
 
     public LoadFrame () {
 

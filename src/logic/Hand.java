@@ -1,101 +1,150 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ *
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ *
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ *
+ *-----------------------------------------------------------------------------
+ * Hand.java
+ *-----------------------------------------------------------------------------
+ * This is a class representing the Hand object. It inherits the Deck class.
+ *-----------------------------------------------------------------------------
+ */
+
 package logic;
 
-import common.Console;
-import ui.GameWindow;
-
+import common.Constants;
+import ui.References;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-
-/**
- * Created by freddeng on 2018-02-05.
- */
 
 public class Hand extends Deck {
 
-    public int selectedIndex;
-    boolean active_skipped = false;
+    // create a weak reference towards player object
+    // to prevent errors in garbage collection
+    private static WeakReference<Player> player;
 
-    ArrayList<Boolean> isPlayable;
+    // integer of the index selected by the user
+    private int selected_index;
+    // Arraylist holding booleans indicating whether
+    // cards in the hand is playable
+    private ArrayList<Boolean> isPlayable;
 
+    /**
+     * Default constructor
+     */
     public Hand () {
         super(false);
 
-        selectedIndex = -1;
+        selected_index = Constants.NO_CARD_SELECTED;
         isPlayable = new ArrayList<>();
+
+        References.updateReferences();
     }
 
-    void play (Card card) {
-        remove (card);
+    /**
+     * Method to sort hand and find
+     * playable cards after modifying
+     * hand.
+     */
+    public void update () {
+
+        // clear ArrayList and refill
+        isPlayable.clear();
+        // sort cards via selectionSort
+        Sort.selectionSort(this);
+
+        for (int i = 0; i < size(); i++) {
+            isPlayable.add(false);
+        }
     }
 
+    /**
+     * Reset all parameter of the hand class after
+     * the player's turn is over.
+     */
+    public void reset () {
+        selected_index = Constants.NO_CARD_SELECTED;
+        for (int i = 0; i < isPlayable.size(); i ++) {
+            isPlayable.set(i, false);
+        }
+    }
 
+    /**
+     * Method for selecting a card when playing.
+     * (if called again on the same index, that
+     * index will be unselected)
+     * @param index index of the card selected
+     */
+    public void select (int index) {
+        if (selected_index == index) selected_index = Constants.NO_CARD_SELECTED;
+        else selected_index = index;
+    }
 
+    /**
+     * Overloaded fill method from Deck class
+     * updates isPlayable and sort cards
+     * after filling.
+     */
     public void fill () {
         super.fill();
         update();
     }
 
-    public void add (Card card) {
-        super.add(card);
-        update();
-        GameWindow.requestRef().repaint();
-    }
-
-    boolean isEmpty () {
+    /**
+     * Method that returns a boolean to indicate
+     * if hand is empty (used for winning conditions)
+     * @return  boolean
+     */
+    public boolean isEmpty () {
         return size() == 0;
     }
 
-    public void update () {
-        for (int i = 0; i < size(); i++) {
-            try {
-                isPlayable.set(i, false);
-            } catch (IndexOutOfBoundsException error) {
-                isPlayable.add(i, false);
-            }
-        }
-    }
-
-    public void findPlayable (boolean active_skipped) {
-
-        if (active_skipped) {
-            for (int i = 0; i < size(); i ++) {
-                isPlayable.set(i, true);
-            }
-        } else {
-            for (int i = 0; i < size(); i++) {
-                Card eval_card = get(i);
-                if (isPlayable(eval_card)) isPlayable.set(i, true);
-                System.out.println(eval_card + " " + isPlayable.get(i));
-            }
-        }
-    }
-
+    /**
+     * Method that finds all playable cards in a hand
+     */
     public void findPlayable () {
-        findPlayable(active_skipped);
-    }
 
-    public void resetPlayability () {
-        for (int i = 0; i < isPlayable.size(); i ++) {
-            isPlayable.set(i, false);
+        // update, then find playable cards
+        update();
+
+        for (int i = 0; i < size(); i++) {
+            if (isPlayable(get(i))) isPlayable.set(i, true);
         }
-        active_skipped = false;
+
     }
 
-    public void select (int index) {
-        if (selectedIndex == index) selectedIndex = -1;
-        else selectedIndex = index;
+    /**
+     * Get the current selected index.
+     * @return  selected index
+     */
+    public int getSelectedIndex () {
+        return selected_index;
     }
 
-    public boolean isPlayable (int index) {
-        return isPlayable.get(index);
+    /**
+     * Get the selected card.
+     * @return selected card if exists, null if not
+     */
+    public Card getSelectedCard () {
+        if (selected_index != Constants.NO_CARD_SELECTED) return get(selected_index);
+        else return null;
     }
 
+    /**
+     * Method that determines if a card is playable.
+     * @param card  target card
+     * @return      boolean of whether card is playable
+     */
     public boolean isPlayable (Card card) {
 
-        Console.print(this.toString());
-
-        Card activeCard = GameWindow.requestRef().player.activeCard;
+        Card activeCard = player.get().getActiveCard();
         if (card.getRank() == 8) {
-            return true;
+            return true;    // special case; 8 is always playable
         } else if (card.getSuit() == activeCard.getSuit()) {
             return true;
         } else if (card.getRank() == activeCard.getRank()) {
@@ -105,6 +154,28 @@ public class Hand extends Deck {
         return false;
     }
 
+    /**
+     * Method that determines if a card at an index
+     * is playable.
+     * This is an extension of
+     * isPlayable (Card card)
+     * @param index index of the card
+     * @return      boolean of whether card is palyable
+     */
+    public boolean isPlayable (int index) {
+        try {
+            return isPlayable.get(index);
+        } catch (IndexOutOfBoundsException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Method that converts a deck into a hand.
+     * Used for converting subdecks into hands.
+     * @param deck  the original deck
+     * @return      the converted Hand
+     */
     public static Hand valueOf (Deck deck) {
         Hand temp_deck = new Hand();
 
@@ -113,6 +184,14 @@ public class Hand extends Deck {
         }
 
         return temp_deck;
+    }
+
+    /**
+     * Method that updates all weak references
+     * of this class.
+     */
+    public static void updateReferences () {
+        player = new WeakReference<>(References.player);
     }
 
 }

@@ -46,12 +46,12 @@ public class Parse {
             Console.printGeneralMessage("Found resource [" + resource_name + "] in plist [" + plist_name +"]", class_name);
 
             return XMLTree.getElementsByTagName(resource_name).item(0).getTextContent();
-        } catch (SAXException error) {
-            Console.printErrorMessage("[SAXException]" + error.getMessage(), class_name);
-        } catch (IOException error) {
-            Console.printErrorMessage("[IOException]" + error.getMessage(), class_name);
-        } catch (ParserConfigurationException error) {
-            Console.printErrorMessage("[ParserConfigurationException]" + error.getMessage(), class_name);
+        } catch (SAXException e) {
+            Console.printErrorMessage("[SAXException]" + e.getMessage(), class_name);
+        } catch (IOException e) {
+            Console.printErrorMessage("[IOException]" + e.getMessage(), class_name);
+        } catch (ParserConfigurationException e) {
+            Console.printErrorMessage("[ParserConfigurationException]" + e.getMessage(), class_name);
         }
 
         Console.printErrorMessage("Resource " + resource_name + " is not found in plist " + plist_name, class_name);
@@ -67,13 +67,19 @@ public class Parse {
      * @param plist_name     name of the plist file
      * @param resource_name  name of the requested resource
      * @return  parsed content (integer)
-     * @throws NullPointerException   may throw exception if helper method returns null
      */
-    public static int parseInt (String plist_name, String resource_name) throws NullPointerException {
+    public static int parseInt (String plist_name, String resource_name) {
         return Integer.parseInt(parseString(plist_name, resource_name));
     }
 
-    public static float parseFloat (String plist_name, String resource_name) throws NullPointerException {
+    /**
+     * Parse float from XML entries, using parseString
+     * as a helper method.
+     * @param plist_name     name of the plist file
+     * @param resource_name  name of the requested resource
+     * @return  parsed content (float)
+     */
+    public static float parseFloat (String plist_name, String resource_name) {
         return Float.parseFloat(parseString(plist_name, resource_name));
     }
 

@@ -1,35 +1,55 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ *
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ *
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ *
+ *-----------------------------------------------------------------------------
+ * WinnerPanel.java
+ *-----------------------------------------------------------------------------
+ * The panel for displaying the winner of the game.
+ *-----------------------------------------------------------------------------
+ */
+
 package ui;
 
 import common.Constants;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.Graphics;
+import java.awt.Font;
+import java.awt.Color;
+import java.lang.ref.WeakReference;
 
-import javax.swing.*;
-import java.awt.*;
-import java.net.Inet4Address;
+public class WinnerPanel extends JPanel {
 
-/**
- * Created by freddeng on 2018-01-26.
- */
-class WinnerPanel extends JPanel {
+    private static WeakReference<GameWindow> frame;     // weak reference of the game window
 
-    private static final int width = Constants.element("HostPanelW");
-    private static final int height = Constants.element("HostPanelH");
+    private static final int width = Constants.getInt("HostPanelW");    // panel width
+    private static final int height = Constants.getInt("HostPanelH");   // panel height
 
-    private static final int x = (Constants.element("initWidth") - width) / 2;
-    private static final int y = (Constants.element("initHeight") - height) / 2;
+    private static final int x = (Constants.getInt("initWidth") - width) / 2;   // panel x coord
+    private static final int y = (Constants.getInt("initHeight") - height) / 2; // panel y coord
 
-    private final static int buttonWidth = Constants.element("ButtonW");
-    private final static int buttonHeight = Constants.element("ButtonH");
+    private final static int buttonWidth = Constants.getInt("ButtonW");     // panel button width
+    private final static int buttonHeight = Constants.getInt("ButtonH");    // panel button height
 
-    private final static int buttonX = (width - buttonWidth) / 2;
-    private final static int buttonY = height - buttonHeight;
+    private final static int buttonX = (width - buttonWidth) / 2;   // panel button x coord
+    private final static int buttonY = height - buttonHeight;       // panel button y coord
 
-    TButton play;
+    private TButton return_to_menu;   // return to main menu button
 
-    JLabel title;
-    JLabel hint;
-    JLabel port;
+    private JLabel title;   // shows the title
+    private JLabel subtext; // shows the subtext
 
-    protected WinnerPanel() throws Exception {
+    /**
+     * Default Constructor
+     */
+    protected WinnerPanel() {
 
         super();
 
@@ -38,57 +58,63 @@ class WinnerPanel extends JPanel {
         setBounds(x, y, width, height);
         setVisible(false);
 
-        play = new TButton(buttonX, buttonY, buttonWidth, buttonHeight);
+        // initialize buttons and labels
+        return_to_menu = new TButton(buttonX, buttonY, buttonWidth, buttonHeight);
+        return_to_menu.addActionListener(e -> References.endGameSession());
 
         title = new JLabel();
         title.setForeground(Color.white);
         title.setFont(new Font("Arial", Font.BOLD, 25));
         title.setBounds((width - 300)/2, 100, 300, 100);
 
-        port = new JLabel();
-        port.setForeground(Color.white);
-        port.setFont(new Font("Arial", Font.BOLD, 12));
-        port.setBounds((width - 300)/2, 125, 500, 100);
+        subtext = new JLabel();
+        subtext.setForeground(Color.white);
+        subtext.setFont(new Font("Arial", Font.BOLD, 12));
+        subtext.setBounds((width - 300)/2, 125, 500, 100);
 
-        hint = new JLabel();
-        hint.setForeground(Color.white);
-        hint.setFont(new Font("Arial", Font.PLAIN, 12));
-        hint.setBounds((width - 300)/2, 180, 500, 50);
-
-        play.addActionListener(e -> {
-            setVisible(false);
-            GameWindow.requestRef().setShade(false);
-            GameWindow.requestRef().startVotingSession();
-        });
-
-        add (play);
-        add (port);
+        add (return_to_menu);
+        add (subtext);
         add (title);
-        add (hint);
 
     }
 
-    protected void paintComponent (Graphics g) {
-        super.paintComponent(g);
-
-        Graphics2D g2d = (Graphics2D) g;
-
-        //g2d.drawImage(Resources.cpu_secondary, buttonX, buttonY, buttonWidth, buttonHeight, null);
-
-    }
-
+    /**
+     * Method for displaying a "you win" message
+     */
     public void youWon () {
         title.setText("<html><div style='text-align: center;'>YOU WON!</div></html>");
-        port.setText("<html><div style='text-align: center;'>Congratulations, your IQ is higher than the other humans.</div></html>");
+        subtext.setText("<html><div style='text-align: center;'>Congratulations, your IQ is higher than the other humans.</div></html>");
 
         setVisible(true);
+        frame.get().setShade(true);
     }
 
+    /**
+     * Method for displaying when another player won
+     * @param name  name of the winner
+     */
     public void otherWon (String name) {
         title.setText("<html><div style='text-align: center;'>Player " + name + " WON!</div></html>");
-        port.setText("<html><div style='text-align: center;'>You suck. Period.</div></html>");
+        subtext.setText("<html><div style='text-align: center;'>You suck. Period.</div></html>");
 
         setVisible(true);
+        frame.get().setShade(true);
+    }
+
+    /**
+     * Overriden paintComponent method
+     * @param g Abstract Graphics Class
+     */
+    protected void paintComponent (Graphics g) {
+        // draw the button graphics
+        g.drawImage(Resources.return_button, buttonX, buttonY, buttonWidth, buttonHeight, null);
+    }
+
+    /**
+     * Method for updating the weak references
+     */
+    public static void updateReferences () {
+        frame = new WeakReference<>(References.frame);
     }
 
 }

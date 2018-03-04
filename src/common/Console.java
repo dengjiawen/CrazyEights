@@ -30,8 +30,8 @@ import java.util.Date;
 public class Console {
 
     //Constant boolean that toggles messages on/off.
-    private static final boolean show_debug_messages = true;
-    private static final boolean show_general_messages = true;
+    private static final boolean show_debug_messages = false;
+    private static final boolean show_general_messages = false;
 
     /**
      * Prints a generic message to console, including time and the
@@ -69,6 +69,7 @@ public class Console {
      * DEPRECATED CODE | USE printGeneralMessage
      * @param message     message to be printed
      */
+    @Deprecated
     public static void print (String message) {
         System.out.println(getDate() + " -> " + message +
                 "\nConsole.print() had been deprecated. Use Console.printGeneralMessage() instead.");

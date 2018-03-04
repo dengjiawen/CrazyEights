@@ -1,24 +1,36 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ *
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ *
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ *
+ *-----------------------------------------------------------------------------
+ * ShadePanel.java
+ *-----------------------------------------------------------------------------
+ * This class inherits the JPanel, and is essentially a black shade over the
+ * whole window.
+ *-----------------------------------------------------------------------------
+ */
+
 package ui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import common.Constants;
-import logic.Hand;
-import logic.Player;
-import logic.Server;
 
-/**
- * Created by freddeng on 2018-01-26.
- */
 class ShadePanel extends JPanel {
 
-    static int width = Constants.element("initWidth");
-    static int height = Constants.element("initHeight");
+    static int width = Constants.getInt("initWidth");   // frame width
+    static int height = Constants.getInt("initHeight"); // frame height
 
-    protected ShadePanel () throws Exception {
+    /**
+     * Default Constructor
+     */
+    protected ShadePanel () {
 
         super();
 
@@ -28,6 +40,10 @@ class ShadePanel extends JPanel {
 
     }
 
+    /**
+     * If visible, GRAB FOCUS
+     * @param isVisible /
+     */
     public void setVisible (boolean isVisible) {
         super.setVisible(isVisible);
 

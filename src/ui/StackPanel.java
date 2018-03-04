@@ -1,44 +1,58 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ *
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ *
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ *
+ *-----------------------------------------------------------------------------
+ * StackPanel.java
+ *-----------------------------------------------------------------------------
+ * This panel is used for displaying the active card.
+ *-----------------------------------------------------------------------------
+ */
+
 package ui;
 
 import common.Constants;
-import logic.Hand;
+import logic.Card;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-/**
- * Created by freddeng on 2018-01-26.
- */
 class StackPanel extends JPanel {
 
-    static final int frame_width = Constants.element("initWidth");
-    static final int frame_height = Constants.element("initHeight");
+    private static final int width = Constants.getInt("stackPanelW");   // panel width
+    private static final int height = Constants.getInt("stackPanelH");  // panel height
 
-    static final int width = Constants.element("stackPanelW");
-    static final int height = Constants.element("stackPanelH");
+    private static final int x = (Constants.getInt("initWidth") - width) / 2;   // x coord
+    private static final int y = Constants.getInt("stackPanelY");               // y coord
 
-    static final int x = (frame_width - width) / 2;
-    static final int y = Constants.element("stackPanelY");
+    private static final int stack_width = (int)(Constants.getInt("CardWidth") * 1.20f);    // width of the stack
+    private static final int stack_height = (int)((float)Resources.card_stack.getHeight() * stack_width/Resources.card_stack.getWidth());   // height of the stack
 
-    static final int stack_width = (int)(Constants.element("CardWidth") * 1.20f);
-    static final int stack_height = (int)((float)Resources.card_stack.getHeight() * stack_width/Resources.card_stack.getWidth());
+    private static final int stack_x = Constants.getInt("stackX");  // x position of the stack
+    private static final int stack_y = (height - stack_height) / 2;              // y position of the stack
 
-    static final int stack_x = Constants.element("stackX");
-    static final int stack_y = (height - stack_height) / 2;
+    private static int cardWidth = Constants.getInt("CardWidth");   // card width
+    private static int cardHeight = (int)((float)(cardWidth) * Resources.cards[1][1].getHeight()/Resources.cards[1][1].getWidth()); // card height
 
-    private static int cardWidth = Constants.element("CardWidth");
-    private static int cardHeight = (int)((float)(cardWidth) * Resources.cards[1][1].getHeight()/Resources.cards[1][1].getWidth());
+    private static final int active_x = Constants.getInt("activeX");        // the x position of active card
+    private static final int active_y = (height - cardHeight) / 2;                       // the y position of the active card
+    private static final int inactive_x = Constants.getInt("inactiveX");   // the x position of the last active card
+    private static final int inactive_y = active_y;                                     // the y position of the last active card
 
-    static final int active_x = Constants.element("activeX");
-    static final int active_y = (height - cardHeight) / 2;
-    static final int inactive_x = Constants.element("inactiveX");
-    static final int inactive_y = active_y;
+    private BufferedImage activeCardRef;        // image of current active card
+    private BufferedImage lastActiveCardRef;    // image of last active card
 
-    BufferedImage activeCardRef;
-    BufferedImage lastActiveCardRef;
-
+    /**
+     * Default Constructor
+     */
     protected StackPanel() {
 
         super();
@@ -54,10 +68,28 @@ class StackPanel extends JPanel {
 
     }
 
+    /**
+     * Update the active card
+     * @param active_card   the active card
+     */
+    public void updateActiveCard (Card active_card) {
+        lastActiveCardRef = activeCardRef;
+        // (set last active card as the current active card
+        activeCardRef = Resources.cards[active_card.getSuit()][active_card.getRank()];
+    }
+
+    /**
+     * Overriden paintComponent class
+     * @param g Abstract Graphics Class
+     */
+    @ Override
     protected void paintComponent (Graphics g) {
         super.paintComponent(g);
 
         Graphics2D g2d = (Graphics2D) g;
+
+        // draw the current active card at the front
+        // draw the last active card at the back, rotated by 15 degrees
 
         g2d.drawImage(Resources.card_stack, stack_x, stack_y, stack_width, stack_height, null);
         if (lastActiveCardRef != null) {

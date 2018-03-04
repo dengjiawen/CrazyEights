@@ -1,39 +1,54 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ *
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ *
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ *
+ *-----------------------------------------------------------------------------
+ * HostPanel.java
+ *-----------------------------------------------------------------------------
+ * This panel shows the IP and port information when a server is created.
+ *-----------------------------------------------------------------------------
+ */
+
 package ui;
 
-import common.Console;
 import common.Constants;
-
 import javax.swing.*;
 import java.awt.*;
 import java.net.Inet4Address;
-import java.net.InetAddress;
+import java.net.UnknownHostException;
 
-/**
- * Created by freddeng on 2018-01-26.
- */
 class HostPanel extends JPanel {
 
-    private static final int width = Constants.element("HostPanelW");
-    private static final int height = Constants.element("HostPanelH");
+    private static final int width = Constants.getInt("HostPanelW");    // panel width
+    private static final int height = Constants.getInt("HostPanelH");   // panel height
 
-    private static final int x = (Constants.element("initWidth") - width) / 2;
-    private static final int y = (Constants.element("initHeight") - height) / 2;
+    private static final int x = (Constants.getInt("initWidth") - width) / 2;   // panel x pos
+    private static final int y = (Constants.getInt("initHeight") - height) / 2; // panel y pos
 
-    private final static int buttonWidth = Constants.element("ButtonW");
-    private final static int buttonHeight = Constants.element("ButtonH");
+    private final static int buttonWidth = Constants.getInt("ButtonW");     // button width
+    private final static int buttonHeight = Constants.getInt("ButtonH");    // button height
 
-    private final static int buttonX = (width - buttonWidth) / 2;
-    private final static int buttonY = height - buttonHeight;
+    private final static int buttonX = (width - buttonWidth) / 2;   // button x pos
+    private final static int buttonY = height - buttonHeight;       // button y pos
 
-    private static int portNumber = 0;
+    private static int portNumber = 0;  // port number
 
-    TButton play;
+    private TButton play;   // button to start playing
 
-    JLabel title;
-    JLabel hint;
-    JLabel port;
+    private JLabel title;   // label that shows the IP address
+    private JLabel hint;    // label that tells the player what to do
+    private JLabel port;    // label that shows the port
 
-    protected HostPanel () throws Exception {
+    /**
+     * Default Constructor
+     */
+    protected HostPanel () {
 
         super();
 
@@ -42,10 +57,16 @@ class HostPanel extends JPanel {
         setBounds(x, y, width, height);
         setVisible(false);
 
+        // initialize all daughter JComponents
         play = new TButton(buttonX, buttonY, buttonWidth, buttonHeight);
 
-        title = new JLabel("<html><div style='text-align: center;'>" +
-                "Your IP: " + Inet4Address.getLocalHost().getHostAddress() + "</div></html>");
+        try {
+            // grab the IP address from Inet4Address.getLocalHost()
+            title = new JLabel("<html><div style='text-align: center;'>" +
+                    "Your IP: " + Inet4Address.getLocalHost().getHostAddress() + "</div></html>");
+        } catch (UnknownHostException e) {
+            title = new JLabel("ERROR");
+        }
         title.setForeground(Color.white);
         title.setFont(new Font("Arial", Font.BOLD, 25));
         title.setBounds((width - 300)/2, 100, 300, 100);
@@ -64,8 +85,8 @@ class HostPanel extends JPanel {
 
         play.addActionListener(e -> {
             setVisible(false);
-            GameWindow.requestRef().setShade(false);
-            GameWindow.requestRef().startVotingSession();
+            References.frame.setShade(false);
+            References.panel.init();
         });
 
         add (play);
@@ -75,21 +96,31 @@ class HostPanel extends JPanel {
 
     }
 
-    protected void paintComponent (Graphics g) {
-        super.paintComponent(g);
-
-        Graphics2D g2d = (Graphics2D) g;
-
-        g2d.drawImage(Resources.cpu_secondary, buttonX, buttonY, buttonWidth, buttonHeight, null);
-
-    }
-
+    /**
+     * Update the port
+     * @param num   port number
+     */
     public void updatePort (int num) {
         setVisible(true);
         portNumber = num;
         port.setText("<html><div style='text-align: center;'>" +
                 "Port Number: " + portNumber + "</div></html>");
         play.grabFocus();
+    }
+
+    /**
+     * Overriden paintComponent Class
+     * @param g Abstract Graphics Class
+     */
+    @ Override
+    protected void paintComponent (Graphics g) {
+        super.paintComponent(g);
+
+        Graphics2D g2d = (Graphics2D) g;
+
+        // draw the play button graphics
+        g2d.drawImage(Resources.cpu_secondary, buttonX, buttonY, buttonWidth, buttonHeight, null);
+
     }
 
 }

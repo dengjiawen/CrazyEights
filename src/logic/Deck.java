@@ -19,7 +19,6 @@
 package logic;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import common.Console;
 import common.Constants;
@@ -67,23 +66,18 @@ class Deck {
             if (rank == 13) rank = 1 - 1;
         }
 
-        System.out.println("size" + size());
-
         Sort.selectionSort(this);
-
-        for (int i = 0; i < size(); i ++) {
-            System.out.println(get(i));
-        }
-
-        // Sort the filled deck
-        //Sort.mergeSort(this);
-
-        System.out.println("size" + size());
     }
 
+    /**
+     * Method that prints out all the deck
+     */
     void print () {
         for (int i = 0; i < size(); i ++) {
-            System.out.println(get(i));
+            Console.printGeneralMessage("-------------------------------------------", this.getClass().getName());
+            Console.printGeneralMessage("Deck Content:", this.getClass().getName());
+            Console.printGeneralMessage(get(i).toString(), this.getClass().getName());
+            Console.printGeneralMessage("-------------------------------------------", this.getClass().getName());
         }
     }
 
@@ -155,6 +149,9 @@ class Deck {
             set(i, null);
         }
 
+        // cards are not directly removed because removal
+        // causes change in indexing
+
         removeNullPointers();
 
     }
@@ -213,17 +210,24 @@ class Deck {
      */
     Deck subdeck (int low, int high) {
 
-        Deck temp_deck = new Deck(false);
+        Deck temp_deck = new Deck(false);   // create temporary deck
 
         for (int i = low; i <= high; i ++) {
-            temp_deck.add(get(i));
-            remove(get(i));
+            temp_deck.add(get(i));                // use for loop to transverse & add card to temp_deck
+            remove(get(i));                       // remove the card from the original deck
         }
 
         return temp_deck;
 
     }
 
+    /**
+     * Method that returns a boolean of whether
+     * the deck contains a card at a particular
+     * index.
+     * @param index index to be checked
+     * @return      boolean
+     */
     boolean isEmpty (int index) {
         return index >= cards.size();
     }

@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.lang.ref.WeakReference;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -11,90 +12,74 @@ import common.Console;
 import common.Constants;
 import common.Misc;
 import logic.Hand;
+import logic.Player;
 import logic.Sort;
 
 /**
  * Created by freddeng on 2018-01-26.
  */
-class HandPanel extends JPanel {
+public class HandPanel extends JPanel {
 
-    private static int cardWidth = Constants.element("CardWidth");
-    private static int cardHeight = (int)((float)(cardWidth) * Resources.cards[1][1].getHeight()/Resources.cards[1][1].getWidth());
+    private static WeakReference<ButtonPanel> buttons;
+    private static WeakReference<Player> player;
+    private static WeakReference<Hand> hand;
 
-    private static int width = Constants.element("HandPanelWidth");
-    private static int height = cardHeight;
+    private static final int card_width = Constants.getInt("CardWidth");
+    private static final int card_height = (int)((float)(card_width) *
+            Resources.cards[1][1].getHeight()/Resources.cards[1][1].getWidth());
 
-    private Hand hand;
+    private static int width = Constants.getInt("HandPanelWidth");
+    private static int height = card_height;
 
     private int x;
     private int y;
 
-    private int individualUsableSpace;
-    private int usedSpace;
+    private int individual_usable_space;
+    private int total_used_space;
 
-    MouseAdapter selectionAgent;
-    ExecutorService clickHandler;
+    private MouseAdapter click_handler;
+    private ExecutorService click_handler_thread;
 
-    private float glowValue = 0f;
-    boolean glowIsIncreasing = false;
+    private float glow_value = 0f;
+    private boolean glow_value_isIncreasing = false;
 
-    Timer glowTimer;
+    private Timer glow_timer;
 
-    int selected = -1;
+    private int selected_index = -1;
 
-    protected HandPanel (Hand currentHand) {
+    protected HandPanel () {
 
         super();
 
         setLayout(null);
         setOpaque(false);
 
-        hand = currentHand;
-        Sort.selectionSort(hand);
+        References.updateReferences();
 
-        clickHandler = Executors.newSingleThreadExecutor();
+        Sort.selectionSort(hand.get());
 
-        glowTimer = new Timer(1000/15, e -> {
-            if (glowIsIncreasing) glowValue += 0.05;
-            else glowValue -= 0.1;
-
-            if (glowValue > 1) {
-                glowValue = 1f;
-                glowIsIncreasing = false;
-            } else if (glowValue < 0) {
-                glowValue = 0f;
-                glowIsIncreasing = true;
-            }
-
-            GameWindow.requestRef().repaint();
-        });
-
-        selectionAgent = new MouseAdapter() {
+        click_handler_thread = Executors.newSingleThreadExecutor();
+        click_handler = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                super.mouseClicked(e);
                 int x = e.getX();
-                int selectedIndex = 0;
 
-                for (int i = 0; i < hand.size(); i++) {
-                    if (Misc.isBetween(i * individualUsableSpace, x, (i + 1) * individualUsableSpace)) {
-                        selectedIndex = i;
+                for (int i = 0; i < hand.get().size(); i++) {
+                    if (Misc.isBetween(i * individual_usable_space, x, (i + 1) * individual_usable_space)) {
+                        selected_index = i;
                         break;
                     } else {
-                        selectedIndex = hand.size() - 1;
+                        selected_index = hand.get().size() - 1;
                     }
                 }
 
-                Console.printErrorMessage("" + selectedIndex, this.getClass().getName());
-
-                hand.select(selectedIndex);
-                if (hand.selectedIndex == -1) {
-                    GameWindow.requestRef().activatePlayButton(false);
+                hand.get().select(selected_index);
+                if (hand.get().getSelectedIndex() != Constants.NO_CARD_SELECTED) {
+                    buttons.get().enablePlay(true);
                 } else {
-                    GameWindow.requestRef().activatePlayButton(true);
+                    buttons.get().enablePlay(false);
                 }
-
-                selected = selectedIndex;
 
                 repaint();
 
@@ -113,71 +98,116 @@ class HandPanel extends JPanel {
             }
         };
 
-        update();
+        glow_timer = new Timer(1000/15, e -> {
+            if (glow_value_isIncreasing) glow_value += 0.05;
+            else glow_value -= 0.1;
 
+            if (glow_value > 1) {
+                glow_value = 1f;
+                glow_value_isIncreasing = false;
+            } else if (glow_value < 0) {
+                glow_value = 0f;
+                glow_value_isIncreasing = true;
+            }
+
+            repaint();
+        });
+
+        updateLayout();
+
+    }
+
+    public void updateLayout () {
+
+        Sort.selectionSort(hand.get());
+
+        individual_usable_space = Constants.getInt("IndividualSpace");
+        total_used_space = card_width + individual_usable_space * hand.get().size();
+
+        width = total_used_space;
+
+        x = (Constants.getInt("initWidth") - width)/2;
+        y = Constants.getInt("initHeight") - height - Constants.getInt("HandPanelYOffset");
+
+        setBounds(x, y, width, height);
+        repaint();
+
+    }
+
+    public void setPlay (boolean doEnable) {
+
+        updateLayout();
+
+        if (!doEnable) {
+            removeMouseListener(click_handler);
+            glow_timer.stop();
+            hand.get().reset();
+            repaint();
+        }
+        else {
+            hand.get().findPlayable();
+
+            addMouseListener(click_handler);
+            grabFocus();
+            glow_timer.start();
+        }
+
+        repaint();
+
+    }
+
+    public void temporarilySetPlay (boolean doEnable) {
+        updateLayout();
+
+        if (!doEnable) {
+            removeMouseListener(click_handler);
+            glow_timer.stop();
+            repaint();
+        } else {
+            hand.get().findPlayable();
+
+            addMouseListener(click_handler);
+            grabFocus();
+            glow_timer.start();
+        }
+
+        repaint();
     }
 
     protected void paintComponent (Graphics g) {
         super.paintComponent(g);
 
         Graphics2D g2d = (Graphics2D) g;
+
         drawCards(g2d);
     }
 
-    private void drawCards (Graphics2D g2d) {
+    private void drawCards (Graphics2D g2d) throws IndexOutOfBoundsException {
 
-        for (int i = 0; i < hand.size(); i ++) {
-            int suit = hand.get(i).getSuit();
-            int rank = hand.get(i).getRank();
-            g2d.drawImage(Resources.cards[suit][rank], i * individualUsableSpace, 0,
-                    cardWidth, cardHeight, null);
+        for (int i = 0; i < hand.get().size(); i ++) {
+            int suit = hand.get().get(i).getSuit();
+            int rank = hand.get().get(i).getRank();
 
-            if (i == hand.selectedIndex) {
-                g2d.drawImage(Resources.highlight, i * individualUsableSpace, 0,
-                        cardWidth, cardHeight, null);
-            }
-            if (hand.isPlayable(i) && i != hand.selectedIndex) {
-                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, glowValue));
-                g2d.drawImage(Resources.playable, i * individualUsableSpace, 0, cardWidth, cardHeight, null);
+            g2d.drawImage(Resources.cards[suit][rank], i * individual_usable_space, 0,
+                    card_width, card_height, null);
+
+            if (i == hand.get().getSelectedIndex()) {
+                g2d.drawImage(Resources.highlight, i * individual_usable_space, 0,
+                        card_width, card_height, null);
+            } else if (hand.get().isPlayable(i)) {
+                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, glow_value));
+                g2d.drawImage(Resources.playable, i * individual_usable_space, 0,
+                        card_width, card_height, null);
                 g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1));
             }
         }
 
     }
 
-    void update () {
-
-        Sort.selectionSort(hand);
-
-        individualUsableSpace = Constants.element("IndividualSpace");
-        usedSpace = cardWidth + individualUsableSpace * hand.size();
-
-        width = usedSpace;
-
-        x = (GamePanel.width - width)/2;
-        y = GamePanel.height - height - Constants.element("HandPanelYOffset");
-
-        setBounds(x, y, width, height);
-        repaint();
-    }
-
-
-
-    public void allowToPlay (boolean isAllowed) {
-        update();
-        if (!isAllowed) {
-            removeMouseListener(selectionAgent);
-            glowTimer.stop();
-            glowValue = 0f;
-            hand.selectedIndex = -1;
-            hand.resetPlayability();
-            repaint();
-        }
-        else {
-            addMouseListener(selectionAgent);
-            grabFocus();
-            glowTimer.start();
-        }
+    public static void updateReferences () throws NullPointerException {
+        buttons = new WeakReference<>(References.buttons);
+        player = new WeakReference<>(References.player);
+        hand = new WeakReference<>(References.player.getHand());
     }
 
 }

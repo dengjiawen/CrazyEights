@@ -10,19 +10,18 @@ import java.awt.*;
  */
 class MainMenuPanel extends JPanel {
 
-    private final static int buttonWidth = Constants.element("ButtonW");
-    private final static int buttonHeight = Constants.element("ButtonH");
-    private final static int buttonOffset = Constants.element("ButtonOffset");
+    private final static int buttonWidth = Constants.getInt("ButtonW");
+    private final static int buttonHeight = Constants.getInt("ButtonH");
+    private final static int buttonOffset = Constants.getInt("ButtonOffset");
 
     private static final int width = buttonWidth;
     private static final int height = 3 * buttonHeight + 2 * buttonOffset;
 
-    private final static int x = (Constants.element("initWidth") - width) / 2;
-    private final static int y = (Constants.element("initHeight") - width) / 2;
+    private final static int x = (Constants.getInt("initWidth") - width) / 2;
+    private final static int y = (Constants.getInt("initHeight") - width) / 2;
 
     TButton connect;
     TButton host;
-    TButton cpu;
 
     protected MainMenuPanel () {
 
@@ -34,33 +33,27 @@ class MainMenuPanel extends JPanel {
 
         host = new TButton(0, 0, buttonWidth, buttonHeight);
         connect = new TButton(0, buttonHeight + buttonOffset, buttonWidth, buttonHeight);
-        cpu = new TButton(0, 2 * buttonHeight + 2 * buttonOffset, buttonWidth, buttonHeight);
 
         host.addActionListener(e -> {
             setVisible(false);
-            int statusCode = GameWindow.requestRef().host();
+            int statusCode = References.host();
 
             if (statusCode == Constants.ERROR) setVisible(true);
         });
 
         connect.addActionListener(e -> {
             setVisible(false);
-            int statusCode = GameWindow.requestRef().connect();
+            int statusCode = References.connect();
 
             if (statusCode == Constants.ERROR) setVisible(true);
             else {
-                GameWindow.requestRef().setShade(false);
-                GameWindow.requestRef().startVotingSession();
+                References.frame.setShade(false);
+                References.panel.init();
             }
-        });
-
-        cpu.addActionListener(e -> {
-            setVisible(false);
         });
 
         add (host);
         add (connect);
-        add (cpu);
 
     }
 
@@ -71,7 +64,6 @@ class MainMenuPanel extends JPanel {
 
         g2d.drawImage(Resources.host_button, 0, 0, buttonWidth, buttonHeight, null);
         g2d.drawImage(Resources.connect_button, 0, buttonHeight + buttonOffset, buttonWidth, buttonHeight, null);
-        g2d.drawImage(Resources.cpu_button, 0, 2 * buttonHeight + 2 * buttonOffset, buttonWidth, buttonHeight, null);
 
     }
 
